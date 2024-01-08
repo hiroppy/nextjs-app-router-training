@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 import { Box } from "./_components/box";
 
+// turn off full route cache for demo
+export const dynamic = "force-dynamic";
+
 export default function Page() {
   return (
     <div className="flex gap-4">

@@ -7,7 +7,7 @@
     "doc": "https://nextjs.org/docs/app/building-your-application/routing/error-handling"
   },
   "codes": {
-    "page.tsx": "export default async function Page() {\n  throw new Error(\"an error from server component\");\n}\n",
+    "page.tsx": "// if you don't add this, build phase will fail\n// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default async function Page() {\n  throw new Error(\"an error from server component\");\n}\n",
     "error.tsx": "\"use client\";\n\ntype Props = {\n  error: Error & { digest?: string };\n  reset: () => void;\n};\n\nexport default function Error({ error, reset }: Props) {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <span>message: {error.message}</span>\n      <span>digest: {error.digest}</span>\n      <button onClick={() => reset()}>Try again</button>\n    </div>\n  );\n}\n"
   }
 }

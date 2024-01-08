@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 import { Loading } from "../_components/loading";
 
+// turn off full route cache for demo
+export const dynamic = "force-dynamic";
+
 async function Main() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
