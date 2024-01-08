@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-10 py-8 px-5">
-      <h1 className="text-center text-4xl font-semibold text-gray-50">
+      <h1 className="text-center text-4xl font-semibold text-gray-50 leading-normal">
         Next.js App Router Training
       </h1>
       <p className="text-center text-lg text-gray-400">
