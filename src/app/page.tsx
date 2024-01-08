@@ -10,14 +10,14 @@ export default function Home() {
         Next.js App Router Training
       </h1>
       <p className="text-center text-lg text-gray-400">
-        Introducing various patterns of app router with{" "}
+        Introducing various basic patterns of app router with{" "}
         <span className="text-gray-50 font-semibold">simplified code</span>.
       </p>
       <hr className="h-px my-8 border-0 bg-gray-700" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5">
         {Array.from(kindMap).map(([key, value]) => (
           <div key={key}>
-            <h2 className="text-2xl font-semibold text-gray-200">
+            <h2 className="text-2xl font-semibold text-gray-100">
               {capitalizeWords(key)}
             </h2>
             <ul className="mt-2 text-gray-300">

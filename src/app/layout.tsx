@@ -7,9 +7,28 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const siteName = "Next.js App Router Training";
+const description =
+  "Introducing various basic patterns using Next.js' app router with simplified code.";
+const url = process.env.VERCEL_URL;
+
 export const metadata: Metadata = {
-  title: "next.js routing demo",
-  description: "training next.js routing",
+  title: siteName,
+  description,
+  openGraph: {
+    title: siteName,
+    description,
+    url,
+    siteName,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description,
+    site: "@about_hiroppy",
+    creator: "@about_hiroppy",
+  },
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
