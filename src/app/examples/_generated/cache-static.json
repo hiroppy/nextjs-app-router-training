@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "kind": "full route cache",
+    "path": "cache-static",
+    "title": "Static Rendering",
+    "description": "\nWith Static Rendering(default), routes are rendered at build time, or in the background after data revalidation. The result is cached and can be pushed to a Content Delivery Network (CDN). This optimization allows you to share the result of the rendering work between users and server requests.\n\nStatic rendering is useful when a route has data that is not personalized to the user and can be known at build time, such as a static blog post or a product page.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/rendering/server-components#static-rendering-default"
+  },
+  "codes": {
+    "page.tsx": "import { Suspense } from \"react\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex gap-4\">\n      <Suspense\n        fallback={\n          <span>😜 you can't see this message when production build</span>\n        }\n      >\n        <Main />\n      </Suspense>\n    </div>\n  );\n}\n\nasync function Main() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  return <span>loaded!</span>;\n}\n"
+  }
+}

@@ -28,7 +28,7 @@ export function FileTree({ filePaths, code }: Props) {
     });
   const initialPath = filePathFromParams
     ? convertURLParamToFilePath(filePathFromParams)
-    : paths[0].replace(basePath, "");
+    : paths[0]?.replace(basePath, "") ?? "";
   const [selectedPath, setSelectedPath] = useState(initialPath);
   const tree = createTree(paths);
   const renderTree = (node: any, path = "") => {
@@ -73,9 +73,11 @@ export function FileTree({ filePaths, code }: Props) {
   }, [initialPath]);
 
   return (
-    <div className="text-gray-100 h-96 flex flex-col md:flex-row">
-      <div className="min-w-max overflow-y-auto pr-10">{renderTree(tree)}</div>
-      <div className="border-gray-600 overflow-auto flex-1 border-t md:border-l md:border-t-0">
+    <div className="text-gray-100 md:h-96 flex flex-col md:flex-row">
+      <div className="min-w-max overflow-y-auto pr-10 h-64 md:h-auto">
+        {renderTree(tree)}
+      </div>
+      <div className="border-gray-600 overflow-auto flex-1 border-t md:border-l md:border-t-0 h-2 md:h-auto">
         <Code code={code[selectedPath] ?? ""} />
       </div>
     </div>

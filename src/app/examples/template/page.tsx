@@ -3,9 +3,9 @@ import { Box } from "./_components/box";
 
 export default function Page() {
   return (
-    <Box title="Page">
+    <Box title="page">
       <Link
-        href="/examples/nesting-layouts/child"
+        href="/examples/template/child"
         className="block border border-gray-400 p-1 w-full text-center rounded-sm"
       >
         go to the child page

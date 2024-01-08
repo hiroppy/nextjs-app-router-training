@@ -11,6 +11,7 @@ export type Meta = {
     | "dynamic routes"
     | "parallel routes"
     | "intercepting routes"
+    | "full route cache"
     | "showcases";
 };
 
@@ -34,6 +35,21 @@ Next.js has a Metadata API that can be used to define your application metadata 
 A layout is UI that is shared between multiple pages. On navigation, layouts preserve state, remain interactive, and do not re-render. Layouts can also be nested.
   `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts",
+  },
+  template: {
+    kind: "basic",
+    path: "template",
+    title: "Template",
+    description: `
+Templates are similar to layouts in that they wrap each child layout or page.
+Unlike layouts that persist across routes and maintain state, templates create a new instance for each of their children on navigation. This means that when a user navigates between routes that share a template, a new instance of the component is mounted, DOM elements are recreated, state is not preserved, and effects are re-synchronized.
+
+There may be cases where you need those specific behaviors, and templates would be a more suitable option than layouts. For example:
+
+- Features that rely on useEffect (e.g logging page views) and useState (e.g a per-page feedback form).
+- To change the default framework behavior. For example, Suspense Boundaries inside layouts only show the fallback the first time the Layout is loaded and not when switching pages. For templates, the fallback is shown on each navigation.
+  `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#templates",
   },
   "(grouping)": {
     kind: "route groups",
@@ -128,6 +144,28 @@ This routing paradigm can be useful when you want to display the content of a ro
 (...) to match segments from the root app directory
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes",
+  },
+  "cache-static": {
+    kind: "full route cache",
+    path: "cache-static",
+    title: "Static Rendering",
+    description: `
+With Static Rendering(default), routes are rendered at build time, or in the background after data revalidation. The result is cached and can be pushed to a Content Delivery Network (CDN). This optimization allows you to share the result of the rendering work between users and server requests.
+
+Static rendering is useful when a route has data that is not personalized to the user and can be known at build time, such as a static blog post or a product page.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/rendering/server-components#static-rendering-default",
+  },
+  "cache-dynamic": {
+    kind: "full route cache",
+    path: "cache-dynamic",
+    title: "Dynamic Rendering",
+    description: `
+With Dynamic Rendering, routes are rendered for each user at request time.
+
+Dynamic rendering is useful when a route has data that is personalized to the user or has information that can only be known at request time, such as cookies or the URL's search params.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering",
   },
   "service-e-commerce": {
     kind: "showcases",
