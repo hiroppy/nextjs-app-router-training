@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Dialog } from "../../../_components/dialog";
 import { Item, items } from "../../../../../mock";
+import { Dialog } from "../../../_components/dialog";
 
 type Props = {
   params: {

@@ -1,7 +1,7 @@
-import { writeFile, readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { join, parse } from "node:path";
 import { glob } from "glob";
-import { meta, type ExampleName } from "../src/app/examples/data";
+import { type ExampleName, meta } from "../src/app/examples/data";
 
 (async () => {
   const base = join(__dirname, "../src/app/examples");
@@ -34,7 +34,7 @@ import { meta, type ExampleName } from "../src/app/examples/data";
     Object.entries<string[]>(pathMap).map(async ([key, value]) => {
       const codeMap: Record<string, string> = {};
       const code = await Promise.all(
-        value.map((path) => readFile(path, "utf-8"))
+        value.map((path) => readFile(path, "utf-8")),
       );
 
       for (const [index, path] of value.entries()) {
@@ -51,9 +51,9 @@ import { meta, type ExampleName } from "../src/app/examples/data";
             codes: codeMap,
           },
           null,
-          2
-        )
+          2,
+        ),
       );
-    })
+    }),
   );
 })();

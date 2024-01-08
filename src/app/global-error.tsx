@@ -7,10 +7,12 @@ type Props = {
 
 export default function GlobalError({ error, reset }: Props) {
   return (
-    <html>
+    <html lang="en">
       <body>
         <h2>Something went wrong!</h2>
-        <button onClick={() => reset()}>Try again</button>
+        <button type="button" onClick={() => reset()}>
+          Try again
+        </button>
       </body>
     </html>
   );

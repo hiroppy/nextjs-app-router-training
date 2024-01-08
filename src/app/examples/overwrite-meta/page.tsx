@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Meta } from "./_components/meta";
 import Link from "next/link";
+import { Meta } from "./_components/meta";
 
 export const metadata: Metadata = {
   title: "[modified] title",

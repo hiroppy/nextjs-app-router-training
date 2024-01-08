@@ -16,6 +16,7 @@ export default function Page() {
             "items/intercepting/sign-up"
           </p>
           <button
+            type="button"
             onClick={() => window.location.reload()}
             className="border border-gray-500 py-1 px-4 rounded-md w-fit"
           >

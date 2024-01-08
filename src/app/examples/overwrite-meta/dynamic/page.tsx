@@ -8,7 +8,7 @@ type Params = {
 
 export async function generateMetadata(
   params: Params,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const parentInfo = await parent;
   const parentTitle = parentInfo.title?.absolute;

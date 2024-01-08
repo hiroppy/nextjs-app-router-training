@@ -18,7 +18,12 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={[inter.className, "bg-gray-800"].join(" ")}>
         <div className="flex justify-between flex-col min-h-screen text-gray-100">
           <header className="flex justify-between items-center px-6 py-3 border-b border-b-gray-600">
-            <Link href="/">🐕</Link>
+            <Link
+              href="/"
+              className="bg-gray-300 p-1 w-8 h-8 text-center rounded-full text-xl"
+            >
+              🐕
+            </Link>
             <Link
               href="https://github.com/hiroppy/nextjs-app-router-training"
               target="_blank"

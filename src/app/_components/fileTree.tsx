@@ -1,10 +1,10 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { convertURLParamToFilePath } from "../_utils/filePath";
 import { Code } from "./code";
 import { FolderIcon } from "./icons/folder";
-import { useSearchParams } from "next/navigation";
-import { convertURLParamToFilePath } from "../_utils/filePath";
 
 export type Props = {
   exampleName: string;
@@ -31,7 +31,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
     : paths[0]?.replace(basePath, "") ?? "";
   const [selectedPath, setSelectedPath] = useState(initialPath);
   const tree = createTree(exampleName, paths);
-  const renderTree = (node: any, path = "") => {
+  const renderTree = (node: Tree, path = "") => {
     return Object.keys(node).map((key) => {
       const newPath = path ? `${path}/${key}` : key;
       const hasChildren = Object.keys(node[key]).length > 0;
@@ -41,7 +41,8 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
         <summary key={newPath} className="list-none">
           <div className="flex gap-1 items-center">
             {hasChildren && <FolderIcon />}
-            <span
+            <button
+              type="button"
               className={[
                 !hasChildren
                   ? "hover:text-blue-300 cursor-pointer"
@@ -57,7 +58,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
               }}
             >
               {`${key} ${hasChildren ? "/" : ""}`.trim()}
-            </span>
+            </button>
           </div>
           <ul className="border-l border-l-gray-600 mt-1 ml-2">
             {hasChildren && (
@@ -87,8 +88,12 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
   );
 }
 
+type Tree = {
+  [key: string]: Tree;
+};
+
 function createTree(name: string, paths: Props["filePaths"]) {
-  const tree: any = {};
+  const tree: Tree = {};
 
   for (const path of paths) {
     let pathParts = path.split("/");

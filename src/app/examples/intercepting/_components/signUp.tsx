@@ -1,7 +1,7 @@
 "use client";
 
-import { type PropsWithChildren } from "react";
 import { usePathname } from "next/navigation";
+import { type PropsWithChildren } from "react";
 
 export function SignUp() {
   const pathname = usePathname();
@@ -19,7 +19,10 @@ export function SignUp() {
 
 function Button({ children }: PropsWithChildren) {
   return (
-    <button className="border border-gray-300 rounded-md w-60 py-1">
+    <button
+      type="button"
+      className="border border-gray-300 rounded-md w-60 py-1"
+    >
       {children}
     </button>
   );

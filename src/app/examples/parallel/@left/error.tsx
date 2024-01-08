@@ -5,6 +5,6 @@ type Props = {
   reset: () => void;
 };
 
-export default function Error({ error }: Props) {
+export default function ErrorComponent({ error }: Props) {
   return <span>{error.message}</span>;
 }

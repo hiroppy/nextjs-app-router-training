@@ -5,12 +5,14 @@ type Props = {
   reset: () => void;
 };
 
-export default function Error({ error, reset }: Props) {
+export default function ErrorComponent({ error, reset }: Props) {
   return (
     <div className="flex flex-col gap-2">
       <span>message: {error.message}</span>
       <span>digest: {error.digest}</span>
-      <button onClick={() => reset()}>Try again</button>
+      <button type="button" onClick={() => reset()}>
+        Try again
+      </button>
     </div>
   );
 }

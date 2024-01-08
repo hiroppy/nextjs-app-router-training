@@ -11,7 +11,7 @@ export default function Page() {
       </p>
       <Link
         href={`/examples/service-e-commerce/admin?file-path=${convertFilePathToURLParam(
-          "(admin)/layout.tsx"
+          "(admin)/layout.tsx",
         )}`}
       >
         check

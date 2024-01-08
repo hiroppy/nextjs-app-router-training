@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { meta, type Meta } from "./examples/data";
+import { type Meta, meta } from "./examples/data";
 
 export default function Home() {
   const kindMap = groupMetaByKind(meta);
@@ -32,6 +32,7 @@ export default function Home() {
                     viewBox="0 -9 3 24"
                     className="mr-1 overflow-visible"
                   >
+                    <title>arrow</title>
                     <path
                       d="M0 0L3 3L0 6"
                       fill="none"
@@ -47,16 +48,15 @@ export default function Home() {
           </div>
         ))}
       </div>
-      {/* <hr className="h-px my-8 border-0 bg-gray-700" /> */}
       <div>if you want to add a new example, please read ...</div>
     </div>
   );
 }
 
-function groupMetaByKind(b: typeof meta) {
+function groupMetaByKind(metadata: typeof meta) {
   const kindMap = new Map<Meta["kind"], Meta[]>();
 
-  Object.values(b).forEach((meta) => {
+  for (const meta of Object.values(metadata)) {
     const kind = meta.kind;
 
     if (!kindMap.has(kind)) {
@@ -64,7 +64,7 @@ function groupMetaByKind(b: typeof meta) {
     }
 
     kindMap.get(kind)?.push(meta);
-  });
+  }
 
   return kindMap;
 }

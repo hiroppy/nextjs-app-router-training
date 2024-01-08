@@ -1,5 +1,5 @@
-import { type PropsWithChildren } from "react";
 import Link from "next/link";
+import { type PropsWithChildren } from "react";
 
 export function ImageList({ children }: PropsWithChildren) {
   return <div className="flex gap-5">{children}</div>;

@@ -1,12 +1,12 @@
 "use client";
 
-// TODO: shikiがclient componentに対応されたら、置き換える(親のfireTreeがclientなため)
-// import { getHighlighter } from "shiki";
-import { useEffect, useRef, useState } from "react";
 import hljs from "highlight.js/lib/core";
 import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
 import "highlight.js/styles/vs2015.min.css";
+// TODO: shikiがclient componentに対応されたら、置き換える(親のfireTreeがclientなため)
+// import { getHighlighter } from "shiki";
+import { useEffect, useRef, useState } from "react";
 
 if (typeof window !== "undefined") {
   // for jsx

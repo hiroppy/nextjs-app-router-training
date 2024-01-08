@@ -5,15 +5,15 @@
 // (if we pass the path via middleware, the first rendering will know only the current path)
 "use client";
 
-import { notFound, usePathname } from "next/navigation";
-import { useEffect, type PropsWithChildren, useState } from "react";
 import {
   FileTree,
   type Props as FileTreeProps,
 } from "@/app/_components/fileTree";
-import type { Meta } from "./data";
 import Link from "next/link";
+import { notFound, usePathname } from "next/navigation";
+import { type PropsWithChildren, useEffect, useState } from "react";
 import { SkeletonBox } from "../_components/skeleton";
+import type { Meta } from "./data";
 
 export default function Template({ children }: PropsWithChildren) {
   const pathname = usePathname();
@@ -105,6 +105,7 @@ export default function Template({ children }: PropsWithChildren) {
           </pre>
         )}
         <button
+          type="button"
           className={[
             "w-fit self-end",
             loading ? "text-gray-600" : "text-gray-400 hover:text-blue-300",

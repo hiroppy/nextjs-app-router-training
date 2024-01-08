@@ -2,8 +2,8 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "quickfix.biome": "explicit",
-    "source.organizeImports.biome": "explicit"
+    "quickfix.biome": true,
+    "source.organizeImports.biome": true
   },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -11,8 +11,11 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "cSpell.enabled": true,
-  "cSpell.words": ["astro", "astrojs", "hiroppy", "algoliasearch", "pnpm"],
+  "cSpell.words": ["hiroppy"],
   "cSpell.allowCompoundWords": true,
   "cSpell.ignorePaths": [
     "**/package-lock.json",

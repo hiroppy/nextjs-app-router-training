@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "generate": "ts-node ./scripts/generateCodeMap.ts"
+    "generate": "ts-node ./scripts/generateCodeMap.ts",
+    "lint": "biome lint .",
+    "fmt": "biome format --write .",
+    "check": "biome check --apply ."
   },
   "dependencies": {
     "highlight.js": "^11.9.0",

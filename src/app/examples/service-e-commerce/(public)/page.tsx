@@ -1,10 +1,10 @@
-import { Suspense } from "react";
-import { Section } from "../_components/section";
-import { items } from "../mock";
-import { ImageSkeletons } from "../_components/skeleton";
-import { ImageItem, ImageList } from "../_components/imageList";
 import Link from "next/link";
+import { Suspense } from "react";
+import { ImageItem, ImageList } from "../_components/imageList";
+import { Section } from "../_components/section";
+import { ImageSkeletons } from "../_components/skeleton";
 import { isSignIn } from "../_utils/auth";
+import { items } from "../mock";
 
 export default async function Page() {
   const signedIn = await isSignIn();
