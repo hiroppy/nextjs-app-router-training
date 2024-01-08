@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "kind": "loading",
+    "path": "loading-with-streaming",
+    "title": "Loading with Streaming",
+    "description": "\nIn addition to loading.js, you can also manually create Suspense Boundaries for your own UI components. The App Router supports streaming with Suspense for both Node.js and Edge runtimes.\n  ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming#streaming-with-suspense"
+  },
+  "codes": {
+    "page.tsx": "import { Suspense } from \"react\";\nimport { Box } from \"./_components/box\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex gap-4\">\n      <Suspense fallback={<Box>loading...</Box>}>\n        <Left />\n      </Suspense>\n      <Box>hi!</Box>\n    </div>\n  );\n}\n\nasync function Left() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  return <Box>loaded!</Box>;\n}\n",
+    "_components/box.tsx": "import { type PropsWithChildren } from \"react\";\n\nexport function Box({ children }: PropsWithChildren) {\n  return (\n    <div className=\"w-40 h-20 flex justify-center items-center bg-gray-700\">\n      {children}\n    </div>\n  );\n}\n"
+  }
+}

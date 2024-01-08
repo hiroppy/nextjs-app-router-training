@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "kind": "basic",
+    "path": "nesting-layouts",
+    "title": "Nesting Layouts",
+    "description": "\nA layout is UI that is shared between multiple pages. On navigation, layouts preserve state, remain interactive, and do not re-render. Layouts can also be nested.\n  ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts"
+  },
+  "codes": {
+    "page.tsx": "export default function NestingLayouts() {\n  return <span className=\"text-lg\">a demo for nesting layouts</span>;\n}\n",
+    "layout.tsx": "import { type PropsWithChildren } from \"react\";\n\nexport default function Layout({ children }: PropsWithChildren) {\n  return (\n    <div className=\"bg-teal-500 h-full p-4 text-gray-800\">\n      <p>child layout</p>\n      <div className=\"pt-4\">{children}</div>\n    </div>\n  );\n}\n"
+  }
+}

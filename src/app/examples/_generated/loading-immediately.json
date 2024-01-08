@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "kind": "loading",
+    "path": "loading-immediately",
+    "title": "Loading Immediately",
+    "description": "\nAn instant loading state is fallback UI that is shown immediately upon navigation. You can pre-render loading indicators such as skeletons and spinners, or a small but meaningful part of future screens such as a cover photo, title, etc. This helps users understand the app is responding and provides a better user experience.\nCreate a loading state by adding a loading.js file inside a folder.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming"
+  },
+  "codes": {
+    "page.tsx": "export default async function Page() {\n  await new Promise((resolve) => setTimeout(resolve, 3000));\n\n  return <span>hi!</span>;\n}\n",
+    "loading.tsx": "export default function Loading() {\n  return <span>loading...</span>;\n}\n"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "kind": "route groups",
+    "path": "grouping-2",
+    "title": "Grouping",
+    "description": "\nIn the app directory, nested folders are normally mapped to URL paths. However, you can mark a folder as a Route Group to prevent the folder from being included in the route's URL path.\nThis allows you to organize your route segments and project files into logical groups without affecting the URL path structure.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/route-groups"
+  },
+  "codes": {
+    "grouping-2/page.tsx": "\"use client\";\n\nimport { usePathname } from \"next/navigation\";\n\nexport default function Page() {\n  const pathname = usePathname();\n\n  return (\n    <span>\n      The current path is <span className=\"text-orange-300\">{pathname}</span>,\n      not /examples/(grouping)/grouping-2\n    </span>\n  );\n}\n"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "kind": "dynamic routes",
+    "path": "dynamic-required-single/dog",
+    "title": "Dynamic Routes with a Single Parameter",
+    "description": "\nA Dynamic Segment can be created by wrapping a file or folder name in square brackets: [segmentName]. For example, [id] or [slug].\n  ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#convention"
+  },
+  "codes": {
+    "[slug]/page.tsx": "type Props = {\n  params: {\n    slug: string;\n  };\n};\n\nexport default function Page({ params }: Props) {\n  return <span>slug: {params.slug}</span>;\n}\n"
+  }
+}

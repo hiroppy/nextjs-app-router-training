@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "kind": "dynamic routes",
+    "path": "dynamic-optional-multiple/animals/dog",
+    "title": "Dynamic Routes with a Multiple Optional Parameter",
+    "description": "\nCatch-all Segments can be made optional by including the parameter in double square brackets: [[...segmentName]].\nFor example, pages/shop/[[...slug]].js will also match /shop, in addition to /shop/clothes, /shop/clothes/tops, /shop/clothes/tops/t-shirts.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#optional-catch-all-segments"
+  },
+  "codes": {
+    "[[...slug]]/page.tsx": "import Link from \"next/link\";\n\ntype Props = {\n  params: {\n    slug: string[];\n  };\n};\n\nexport default function Page({ params }: Props) {\n  return (\n    <div className=\"flex flex-col gap-1\">\n      <span>slug: {JSON.stringify(params.slug)}</span>\n      <Link href=\"/examples/dynamic-optional-multiple/one\">\n        👉 \"dynamic-optional-multiple/one\" is OK\n      </Link>\n      <Link href=\"/examples/dynamic-optional-multiple\">\n        👉 \"dynamic-optional-multiple\" is OK\n      </Link>\n    </div>\n  );\n}\n"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "kind": "basic",
+    "path": "overwrite-meta",
+    "title": "Overwriting Metadata",
+    "description": "\nNext.js has a Metadata API that can be used to define your application metadata (e.g. meta and link tags inside your HTML head element) for improved SEO and web shareability.\n  ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/optimizing/metadata"
+  },
+  "codes": {
+    "page.tsx": "import type { Metadata, ResolvingMetadata } from \"next\";\nimport { Meta } from \"./_components/meta\";\n\ntype Params = {\n  params: { id: string };\n  searchParams: { [key: string]: string | string[] | undefined };\n};\n\n// for static data\n// export const metadata: Metadata = {\n//   title: \"[modified]\",\n//   description: \"[modified]\",\n// };\n\n// for dynamic data\nexport async function generateMetadata(\n  params: Params,\n  parent: ResolvingMetadata\n): Promise<Metadata> {\n  const parentTitle = (await parent).title?.absolute;\n  const parentDescription = (await parent).description;\n\n  return {\n    title: `[modified] ${parentTitle}`,\n    description: `[modified] ${parentDescription}`,\n  };\n}\n\nexport default function Page() {\n  return <Meta />;\n}\n",
+    "_components/meta.tsx": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { usePathname } from \"next/navigation\";\n\nexport function Meta() {\n  const [meta, setMeta] = useState(\"\");\n  const pathname = usePathname();\n\n  useEffect(() => {\n    const title = document.querySelector(\"title\")?.outerHTML;\n    const description = document.querySelector(\n      'meta[name=\"description\"]'\n    )?.outerHTML;\n\n    setMeta([title, description].join(\"\\n\"));\n  }, [pathname]);\n\n  return <pre>{meta}</pre>;\n}\n"
+  }
+}
