@@ -83,7 +83,7 @@ export default function Template({ children }: PropsWithChildren) {
         <Link
           href={meta?.doc ?? ""}
           target="_blank"
-          className="border border-gray-600 py-1 px-2 rounded-md"
+          className="border border-gray-600 py-1 px-2 rounded-md hover:text-blue-300 hover:border-blue-300"
         >
           Documentation
         </Link>
@@ -107,7 +107,7 @@ export default function Template({ children }: PropsWithChildren) {
         <button
           className={[
             "w-fit self-end",
-            loading ? "text-gray-600" : "text-gray-400",
+            loading ? "text-gray-600" : "text-gray-400 hover:text-blue-300",
           ].join(" ")}
           onClick={() => {
             if (!loading) {

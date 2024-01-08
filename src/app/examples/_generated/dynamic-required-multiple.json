@@ -2,7 +2,7 @@
   "meta": {
     "kind": "dynamic routes",
     "path": "dynamic-required-multiple/animals/dog",
-    "title": "Dynamic Routes with a Multiple Required Parameter",
+    "title": "Catch-all Segments",
     "description": "\nDynamic Segments can be extended to catch-all subsequent segments by adding an ellipsis inside the brackets [...segmentName].\nFor example, pages/shop/[...slug].js will match /shop/clothes, but also /shop/clothes/tops, /shop/clothes/tops/t-shirts, and so on.\n    ",
     "doc": "https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#catch-all-segments"
   },

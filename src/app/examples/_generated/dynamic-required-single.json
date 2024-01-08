@@ -2,7 +2,7 @@
   "meta": {
     "kind": "dynamic routes",
     "path": "dynamic-required-single/dog",
-    "title": "Dynamic Routes with a Single Parameter",
+    "title": "A Single Segment",
     "description": "\nA Dynamic Segment can be created by wrapping a file or folder name in square brackets: [segmentName]. For example, [id] or [slug].\n  ",
     "doc": "https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#convention"
   },

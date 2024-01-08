@@ -16,5 +16,9 @@ export function Meta() {
     setMeta([title, description].join("\n"));
   }, [pathname]);
 
-  return <pre>{meta}</pre>;
+  return (
+    <div className="overflow-scroll py-4">
+      <pre>{meta}</pre>
+    </div>
+  );
 }

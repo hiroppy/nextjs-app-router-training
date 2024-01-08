@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "kind": "parallel routes",
+    "path": "parallel-condition",
+    "title": "Conditional Routes",
+    "description": "\nParallel Routes can be used to implement conditional routing. For example, you can render a @dashboard or @login route depending on the authentication state.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/parallel-routes#conditional-routes"
+  },
+  "codes": {
+    "page.tsx": "// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default function Page() {\n  return <p>🐕</p>;\n}\n",
+    "layout.tsx": "import { type PropsWithChildren } from \"react\";\nimport { getUser } from \"./_utils/auth\";\n\ntype Props = PropsWithChildren<{\n  dashboard: React.ReactNode;\n  login: React.ReactNode;\n}>;\n\nexport default function Layout({ dashboard, login, children }: Props) {\n  const isLoggedIn = getUser();\n\n  return (\n    <div className=\"flex flex-col gap-2 bg-slate-700 p-4\">\n      {isLoggedIn ? dashboard : login}\n      {children}\n    </div>\n  );\n}\n",
+    "_utils/auth.ts": "export function getUser() {\n  return Date.now() % 2 === 0;\n}\n",
+    "_components/box.tsx": "import { type PropsWithChildren } from \"react\";\n\ntype Props = PropsWithChildren<{\n  title: string;\n}>;\n\nexport function Box({ title, children }: Props) {\n  return (\n    <div className=\"w-full flex flex-col items-center justify-center gap-5 border border-gray-500 p-2 rounded-md text-gray-300\">\n      <h2 className=\"text-gray-200 text-xl font-semibold\">{title}</h2>\n      {children}\n    </div>\n  );\n}\n",
+    "@login/page.tsx": "import { Box } from \"../_components/box\";\n\nexport default function Page() {\n  return (\n    <Box title=\"Login\">\n      <p>Please reload! (50%)</p>\n    </Box>\n  );\n}\n",
+    "@dashboard/page.tsx": "import { Box } from \"../_components/box\";\n\nexport default function Page() {\n  return (\n    <Box title=\"Dashboard\">\n      <p>you are logged in 😄</p>\n    </Box>\n  );\n}\n"
+  }
+}

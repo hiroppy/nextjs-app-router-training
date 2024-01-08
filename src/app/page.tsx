@@ -11,7 +11,7 @@ export default function Home() {
       </h1>
       <p className="text-center text-lg text-gray-400">
         Introducing various patterns of app router with{" "}
-        <span className="text-orange-300">simplified code</span>.
+        <span className="text-gray-50 font-semibold">simplified code</span>.
       </p>
       <hr className="h-px my-8 border-0 bg-gray-700" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5">
@@ -24,7 +24,7 @@ export default function Home() {
               {value.map(({ path, title }) => (
                 <li
                   key={path}
-                  className="ml-4 flex gap-1 items-center hover:text-gray-400"
+                  className="ml-4 flex gap-1 items-center hover:text-gray-400 w-fit"
                 >
                   <svg
                     width="3"

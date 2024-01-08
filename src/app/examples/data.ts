@@ -92,7 +92,7 @@ The error.js file convention allows you to gracefully handle unexpected runtime 
   "dynamic-required-single": {
     kind: "dynamic routes",
     path: "dynamic-required-single/dog",
-    title: "Dynamic Routes with a Single Parameter",
+    title: "A Single Segment",
     description: `
 A Dynamic Segment can be created by wrapping a file or folder name in square brackets: [segmentName]. For example, [id] or [slug].
   `,
@@ -101,7 +101,7 @@ A Dynamic Segment can be created by wrapping a file or folder name in square bra
   "dynamic-required-multiple": {
     kind: "dynamic routes",
     path: "dynamic-required-multiple/animals/dog",
-    title: "Dynamic Routes with a Multiple Required Parameter",
+    title: "Catch-all Segments",
     description: `
 Dynamic Segments can be extended to catch-all subsequent segments by adding an ellipsis inside the brackets [...segmentName].
 For example, pages/shop/[...slug].js will match /shop/clothes, but also /shop/clothes/tops, /shop/clothes/tops/t-shirts, and so on.
@@ -111,7 +111,7 @@ For example, pages/shop/[...slug].js will match /shop/clothes, but also /shop/cl
   "dynamic-optional-multiple": {
     kind: "dynamic routes",
     path: "dynamic-optional-multiple/animals/dog",
-    title: "Dynamic Routes with a Multiple Optional Parameter",
+    title: "Optional Catch-all Segments",
     description: `
 Catch-all Segments can be made optional by including the parameter in double square brackets: [[...segmentName]].
 For example, pages/shop/[[...slug]].js will also match /shop, in addition to /shop/clothes, /shop/clothes/tops, /shop/clothes/tops/t-shirts.
@@ -129,6 +129,15 @@ For highly dynamic sections of an app, such as dashboards and feeds on social si
 Slots(@) are not route segments and do not affect the URL structure.
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/parallel-routes",
+  },
+  "parallel-condition": {
+    kind: "parallel routes",
+    path: "parallel-condition",
+    title: "Conditional Routes",
+    description: `
+Parallel Routes can be used to implement conditional routing. For example, you can render a @dashboard or @login route depending on the authentication state.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/parallel-routes#conditional-routes",
   },
   intercepting: {
     kind: "intercepting routes",
@@ -166,6 +175,19 @@ With Dynamic Rendering, routes are rendered for each user at request time.
 Dynamic rendering is useful when a route has data that is personalized to the user or has information that can only be known at request time, such as cookies or the URL's search params.
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering",
+  },
+  "cache-revalidate": {
+    kind: "full route cache",
+    path: "cache-revalidate",
+    title: "Revalidating",
+    description: `
+Set the default revalidation time for a layout or page. This option does not override the revalidate value set by individual fetch requests.
+
+- false: (default) The default heuristic to cache any fetch requests that set their cache option to 'force-cache' or are discovered before a dynamic function is used. Semantically equivalent to revalidate: Infinity which effectively means the resource should be cached indefinitely. It is still possible for individual fetch requests to use cache: 'no-store' or revalidate: 0 to avoid being cached and make the route dynamically rendered. Or set revalidate to a positive number lower than the route default to increase the revalidation frequency of a route.
+- 0: Ensure a layout or page is always dynamically rendered even if no dynamic functions or uncached data fetches are discovered. This option changes the default of fetch requests that do not set a cache option to 'no-store' but leaves fetch requests that opt into 'force-cache' or use a positive revalidate as is.
+- number: (in seconds) Set the default revalidation frequency of a layout or page to n seconds.
+    `,
+    doc: "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate",
   },
   "service-e-commerce": {
     kind: "showcases",

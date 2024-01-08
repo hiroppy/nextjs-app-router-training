@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import { type Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import type { PropsWithChildren } from "react";
 import Link from "next/link";
+import { type PropsWithChildren } from "react";
+import { GitHubIcon } from "./_components/icons/github";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,15 +15,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="flex justify-between flex-col min-h-screen bg-gray-800 text-gray-100">
+      <body className={[inter.className, "bg-gray-800"].join(" ")}>
+        <div className="flex justify-between flex-col min-h-screen text-gray-100">
           <header className="flex justify-between items-center px-6 py-3 border-b border-b-gray-600">
-            <Link href="/">👈 top</Link>
+            <Link href="/">🐕</Link>
             <Link
               href="https://github.com/hiroppy/nextjs-app-router-training"
               target="_blank"
             >
-              GitHub
+              <i className="text-gray-300 hover:text-blue-300">
+                <GitHubIcon />
+              </i>
             </Link>
           </header>
           <main className="p-6 text-gray-200 flex-1 h-full">{children}</main>
