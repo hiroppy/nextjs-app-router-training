@@ -11,11 +11,15 @@ import {
 } from "@/app/_components/fileTree";
 import Link from "next/link";
 import { notFound, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { type PropsWithChildren, useEffect, useState } from "react";
+import { GitHubIcon } from "../_components/icons/github";
+import { Reload } from "../_components/icons/reload";
 import { SkeletonBox } from "../_components/skeleton";
 import type { Meta } from "./data";
 
 export default function Template({ children }: PropsWithChildren) {
+  const router = useRouter();
   const pathname = usePathname();
   const [loading, setLoading] = useState(true);
   const [meta, setMeta] = useState<Meta | null>(null);
@@ -26,6 +30,18 @@ export default function Template({ children }: PropsWithChildren) {
   });
   const [isOpenDescription, setIsOpenDescription] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const exampleName = (() => {
+    const parts = pathname.split("/");
+    // always flat
+    const name = parts[2];
+
+    // for grouping
+    if (name === "grouping-2") {
+      return "(grouping)";
+    }
+
+    return name;
+  })();
 
   // don't use Route Handlers in this case
   // since the sample directory has various cases which mean,
@@ -33,18 +49,6 @@ export default function Template({ children }: PropsWithChildren) {
   useEffect(() => {
     (async () => {
       setLoading(true);
-      const exampleName = (() => {
-        const parts = pathname.split("/");
-        // always flat
-        const name = parts[2];
-
-        // for grouping
-        if (name === "grouping-2") {
-          return "(grouping)";
-        }
-
-        return name;
-      })();
 
       try {
         const data = await import(
@@ -64,7 +68,7 @@ export default function Template({ children }: PropsWithChildren) {
         setLoading(false);
       }
     })();
-  }, [pathname]);
+  }, [exampleName]);
 
   if (hasError) {
     return notFound();
@@ -121,10 +125,35 @@ export default function Template({ children }: PropsWithChildren) {
       </div>
       <div className="flex gap-4 flex-col lg:flex-row">
         <div className="lg:w-96 lg:min-w-96">
-          <Section title="Preview">{children}</Section>
+          <Section
+            title="Preview"
+            action={
+              <button
+                type="button"
+                onClick={() => router.refresh()}
+                className="text-gray-400"
+              >
+                <Reload />
+              </button>
+            }
+          >
+            {children}
+          </Section>
         </div>
         <div className="flex-1 overflow-auto">
-          <Section title="Code">
+          <Section
+            title="Code"
+            action={
+              <Link
+                href={`https://github.com/hiroppy/nextjs-app-router-training/tree/main/src/app/examples/${exampleName}`}
+                target="_blank"
+                className="flex gap-2 items-center text-gray-400 hover:text-blue-300"
+              >
+                <GitHubIcon size="small" />
+                Edit
+              </Link>
+            }
+          >
             <FileTree {...code} />
           </Section>
         </div>
@@ -133,10 +162,17 @@ export default function Template({ children }: PropsWithChildren) {
   );
 }
 
-function Section({ title, children }: PropsWithChildren<{ title: string }>) {
+function Section({
+  title,
+  action,
+  children,
+}: PropsWithChildren<{ title: string; action?: React.ReactNode }>) {
   return (
     <div className="flex flex-col gap-4">
-      <h3 className="text-xl">{title}</h3>
+      <div className="flex justify-between items-center">
+        <h3 className="text-xl">{title}</h3>
+        {action}
+      </div>
       <div className="border border-gray-500 rounded-md p-4 overflow-auto">
         {children}
       </div>

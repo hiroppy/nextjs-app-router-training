@@ -1,7 +1,11 @@
-export function GitHubIcon() {
+type Props = {
+  size?: "large" | "small";
+};
+
+export function GitHubIcon({ size = "large" }: Props) {
   return (
     <svg
-      className="w-6 h-6"
+      className={size === "large" ? "w-6 h-6" : "w-4 h-4"}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

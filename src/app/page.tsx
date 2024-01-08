@@ -5,7 +5,7 @@ export default function Home() {
   const kindMap = groupMetaByKind(meta);
 
   return (
-    <div className="flex flex-col gap-10 py-8 px-5">
+    <div className="flex flex-col gap-10 py-6 px-5">
       <h1 className="text-center text-4xl font-semibold text-gray-50 leading-normal">
         Next.js App Router Training
       </h1>
@@ -13,7 +13,7 @@ export default function Home() {
         Introducing various basic patterns of app router with{" "}
         <span className="text-gray-50 font-semibold">simplified code</span>.
       </p>
-      <hr className="h-px my-8 border-0 bg-gray-700" />
+      <hr className="h-px my-6 border-0 bg-gray-700" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5">
         {Array.from(kindMap).map(([key, value]) => (
           <div key={key}>
@@ -48,7 +48,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div>if you want to add a new example, please read ...</div>
     </div>
   );
 }

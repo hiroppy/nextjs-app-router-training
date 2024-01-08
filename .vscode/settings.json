@@ -15,7 +15,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "cSpell.enabled": true,
-  "cSpell.words": ["hiroppy"],
+  "cSpell.words": ["hiroppy", "nextjs", "biomejs"],
   "cSpell.allowCompoundWords": true,
   "cSpell.ignorePaths": [
     "**/package-lock.json",
