@@ -14,7 +14,7 @@ export type Props = {
 
 const basePath = "src/app/examples/";
 
-export function FileTree({ filePaths, code }: Props) {
+export function FileTree({ exampleName, filePaths, code }: Props) {
   const params = useSearchParams();
   const filePathFromParams = params.get("file-path");
   const paths = filePaths
@@ -30,11 +30,12 @@ export function FileTree({ filePaths, code }: Props) {
     ? convertURLParamToFilePath(filePathFromParams)
     : paths[0]?.replace(basePath, "") ?? "";
   const [selectedPath, setSelectedPath] = useState(initialPath);
-  const tree = createTree(paths);
+  const tree = createTree(exampleName, paths);
   const renderTree = (node: any, path = "") => {
     return Object.keys(node).map((key) => {
       const newPath = path ? `${path}/${key}` : key;
       const hasChildren = Object.keys(node[key]).length > 0;
+      const basePathWithName = `${basePath}${exampleName}/`;
 
       return (
         <summary key={newPath} className="list-none">
@@ -45,13 +46,13 @@ export function FileTree({ filePaths, code }: Props) {
                 !hasChildren
                   ? "hover:text-blue-300 cursor-pointer"
                   : "text-gray-400",
-                newPath.replace(basePath, "") === selectedPath
+                newPath.replace(basePathWithName, "") === selectedPath
                   ? "text-blue-300"
                   : "",
               ].join(" ")}
               onClick={() => {
                 if (!hasChildren) {
-                  setSelectedPath(newPath.replace(basePath, ""));
+                  setSelectedPath(newPath.replace(basePathWithName, ""));
                 }
               }}
             >
@@ -77,14 +78,16 @@ export function FileTree({ filePaths, code }: Props) {
       <div className="min-w-max overflow-y-auto pr-10 h-64 md:h-auto">
         {renderTree(tree)}
       </div>
-      <div className="border-gray-600 overflow-auto flex-1 border-t md:border-l md:border-t-0 h-2 md:h-auto">
-        <Code code={code[selectedPath] ?? ""} />
-      </div>
+      {Object.keys(code).length !== 0 && (
+        <div className="border-gray-600 overflow-auto flex-1 border-t md:border-l md:border-t-0 h-2 md:h-auto">
+          <Code code={code[selectedPath] ?? ""} />
+        </div>
+      )}
     </div>
   );
 }
 
-function createTree(paths: Props["filePaths"]): any {
+function createTree(name: string, paths: Props["filePaths"]) {
   const tree: any = {};
 
   for (const path of paths) {
@@ -93,7 +96,7 @@ function createTree(paths: Props["filePaths"]): any {
 
     // If the path starts with "src/app/examples", treat it as a single key
     if (pathParts.slice(0, 3).join("/") === "src/app/examples") {
-      pathParts = ["src/app/examples", ...pathParts.slice(3)];
+      pathParts = [`src/app/examples/${name}`, ...pathParts.slice(3)];
     }
 
     for (const part of pathParts) {
