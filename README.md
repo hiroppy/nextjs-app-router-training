@@ -13,7 +13,7 @@ This project aims to
 
 | Example                      | Kind                | Status |
 | ---------------------------- | ------------------- | ------ |
-| Client and Server Components | basic               |        |
+| Client and Server Components | basic               | ✅     |
 | Overwriting Metadata         | basic               | ✅     |
 | Nesting Layouts              | basic               | ✅     |
 | Template                     | basic               | ✅     |
