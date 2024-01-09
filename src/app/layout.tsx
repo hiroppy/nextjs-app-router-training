@@ -10,11 +10,12 @@ const inter = Inter({ subsets: ["latin"] });
 const siteName = "Next.js App Router Training";
 const description =
   "Introducing various basic patterns using Next.js' app router with simplified code.";
-const url = process.env.VERCEL_URL;
+const url = "https://nextjs-app-router-training.vercel.app";
 
 export const metadata: Metadata = {
   title: siteName,
   description,
+  metadataBase: new URL(url),
   openGraph: {
     title: siteName,
     description,
@@ -39,7 +40,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           <header className="flex justify-between items-center px-6 py-3 border-b border-b-gray-600">
             <Link
               href="/"
-              className="bg-gray-300 p-1 w-8 h-8 text-center rounded-full text-xl"
+              className="bg-gray-300 p-1 w-8 h-8 text-center rounded-full text-xl hover:bg-blue-300"
             >
               🐕
             </Link>
