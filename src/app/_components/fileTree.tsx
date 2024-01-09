@@ -21,14 +21,14 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
     .map((path) => `${basePath}${path}`)
     .sort((a, b) => {
       if (
-        a.includes("_components") ||
-        a.includes("_utils") ||
-        a.includes("_hooks")
+        b.includes("_components") ||
+        b.includes("_utils") ||
+        b.includes("_hooks")
       ) {
-        return 1;
+        return -1;
       }
 
-      return a.localeCompare(b);
+      return 1;
     });
   const initialPath = filePathFromParams
     ? convertURLParamToFilePath(filePathFromParams)
