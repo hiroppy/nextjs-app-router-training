@@ -20,6 +20,7 @@ This project aims to
 | Loading Immediately         | loading             | ✅     |
 | Loading with Streaming      | loading             | ✅     |
 | Error Immediately           | error               | ✅     |
+| Not Found                   | error               | ✅     |
 | A Single Segment            | dynamic routes      | ✅     |
 | Catch-all Segments          | dynamic routes      | ✅     |
 | Optional Catch-all Segments | dynamic routes      | ✅     |

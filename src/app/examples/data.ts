@@ -89,6 +89,16 @@ The error.js file convention allows you to gracefully handle unexpected runtime 
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/error-handling",
   },
+  "error-not-found": {
+    kind: "error",
+    path: "error-not-found",
+    title: "Not Found",
+    description: `
+Invoking the notFound() function throws a NEXT_NOT_FOUND error and terminates rendering of the route segment in which it was thrown.
+Specifying a not-found file allows you to gracefully handle such errors by rendering a Not Found UI within the segment.
+    `,
+    doc: "https://nextjs.org/docs/app/api-reference/functions/not-found",
+  },
   "dynamic-required-single": {
     kind: "dynamic routes",
     path: "dynamic-required-single/dog",
@@ -194,8 +204,13 @@ Set the default revalidation time for a layout or page. This option does not ove
     path: "service-e-commerce",
     title: "Electronic Commerce",
     description: `
-Intercepting routes allows you to load a route from another part of your application within the current layout.
-This routing paradigm can be useful when you want to display the content of a route without the user switching to a different context.
+This example is for an e-commerce site that uses segment, grouping, intercepting, and parallel.
+
+Path
+- /admin "(admin)"
+- / "(public)"
+- /foods/[itemId] (with intercepting)
+- /sign-in  (with intercepting)
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes",
   },

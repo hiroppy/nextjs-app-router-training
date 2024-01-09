@@ -1,5 +1,7 @@
+import { getItem } from "@/app/examples/service-e-commerce/_utils/items";
+import { type Item } from "@/app/examples/service-e-commerce/mock";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { Item, items } from "../../../../../mock";
 import { Dialog } from "../../../_components/dialog";
 
 type Props = {
@@ -11,7 +13,7 @@ type Props = {
 export default function Page({ params }: Props) {
   return (
     <Dialog>
-      <Suspense fallback={<A id={0} name="aa" thumbnail="🐕" description="" />}>
+      <Suspense fallback={<Loading />}>
         <Main id={params.itemId} />
       </Suspense>
     </Dialog>
@@ -19,23 +21,20 @@ export default function Page({ params }: Props) {
 }
 
 async function Main({ id }: { id: string }) {
-  const item = await new Promise<Item>((resolve, reject) => {
-    setTimeout(() => {
-      const item = items.find((item) => item.id === Number(id));
+  const item = await getItem(id);
 
-      if (!item) {
-        reject(new Error("Item not found"));
-      } else {
-        resolve(item);
-      }
-    }, 1000);
-  });
+  if (!item) {
+    return notFound();
+  }
 
-  return <A {...item} />;
+  return <Container {...item} />;
 }
 
-// TODO: skeleton
-function A({ name, description, thumbnail }: Item) {
+function Loading() {
+  return <Container id={0} name="loading..." thumbnail="🐕" description="" />;
+}
+
+function Container({ name, description, thumbnail }: Item) {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex gap-4 items-center">

@@ -4,7 +4,7 @@ import { ImageItem, ImageList } from "../_components/imageList";
 import { Section } from "../_components/section";
 import { ImageSkeletons } from "../_components/skeleton";
 import { isSignIn } from "../_utils/auth";
-import { items } from "../mock";
+import { getItems } from "../_utils/items";
 
 export default async function Page() {
   const signedIn = await isSignIn();
@@ -29,14 +29,11 @@ export default async function Page() {
 }
 
 async function Items() {
-  // e.g. fetch
-  const allItems = await new Promise<typeof items>((resolve) => {
-    setTimeout(() => resolve(items), 2000);
-  });
+  const items = await getItems();
 
   return (
     <ImageList>
-      {allItems.map(({ id, thumbnail }) => (
+      {items.map(({ id, thumbnail }) => (
         <ImageItem id={id} thumbnail={thumbnail} key={id} />
       ))}
     </ImageList>

@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "kind": "error",
+    "path": "error-not-found",
+    "title": "Not Found",
+    "description": "\nInvoking the notFound() function throws a NEXT_NOT_FOUND error and terminates rendering of the route segment in which it was thrown.\nSpecifying a not-found file allows you to gracefully handle such errors by rendering a Not Found UI within the segment.\n    ",
+    "doc": "https://nextjs.org/docs/app/api-reference/functions/not-found"
+  },
+  "codes": {
+    "page.tsx": "import Link from \"next/link\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Link href=\"/examples/error-not-found/1\">👉 200</Link>\n      <Link href=\"/examples/error-not-found/2\">👉 404</Link>\n    </div>\n  );\n}\n",
+    "[id]/page.tsx": "import { notFound } from \"next/navigation\";\n\ntype Props = {\n  params: {\n    id: string;\n  };\n};\n\nexport default async function Page({ params }: Props) {\n  const item = await getItem(params.id);\n\n  if (item) {\n    return <span>🍎</span>;\n  }\n\n  return notFound();\n}\n\nasync function getItem(id: string) {\n  if (id === \"1\") {\n    return true;\n  }\n\n  return false;\n}\n"
+  }
+}
