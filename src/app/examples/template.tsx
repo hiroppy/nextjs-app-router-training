@@ -33,14 +33,7 @@ export default function Template({ children }: PropsWithChildren) {
   const exampleName = (() => {
     const parts = pathname.split("/");
     // always flat
-    const name = parts[2];
-
-    // for grouping
-    if (name === "grouping-2") {
-      return "(grouping)";
-    }
-
-    return name;
+    return parts[2];
   })();
 
   // don't use Route Handlers in this case

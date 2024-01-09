@@ -19,53 +19,77 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
   const filePathFromParams = params.get("file-path");
   const paths = filePaths
     .map((path) => `${basePath}${path}`)
-    .sort((a) => {
-      if (a.includes("_components") || a.includes("_utils")) {
+    .sort((a, b) => {
+      if (
+        a.includes("_components") ||
+        a.includes("_utils") ||
+        a.includes("_hooks")
+      ) {
         return 1;
       }
 
-      return -1;
+      return a.localeCompare(b);
     });
   const initialPath = filePathFromParams
     ? convertURLParamToFilePath(filePathFromParams)
     : paths[0]?.replace(basePath, "") ?? "";
   const [selectedPath, setSelectedPath] = useState(initialPath);
   const tree = createTree(exampleName, paths);
-  const renderTree = (node: Tree, path = "") => {
+  const renderTree = (node: Tree, i: number, path = "") => {
     return Object.keys(node).map((key) => {
       const newPath = path ? `${path}/${key}` : key;
       const hasChildren = Object.keys(node[key]).length > 0;
       const basePathWithName = `${basePath}${exampleName}/`;
+      const position = i === 0 ? 0 : 24;
 
-      return (
-        <summary key={newPath} className="list-none">
-          <div className="flex gap-1 items-center">
-            {hasChildren && <FolderIcon />}
+      if (!hasChildren) {
+        return (
+          <li
+            key={newPath}
+            style={{
+              marginLeft: position,
+            }}
+            className={[
+              "mt-1 hover:text-blue-300 cursor-pointer",
+              newPath.replace(basePathWithName, "") === selectedPath
+                ? "text-blue-300"
+                : "",
+            ].join(" ")}
+          >
             <button
               type="button"
-              className={[
-                !hasChildren
-                  ? "hover:text-blue-300 cursor-pointer"
-                  : "text-gray-400",
-                newPath.replace(basePathWithName, "") === selectedPath
-                  ? "text-blue-300"
-                  : "",
-              ].join(" ")}
               onClick={() => {
-                if (!hasChildren) {
-                  setSelectedPath(newPath.replace(basePathWithName, ""));
-                }
+                setSelectedPath(newPath.replace(basePathWithName, ""));
               }}
             >
-              {`${key} ${hasChildren ? "/" : ""}`.trim()}
+              {key}
             </button>
-          </div>
-          <ul className="border-l border-l-gray-600 mt-1 ml-2">
-            {hasChildren && (
-              <li className="ml-6">{renderTree(node[key], newPath)}</li>
-            )}
+          </li>
+        );
+      }
+
+      return (
+        <details
+          key={newPath}
+          className="list-none"
+          style={{
+            marginLeft: position,
+          }}
+          open
+        >
+          <summary
+            className={[
+              "flex gap-1 items-center list-none cursor-pointer text-gray-400 select-none",
+              i !== 0 ? "mt-1" : "",
+            ].join(" ")}
+          >
+            {hasChildren && <FolderIcon />}
+            {`${key} /`}
+          </summary>
+          <ul className="ml-2 t-1 border-l border-l-gray-600">
+            {renderTree(node[key], i + 1, newPath)}
           </ul>
-        </summary>
+        </details>
       );
     });
   };
@@ -77,7 +101,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
   return (
     <div className="text-gray-100 md:h-96 flex flex-col md:flex-row">
       <div className="min-w-max overflow-y-auto pr-10 h-64 md:h-auto">
-        {renderTree(tree)}
+        {renderTree(tree, 0)}
       </div>
       {Object.keys(code).length !== 0 && (
         <div className="border-gray-600 overflow-auto flex-1 border-t md:border-l md:border-t-0 h-2 md:h-auto">

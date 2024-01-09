@@ -1,0 +1,5 @@
+{
+  "codes": {
+    "page.tsx": "import { z } from \"zod\";\n\nconst schema = z.object({\n  email: z.string().email(\"error\"),\n});\n\nexport default function Page() {\n  async function createUser(formData: FormData) {\n    \"use server\";\n\n    const validatedFields = schema.safeParse({\n      email: formData.get(\"email\"),\n    });\n\n    // Return early if the form data is invalid\n    if (!validatedFields.success) {\n      return {\n        errors: validatedFields.error.flatten().fieldErrors,\n      };\n    }\n  }\n\n  return (\n    <form action={createUser} className=\"flex flex-col gap-4\">\n      <input type=\"text\" name=\"email\" className=\"bg-slate-700\" />\n      {/* <Submit /> */}\n    </form>\n  );\n}\n"
+  }
+}

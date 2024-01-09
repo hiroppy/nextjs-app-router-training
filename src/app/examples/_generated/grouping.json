@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "kind": "route groups",
+    "path": "grouping",
+    "title": "Grouping",
+    "description": "\nIn the app directory, nested folders are normally mapped to URL paths. However, you can mark a folder as a Route Group to prevent the folder from being included in the route's URL path.\nThis allows you to organize your route segments and project files into logical groups without affecting the URL path structure.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/route-groups"
+  },
+  "codes": {
+    "page.tsx": "import Link from \"next/link\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <p className=\"text-gray-400\">\n        \"(grouping)\" will be skipped from the url path. This is useful when you\n        want to separate the layouts even though they have the same path\n        hierarchy.\n      </p>\n      <Link href=\"/examples/grouping/admin\">👉 admin</Link>\n      <Link href=\"/examples/grouping/items\">👉 items</Link>\n    </div>\n  );\n}\n",
+    "layout.tsx": "\"use client\";\n\nimport { usePathname } from \"next/navigation\";\nimport { type PropsWithChildren } from \"react\";\n\nexport default function Layout({ children }: PropsWithChildren) {\n  const pathname = usePathname();\n\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <p>current path: {pathname}</p>\n      {children}\n    </div>\n  );\n}\n",
+    "(public)/items/page.tsx": "export default function Page() {\n  return <p>file path: examples/grouping/(public)/items</p>;\n}\n",
+    "(public)/items/layout.tsx": "import { PropsWithChildren } from \"react\";\n\nexport default function Layout({ children }: PropsWithChildren) {\n  return <div className=\"bg-blue-900 p-4\">{children}</div>;\n}\n",
+    "(private)/admin/page.tsx": "export default function Page() {\n  return <p>file path: examples/grouping/(private)/admin</p>;\n}\n",
+    "(private)/admin/layout.tsx": "import { PropsWithChildren } from \"react\";\n\nexport default function Layout({ children }: PropsWithChildren) {\n  return <div className=\"bg-green-900 p-4\">{children}</div>;\n}\n"
+  }
+}

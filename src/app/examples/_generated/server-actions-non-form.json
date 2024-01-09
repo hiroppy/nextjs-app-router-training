@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "kind": "server actions",
+    "path": "server-actions-non-form",
+    "title": "Non-form Elements",
+    "description": "\nWhile it's common to use Server Actions within <form> elements, they can also be invoked from other parts of your code such as event handlers and useEffect.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#non-form-elements"
+  },
+  "codes": {
+    "page.tsx": "\"use client\";\n\nimport { useMemo } from \"react\";\nimport { debounce } from \"./_utils/debounce\";\nimport { like, save, saveAsDraft } from \"./actions\";\n\nexport default function Page() {\n  const saveDraftDebounced = useMemo(() => debounce(saveAsDraft, 300), []);\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <form action={save} className=\"flex flex-col gap-4\">\n        <textarea\n          name=\"content\"\n          onChange={async (e) => {\n            await saveDraftDebounced(e.target.value);\n          }}\n          className=\"bg-gray-600\"\n        />\n        <button type=\"submit\">Publish</button>\n      </form>\n      <button\n        type=\"button\"\n        className=\"text-left text-2xl\"\n        onClick={() => like()}\n      >\n        👍\n      </button>\n    </div>\n  );\n}\n",
+    "actions.ts": "\"use server\";\n\nexport async function saveAsDraft(text: string) {\n  return true;\n}\n\nexport async function save(formData: FormData) {\n  return true;\n}\n\nexport async function like() {\n  return true;\n}\n",
+    "_utils/debounce.ts": "export function debounce<T extends (...args: Parameters<T>) => void>(\n  this: ThisParameterType<T>,\n  fn: T,\n  delay = 300,\n) {\n  let timer: ReturnType<typeof setTimeout> | undefined;\n\n  return async (...args: Parameters<T>) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn.apply(this, args), delay);\n  };\n}\n"
+  }
+}

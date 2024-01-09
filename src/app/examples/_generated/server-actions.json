@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "kind": "server actions",
+    "path": "server-actions",
+    "title": "Server Actions",
+    "description": "\nServer Actions are asynchronous functions that are executed on the server.\nThey can be used in Server and Client Components to handle form submissions and data mutations in Next.js applications.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations"
+  },
+  "codes": {
+    "schema.ts": "import { z } from \"zod\";\n\n// frontend can use this same schema with react-hook-form, etc..\nexport const schema = z.object({\n  name: z.string().min(2, '\"name\" must be at least 2 characters'),\n});\n",
+    "page.tsx": "\"use client\";\n\nimport { useFormState, useFormStatus } from \"react-dom\";\nimport { create } from \"./actions\";\n\nexport default function Page() {\n  const [state, formAction] = useFormState(create, null);\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <form action={formAction} className=\"flex flex-col gap-4\">\n        <input type=\"text\" name=\"name\" className=\"bg-slate-600\" />\n        <Submit />\n      </form>\n      {state?.message && <p>{state?.message}</p>}\n    </div>\n  );\n}\n\nfunction Submit() {\n  const { pending } = useFormStatus();\n\n  return (\n    <button\n      type=\"submit\"\n      className={pending ? \"text-gray-500\" : \"text-gray-300\"}\n    >\n      Submit\n    </button>\n  );\n}\n",
+    "actions.ts": "\"use server\";\n\nimport { schema } from \"./schema\";\n\nconst initialState = {\n  message: \"\",\n};\n\nexport async function create(\n  prevState: typeof initialState | null,\n  formData: FormData,\n) {\n  const name = formData.get(\"name\");\n  const validatedFields = schema.safeParse({ name });\n\n  if (!validatedFields.success) {\n    return {\n      message: `error: ${validatedFields.error.flatten().fieldErrors.name}`,\n    };\n  }\n\n  // e.g. insert to DB\n  await new Promise((resolve) => setTimeout(resolve, 1000));\n\n  return {\n    message: `success: ${formData.get(\"name\")}`,\n  };\n}\n"
+  }
+}

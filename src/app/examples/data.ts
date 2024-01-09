@@ -12,6 +12,8 @@ export type Meta = {
     | "parallel routes"
     | "intercepting routes"
     | "full route cache"
+    | "route handlers"
+    | "server actions"
     | "showcases";
 };
 
@@ -51,54 +53,6 @@ There may be cases where you need those specific behaviors, and templates would 
   `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#templates",
   },
-  "(grouping)": {
-    kind: "route groups",
-    path: "grouping-2",
-    title: "Grouping",
-    description: `
-In the app directory, nested folders are normally mapped to URL paths. However, you can mark a folder as a Route Group to prevent the folder from being included in the route's URL path.
-This allows you to organize your route segments and project files into logical groups without affecting the URL path structure.
-    `,
-    doc: "https://nextjs.org/docs/app/building-your-application/routing/route-groups",
-  },
-  "loading-immediately": {
-    kind: "loading",
-    path: "loading-immediately",
-    title: "Loading Immediately",
-    description: `
-An instant loading state is fallback UI that is shown immediately upon navigation. You can pre-render loading indicators such as skeletons and spinners, or a small but meaningful part of future screens such as a cover photo, title, etc. This helps users understand the app is responding and provides a better user experience.
-Create a loading state by adding a loading.js file inside a folder.
-    `,
-    doc: "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming",
-  },
-  "loading-with-streaming": {
-    kind: "loading",
-    path: "loading-with-streaming",
-    title: "Loading with Streaming",
-    description: `
-In addition to loading.js, you can also manually create Suspense Boundaries for your own UI components. The App Router supports streaming with Suspense for both Node.js and Edge runtimes.
-  `,
-    doc: "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming#streaming-with-suspense",
-  },
-  "error-immediately": {
-    kind: "error",
-    path: "error-immediately",
-    title: "Error Immediately",
-    description: `
-The error.js file convention allows you to gracefully handle unexpected runtime errors in nested routes.
-    `,
-    doc: "https://nextjs.org/docs/app/building-your-application/routing/error-handling",
-  },
-  "error-not-found": {
-    kind: "error",
-    path: "error-not-found",
-    title: "Not Found",
-    description: `
-Invoking the notFound() function throws a NEXT_NOT_FOUND error and terminates rendering of the route segment in which it was thrown.
-Specifying a not-found file allows you to gracefully handle such errors by rendering a Not Found UI within the segment.
-    `,
-    doc: "https://nextjs.org/docs/app/api-reference/functions/not-found",
-  },
   "dynamic-required-single": {
     kind: "dynamic routes",
     path: "dynamic-required-single/dog",
@@ -127,6 +81,64 @@ Catch-all Segments can be made optional by including the parameter in double squ
 For example, pages/shop/[[...slug]].js will also match /shop, in addition to /shop/clothes, /shop/clothes/tops, /shop/clothes/tops/t-shirts.
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#optional-catch-all-segments",
+  },
+  grouping: {
+    kind: "route groups",
+    path: "grouping",
+    title: "Grouping",
+    description: `
+In the app directory, nested folders are normally mapped to URL paths. However, you can mark a folder as a Route Group to prevent the folder from being included in the route's URL path.
+This allows you to organize your route segments and project files into logical groups without affecting the URL path structure.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/route-groups",
+  },
+  "loading-immediately": {
+    kind: "loading",
+    path: "loading-immediately",
+    title: "Loading Immediately",
+    description: `
+An instant loading state is fallback UI that is shown immediately upon navigation. You can pre-render loading indicators such as skeletons and spinners, or a small but meaningful part of future screens such as a cover photo, title, etc. This helps users understand the app is responding and provides a better user experience.
+Create a loading state by adding a loading.js file inside a folder.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming",
+  },
+  "loading-with-streaming": {
+    kind: "loading",
+    path: "loading-with-streaming",
+    title: "Loading with Streaming",
+    description: `
+In addition to loading.js, you can also manually create Suspense Boundaries for your own UI components. The App Router supports streaming with Suspense for both Node.js and Edge runtimes.
+  `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming#streaming-with-suspense",
+  },
+  "loading-with-preloading-data": {
+    kind: "loading",
+    path: "loading-with-preloading-data",
+    title: "Loading with Preloading Data",
+    description: `
+Another way to prevent waterfalls is to use the preload pattern.
+You can optionally create a preload function to further optimize parallel data fetching. With this approach, you don't have to pass promises down as props. The preload function can also have any name as it's a pattern, not an API.
+  `,
+    doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#preloading-data",
+  },
+  "error-immediately": {
+    kind: "error",
+    path: "error-immediately",
+    title: "Error Immediately",
+    description: `
+The error.js file convention allows you to gracefully handle unexpected runtime errors in nested routes.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/error-handling",
+  },
+  "error-not-found": {
+    kind: "error",
+    path: "error-not-found",
+    title: "Not Found",
+    description: `
+Invoking the notFound() function throws a NEXT_NOT_FOUND error and terminates rendering of the route segment in which it was thrown.
+Specifying a not-found file allows you to gracefully handle such errors by rendering a Not Found UI within the segment.
+    `,
+    doc: "https://nextjs.org/docs/app/api-reference/functions/not-found",
   },
   parallel: {
     kind: "parallel routes",
@@ -164,6 +176,21 @@ This routing paradigm can be useful when you want to display the content of a ro
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes",
   },
+  "intercepting-modal": {
+    kind: "intercepting routes",
+    path: "intercepting-modal",
+    title: "Modal with Parallel Routes",
+    description: `
+Intercepting Routes can be used together with Parallel Routes to create modals.
+Using this pattern to create modals overcomes some common challenges when working with modals, by allowing you to:
+
+- Make the modal content shareable through a URL
+- Preserve context when the page is refreshed, instead of closing the modal
+- Close the modal on backwards navigation rather than going to the previous route
+- Reopen the modal on forwards navigation
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes#modals",
+  },
   "cache-static": {
     kind: "full route cache",
     path: "cache-static",
@@ -198,6 +225,48 @@ Set the default revalidation time for a layout or page. This option does not ove
 - number: (in seconds) Set the default revalidation frequency of a layout or page to n seconds.
     `,
     doc: "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate",
+  },
+  "route-handlers": {
+    kind: "route handlers",
+    path: "route-handlers",
+    title: "Route Handlers",
+    description: `
+Route Handlers allow you to create custom request handlers for a given route using the Web Request and Response APIs.
+Route Handlers can be nested inside the app directory, similar to page.js and layout.js. But there cannot be a route.js file at the same route segment level as page.js.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/routing/route-handlers",
+  },
+  "server-actions": {
+    kind: "server actions",
+    path: "server-actions",
+    title: "Server Actions",
+    description: `
+Server Actions are asynchronous functions that are executed on the server.
+They can be used in Server and Client Components to handle form submissions and data mutations in Next.js applications.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations",
+  },
+  "server-actions-non-form": {
+    kind: "server actions",
+    path: "server-actions-non-form",
+    title: "Non-form Elements",
+    description: `
+While it's common to use Server Actions within <form> elements, they can also be invoked from other parts of your code such as event handlers and useEffect.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#non-form-elements",
+  },
+  "server-actions-optimism": {
+    kind: "server actions",
+    path: "server-actions-optimism",
+    title: "Optimistic Updates",
+    description: `
+useOptimistic is a React Hook that lets you show a different state while an async action is underway.
+It accepts some state as an argument and returns a copy of that state that can be different during the duration of an async action such as a network request.
+You provide a function that takes the current state and the input to the action, and returns the optimistic state to be used while the action is pending.
+
+This state is called the “optimistic” state because it is usually used to immediately present the user with the result of performing an action, even though the action actually takes time to complete.
+    `,
+    doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#optimistic-updates",
   },
   "service-e-commerce": {
     kind: "showcases",

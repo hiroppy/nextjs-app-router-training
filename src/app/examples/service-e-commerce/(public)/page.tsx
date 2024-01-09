@@ -21,7 +21,7 @@ export default async function Page() {
           href="/examples/service-e-commerce/admin"
           className="text-gray-300"
         >
-          Admin
+          👉 go to admin page
         </Link>
       )}
     </>

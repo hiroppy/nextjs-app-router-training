@@ -2,11 +2,12 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <Link
-      href="/examples/intercepting/sign-up"
-      className="w-fit border border-gray-600 py-1 px-2 rounded-md"
-    >
-      sign up
-    </Link>
+    <div className="flex flex-col gap-4">
+      <h2>root</h2>
+      <Link href="/examples/intercepting/same-level">👉 /same-level (.)</Link>
+      <Link href="/examples/intercepting/levels">
+        👉 /levels (..), (..)(..)
+      </Link>
+    </div>
   );
 }
