@@ -37,7 +37,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
   const tree = createTree(exampleName, paths);
   const renderTree = (node: Tree, i: number, path = "") => {
     return Object.keys(node).map((key) => {
-      const newPath = path ? `${path}/${key}` : key;
+      const newPath = path ? `${path}/${key}` : `src/${key}`;
       const hasChildren = Object.keys(node[key]).length > 0;
       const basePathWithName = `${basePath}${exampleName}/`;
       const position = i === 0 ? 0 : 24;
@@ -125,7 +125,7 @@ function createTree(name: string, paths: Props["filePaths"]) {
 
     // If the path starts with "src/app/examples", treat it as a single key
     if (pathParts.slice(0, 3).join("/") === "src/app/examples") {
-      pathParts = [`src/app/examples/${name}`, ...pathParts.slice(3)];
+      pathParts = [`app/examples/${name}`, ...pathParts.slice(3)];
     }
 
     for (const part of pathParts) {

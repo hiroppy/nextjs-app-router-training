@@ -20,6 +20,19 @@ export type Meta = {
 export type ExampleName = keyof typeof meta;
 
 export const meta = (<const>{
+  "server-client-components": {
+    kind: "basic",
+    path: "server-client-components",
+    title: "Server and Client Components",
+    description: `
+By default, Next.js uses Server Components. This allows you to automatically implement server rendering with no additional configuration, and you can opt into using Client Components when needed
+
+React Server Components allow you to write UI that can be rendered and optionally cached on the server. In Next.js, the rendering work is further split by route segments to enable streaming and partial rendering
+
+Client Components allows you to write interactive UI that can be rendered on the client at request time. In Next.js, client rendering is opt-in, meaning you have to explicitly decide what components React should render on the client.
+  `,
+    doc: "https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns",
+  },
   "overwrite-meta": {
     kind: "basic",
     path: "overwrite-meta",
