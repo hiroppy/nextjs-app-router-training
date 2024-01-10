@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           </header>
           <main className="p-6 text-gray-200 flex-1 h-full">{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
   );
