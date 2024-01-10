@@ -14,6 +14,7 @@ export type Meta = {
     | "full route cache"
     | "route handlers"
     | "server actions"
+    | "security"
     | "showcases";
 };
 
@@ -280,6 +281,16 @@ You provide a function that takes the current state and the input to the action,
 This state is called the “optimistic” state because it is usually used to immediately present the user with the result of performing an action, even though the action actually takes time to complete.
     `,
     doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#optimistic-updates",
+  },
+  taint: {
+    kind: "security",
+    path: "taint",
+    title: "Taint",
+    description: `
+A Client Component should never accept objects that carry sensitive data.
+Ideally, the data fetching functions should not expose data that the current user should not have access to. Sometimes mistakes happen during refactoring. To protect against these mistakes happening down the line we can “taint” the user object in our data API.
+  `,
+    doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#preventing-sensitive-data-from-being-exposed-to-the-client",
   },
   "service-e-commerce": {
     kind: "showcases",

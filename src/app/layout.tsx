@@ -56,7 +56,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           </header>
           <main className="p-6 text-gray-200 flex-1 h-full">{children}</main>
         </div>
-        <Analytics />
+        <Analytics debug={false} />
       </body>
     </html>
   );

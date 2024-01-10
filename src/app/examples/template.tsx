@@ -78,7 +78,7 @@ export default function Template({ children }: PropsWithChildren) {
           <h2 className="text-2xl text-gray-50">{meta?.title}</h2>
         )}
         <Link
-          href={meta?.doc ?? ""}
+          href={meta?.doc ?? "https://nextjs.org/docs"}
           target="_blank"
           className="border border-gray-600 py-1 px-2 rounded-md hover:text-blue-300 hover:border-blue-300"
         >
