@@ -39,7 +39,7 @@ This project aims to
 | Non-form Elements            | server actions      | ✅     |
 | Optimistic Updates           | server actions      | ✅     |
 | Revalidating data            | server actions      |        |
-| Taint                        |                     | ✅     |
+| Taint                        | security            | ✅     |
 
 _This project doesn't have `fetch` section until now._
 
