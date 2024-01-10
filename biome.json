@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.4.0/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "organizeImports": {
     "enabled": true
   },
@@ -15,6 +15,7 @@
     }
   },
   "files": {
-    "ignore": [".next", "src/app/examples/_generated"]
+    "ignoreUnknown": true,
+    "ignore": ["./.next", "./src/app/examples/_generated/*.json"]
   }
 }
