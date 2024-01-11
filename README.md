@@ -1,5 +1,7 @@
 # Next.js App Router Training
 
+![site](./assets/hero.png)
+
 [This site](https://nextjs-app-router-training.vercel.app/) introduces various basic patterns for Next.js app router to understand how to work it.
 
 This project aims to
