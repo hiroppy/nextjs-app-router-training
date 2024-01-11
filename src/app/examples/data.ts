@@ -246,6 +246,15 @@ Route Handlers can be nested inside the app directory, similar to page.js and la
     `,
       doc: "https://nextjs.org/docs/app/building-your-application/routing/route-handlers",
     },
+    "route-handlers-revalidating": {
+      path: "route-handlers-revalidating",
+      title: "Revalidating Data",
+      description: `
+revalidatePath only invalidates the cache when the included path is next visited.
+This means calling revalidatePath with a dynamic route segment will not immediately trigger many revalidations at once. The invalidation only happens when the path is next visited.
+    `,
+      doc: "https://nextjs.org/docs/app/api-reference/functions/revalidatePath",
+    },
   },
   "server-actions": {
     "server-actions": {
