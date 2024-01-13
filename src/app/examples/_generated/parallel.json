@@ -1,18 +1,18 @@
 {
   "meta": {
-    "kind": "parallel routes",
+    "kind": "parallel-routes",
     "path": "parallel",
     "title": "Parallel Routes",
     "description": "\nParallel Routing allows you to simultaneously or conditionally render one or more pages in the same layout.\nFor highly dynamic sections of an app, such as dashboards and feeds on social sites, Parallel Routing can be used to implement complex routing patterns.\n\nSlots(@) are not route segments and do not affect the URL structure.\n    ",
     "doc": "https://nextjs.org/docs/app/building-your-application/routing/parallel-routes"
   },
   "codes": {
-    "page.tsx": "// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default function Page() {\n  return (\n    <p>\n      By using Slot(`@`), you can define independent errors and loading states\n      for each route at the same time. In this example, \"@left\" will fail 50% of\n      the time.\n    </p>\n  );\n}\n",
-    "layout.tsx": "import { type PropsWithChildren } from \"react\";\nimport { Box } from \"./_components/box\";\n\ntype Props = PropsWithChildren<{\n  left: React.ReactNode;\n  right: React.ReactNode;\n}>;\n\nexport default function Layout({ left, right, children }: Props) {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex gap-1\">\n        <Box title=\"@left\">{left}</Box>\n        <Box title=\"@right\">{right}</Box>\n      </div>\n      {children}\n    </div>\n  );\n}\n",
-    "_components/loading.tsx": "export function Loading() {\n  return <div>Loading...</div>;\n}\n",
-    "_components/box.tsx": "import { type PropsWithChildren } from \"react\";\n\ntype Props = PropsWithChildren<{\n  title: string;\n}>;\n\nexport function Box({ title, children }: Props) {\n  return (\n    <div className=\"w-40 h-20 flex flex-col items-center gap-4 bg-gray-700 py-1 text-lg\">\n      <p>{title}</p>\n      {children}\n    </div>\n  );\n}\n",
-    "@right/page.tsx": "import { Suspense } from \"react\";\nimport { Loading } from \"../_components/loading\";\n\nasync function Main() {\n  await new Promise((resolve) => setTimeout(resolve, 1000));\n\n  return <span>hi 😁</span>;\n}\n\nexport default function Page() {\n  return (\n    <Suspense fallback={<Loading />}>\n      <Main />\n    </Suspense>\n  );\n}\n",
+    "@left/error.tsx": "\"use client\";\n\ntype Props = {\n  error: Error & { digest?: string };\n  reset: () => void;\n};\n\nexport default function ErrorComponent({ error }: Props) {\n  return <span>{error.message}</span>;\n}\n",
     "@left/page.tsx": "import { Suspense } from \"react\";\nimport { Loading } from \"../_components/loading\";\n\nasync function Main() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  // TODO: app router has a bug related to having errors in parallel routes.\n  // dev works but prod doesn't.\n  // if (Date.now() % 2 === 0) {\n  //   throw new Error(\"error 🥲\");\n  // }\n\n  return <span>hi 😁</span>;\n}\n\nexport default async function Page() {\n  return (\n    <Suspense fallback={<Loading />}>\n      <Main />\n    </Suspense>\n  );\n}\n",
-    "@left/error.tsx": "\"use client\";\n\ntype Props = {\n  error: Error & { digest?: string };\n  reset: () => void;\n};\n\nexport default function ErrorComponent({ error }: Props) {\n  return <span>{error.message}</span>;\n}\n"
+    "@right/page.tsx": "import { Suspense } from \"react\";\nimport { Loading } from \"../_components/loading\";\n\nasync function Main() {\n  await new Promise((resolve) => setTimeout(resolve, 1000));\n\n  return <span>hi 😁</span>;\n}\n\nexport default function Page() {\n  return (\n    <Suspense fallback={<Loading />}>\n      <Main />\n    </Suspense>\n  );\n}\n",
+    "_components/box.tsx": "import { type PropsWithChildren } from \"react\";\n\ntype Props = PropsWithChildren<{\n  title: string;\n}>;\n\nexport function Box({ title, children }: Props) {\n  return (\n    <div className=\"w-40 h-20 flex flex-col items-center gap-4 bg-gray-700 py-1 text-lg\">\n      <p>{title}</p>\n      {children}\n    </div>\n  );\n}\n",
+    "_components/loading.tsx": "export function Loading() {\n  return <div>Loading...</div>;\n}\n",
+    "layout.tsx": "import { type PropsWithChildren } from \"react\";\nimport { Box } from \"./_components/box\";\n\ntype Props = PropsWithChildren<{\n  left: React.ReactNode;\n  right: React.ReactNode;\n}>;\n\nexport default function Layout({ left, right, children }: Props) {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex gap-1\">\n        <Box title=\"@left\">{left}</Box>\n        <Box title=\"@right\">{right}</Box>\n      </div>\n      {children}\n    </div>\n  );\n}\n",
+    "page.tsx": "// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default function Page() {\n  return (\n    <p>\n      By using Slot(`@`), you can define independent errors and loading states\n      for each route at the same time. In this example, \"@left\" will fail 50% of\n      the time.\n    </p>\n  );\n}\n"
   }
 }

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "kind": "full route cache",
+    "kind": "full-route-cache",
     "path": "cache-dynamic",
     "title": "Dynamic Rendering",
     "description": "\nWith Dynamic Rendering, routes are rendered for each user at request time.\n\nDynamic rendering is useful when a route has data that is personalized to the user or has information that can only be known at request time, such as cookies or the URL's search params.\n    ",

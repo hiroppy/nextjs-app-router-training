@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { type Meta, meta } from "./examples/data";
+import { meta } from "./examples/data";
 
 export default function Home() {
-  const kindMap = groupMetaByKind(meta);
-
   return (
     <div className="flex flex-col gap-10 py-6">
       <h1 className="text-center text-4xl font-semibold text-gray-50 leading-normal">
@@ -15,13 +13,13 @@ export default function Home() {
       </p>
       <hr className="h-px my-6 border-0 bg-gray-700" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5 max-w-screen-xl md:mx-auto w-[90%]">
-        {Array.from(kindMap).map(([key, value]) => (
-          <div key={key}>
+        {Object.entries(meta).map(([kind, examples]) => (
+          <div key={kind}>
             <h2 className="text-2xl font-semibold text-gray-100">
-              {capitalizeWords(key)}
+              {capitalizeWords(kind)}
             </h2>
             <ul className="mt-2 text-gray-300">
-              {value.map(({ path, title }) => (
+              {Object.values(examples).map(({ path, title }) => (
                 <li
                   key={path}
                   className="ml-4 flex gap-1 items-center hover:text-gray-400 w-fit"
@@ -52,25 +50,9 @@ export default function Home() {
   );
 }
 
-function groupMetaByKind(metadata: typeof meta) {
-  const kindMap = new Map<Meta["kind"], Meta[]>();
-
-  for (const meta of Object.values(metadata)) {
-    const kind = meta.kind;
-
-    if (!kindMap.has(kind)) {
-      kindMap.set(kind, []);
-    }
-
-    kindMap.get(kind)?.push(meta);
-  }
-
-  return kindMap;
-}
-
 function capitalizeWords(str: string) {
   return str
-    .split(" ")
+    .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(" ");
 }

@@ -1,6 +1,0 @@
-{
-  "codes": {
-    "page.tsx": "async function Main() {\n  await new Promise((_, reject) =>\n    setTimeout(() => {\n      reject(\"error aaa\");\n    }, 2000)\n  );\n\n  return \"success\";\n}\n\nexport default function Page() {\n  return (\n    <div>\n      <Main />\n    </div>\n  );\n}\n",
-    "error.tsx": "\"use client\";\n\nexport default function Error({\n  error,\n  reset,\n}: {\n  error: Error;\n  reset: () => void;\n}) {\n  return (\n    <div>\n      <h2>{error.message}</h2>\n      <button onClick={() => reset()}>Try again</button>\n    </div>\n  );\n}\n"
-  }
-}

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "kind": "dynamic routes",
+    "kind": "dynamic-routes",
     "path": "dynamic-optional-multiple/animals/dog",
     "title": "Optional Catch-all Segments",
     "description": "\nCatch-all Segments can be made optional by including the parameter in double square brackets: [[...segmentName]].\nFor example, pages/shop/[[...slug]].js will also match /shop, in addition to /shop/clothes, /shop/clothes/tops, /shop/clothes/tops/t-shirts.\n    ",

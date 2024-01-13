@@ -1,6 +1,6 @@
 "use client";
 
-import { SignUp } from "@/app/examples/intercepting-modal/_components/signUp";
+import { SignUp } from "@/app/examples/(intercepting-routes)/intercepting-modal/_components/signUp";
 import { Modal } from "../_components/modal";
 
 export default function Page() {

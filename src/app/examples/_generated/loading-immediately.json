@@ -7,7 +7,7 @@
     "doc": "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming"
   },
   "codes": {
-    "page.tsx": "// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default async function Page() {\n  await new Promise((resolve) => setTimeout(resolve, 3000));\n\n  return <span>hi!</span>;\n}\n",
-    "loading.tsx": "export default function Loading() {\n  return <span>loading...</span>;\n}\n"
+    "loading.tsx": "export default function Loading() {\n  return <span>loading...</span>;\n}\n",
+    "page.tsx": "// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default async function Page() {\n  await new Promise((resolve) => setTimeout(resolve, 3000));\n\n  return <span>hi!</span>;\n}\n"
   }
 }

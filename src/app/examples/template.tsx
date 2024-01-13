@@ -138,7 +138,7 @@ export default function Template({ children }: PropsWithChildren) {
             title="Code"
             action={
               <Link
-                href={`https://github.com/hiroppy/nextjs-app-router-training/tree/main/src/app/examples/${exampleName}`}
+                href={`https://github.com/hiroppy/nextjs-app-router-training/tree/main/src/app/examples/(${meta?.kind})/${exampleName}`}
                 target="_blank"
                 className="flex gap-2 items-center text-gray-400 hover:text-blue-300"
               >
