@@ -6,15 +6,13 @@ import { useFetch } from "../_hooks/useFetch";
 export default function Page() {
   const path = "/examples/route-handlers-revalidating/revalidate-tag/api";
   const tags = useMemo(() => ["dog"], []);
-  const { data } = useFetch<{ now: number }>(path, tags);
-  const { data: a } = useFetch<{ now: number }>(path, tags);
-  const { data: b } = useFetch<{ now: number }>(path);
+  const { data: dataWithTags } = useFetch<{ now: number }>(path, tags);
+  const { data: dataWithNoTag } = useFetch<{ now: number }>(path);
 
   return (
     <div>
-      <p>revalidated: {data?.now}</p>
-      <p>revalidated: {a?.now}</p>
-      <p>revalidated: {b?.now}</p>
+      <p>revalidated: {dataWithTags?.now}</p>
+      <p>revalidated: {dataWithNoTag?.now}</p>
     </div>
   );
 }

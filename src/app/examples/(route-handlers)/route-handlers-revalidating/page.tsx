@@ -17,9 +17,6 @@ export default function Page() {
       >
         👉 revalidateTag
       </Link>
-      {/* <Link href={getUrl("revalidate-path", "revalidate-path/api/route.ts")}>
-        👉 revalidatePath
-      </Link> */}
     </div>
   );
 }

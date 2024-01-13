@@ -11,7 +11,7 @@ export function useFetch<T = unknown>(path: string, tags?: string[]) {
         setLoading(true);
         const data = await (
           await fetch(path, {
-            next: { tags, revalidate: 86400 },
+            next: { tags },
           })
         ).json();
 
