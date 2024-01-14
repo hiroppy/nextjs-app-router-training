@@ -1,19 +1,22 @@
+import { Boundary } from "@/app/_components/boundary";
 import { convertFilePathToURLParam } from "@/app/_utils/filePath";
 import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-4">
-      <Link href={getUrl("object-reference-ok", "page.tsx")}>
-        👍 taintObjectReference
-      </Link>
-      <Link href={getUrl("object-reference-ng", "page.tsx")}>
-        👎 taintObjectReference
-      </Link>
-      <Link href={getUrl("unique-value-ok", "page.tsx")}>
-        👍 taintUniqueValue
-      </Link>
-    </div>
+    <Boundary label="Root Page">
+      <div className="flex flex-col gap-4">
+        <Link href={getUrl("object-reference-ok", "page.tsx")}>
+          👍 taintObjectReference
+        </Link>
+        <Link href={getUrl("object-reference-ng", "page.tsx")}>
+          👎 taintObjectReference
+        </Link>
+        <Link href={getUrl("unique-value-ok", "page.tsx")}>
+          👍 taintUniqueValue
+        </Link>
+      </div>
+    </Boundary>
   );
 }
 

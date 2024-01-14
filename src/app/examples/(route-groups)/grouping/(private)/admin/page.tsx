@@ -1,3 +1,9 @@
+import { Boundary } from "@/app/_components/boundary";
+
 export default function Page() {
-  return <p>file path: examples/grouping/(private)/admin</p>;
+  return (
+    <Boundary label="Private page">
+      <p>file path: grouping/(private)/admin</p>
+    </Boundary>
+  );
 }

@@ -1,3 +1,4 @@
+import { Boundary } from "@/app/_components/boundary";
 import { Suspense } from "react";
 import { Loading } from "../_components/loading";
 
@@ -10,7 +11,7 @@ async function Main() {
   //   throw new Error("error 🥲");
   // }
 
-  return <span>hi 😁</span>;
+  return <Boundary label="Left">hi 😁</Boundary>;
 }
 
 export default async function Page() {

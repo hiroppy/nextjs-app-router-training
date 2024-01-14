@@ -1,3 +1,4 @@
+import { Boundary } from "@/app/_components/boundary";
 import { notFound } from "next/navigation";
 import { getItem, isSignIn } from "../_utils/api";
 
@@ -22,5 +23,9 @@ export async function Preload() {
     return notFound();
   }
 
-  return <Item id={1} />;
+  return (
+    <Boundary label="Preload">
+      <Item id={1} />
+    </Boundary>
+  );
 }

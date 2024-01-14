@@ -1,3 +1,4 @@
+import { Boundary } from "@/app/_components/boundary";
 import { Suspense } from "react";
 
 export const dynamic = "force-dynamic";
@@ -7,11 +8,7 @@ export const dynamic = "force-dynamic";
 export default function Page() {
   return (
     <div className="flex gap-4">
-      <Suspense
-        fallback={
-          <span>😜 you can see this message even if production build</span>
-        }
-      >
+      <Suspense fallback={<Loading />}>
         <Main />
       </Suspense>
     </div>
@@ -21,5 +18,13 @@ export default function Page() {
 async function Main() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  return <span>loaded!</span>;
+  return <Boundary label="Page">loaded!</Boundary>;
+}
+
+function Loading() {
+  return (
+    <Boundary label="Loading">
+      😜 you can see this message even if production build
+    </Boundary>
+  );
 }

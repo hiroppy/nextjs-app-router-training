@@ -1,5 +1,6 @@
 "use client";
 
+import { Boundary } from "@/app/_components/boundary";
 import { useOptimistic, useRef, useState } from "react";
 import { type Message, post } from "./actions";
 
@@ -31,17 +32,17 @@ export default function Page() {
   };
 
   return (
-    <div>
+    <Boundary label="Page">
       <form action={onSubmit} ref={ref} className="flex gap-4">
         <input type="text" name="message" className="bg-slate-600 flex-1" />
         <button type="submit">Submit</button>
       </form>
       {optimisticMessages.map(({ message, sending }, i) => (
-        <p key={i}>
+        <p key={`${message}_${i}`}>
           {message}
           {sending && <small> (Sending...)</small>}
         </p>
       ))}
-    </div>
+    </Boundary>
   );
 }

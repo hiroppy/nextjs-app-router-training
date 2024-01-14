@@ -1,5 +1,5 @@
+import { Boundary } from "@/app/_components/boundary";
 import { type PropsWithChildren } from "react";
-import { Box } from "./_components/box";
 
 type Props = PropsWithChildren<{
   left: React.ReactNode;
@@ -8,12 +8,14 @@ type Props = PropsWithChildren<{
 
 export default function Layout({ left, right, children }: Props) {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex gap-1">
-        <Box title="@left">{left}</Box>
-        <Box title="@right">{right}</Box>
+    <Boundary label="Root Layout">
+      <div className="flex flex-col gap-4">
+        <div className="flex gap-4">
+          <div className="w-1/2">{left}</div>
+          <div className="w-1/2">{right}</div>
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </Boundary>
   );
 }

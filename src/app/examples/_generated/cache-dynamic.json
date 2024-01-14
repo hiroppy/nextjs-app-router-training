@@ -7,6 +7,6 @@
     "doc": "https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering"
   },
   "codes": {
-    "page.tsx": "import { Suspense } from \"react\";\n\nexport const dynamic = \"force-dynamic\";\n// or\n// export const revalidate = 0;\n\nexport default function Page() {\n  return (\n    <div className=\"flex gap-4\">\n      <Suspense\n        fallback={\n          <span>😜 you can see this message even if production build</span>\n        }\n      >\n        <Main />\n      </Suspense>\n    </div>\n  );\n}\n\nasync function Main() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  return <span>loaded!</span>;\n}\n"
+    "page.tsx": "import { Boundary } from \"@/app/_components/boundary\";\nimport { Suspense } from \"react\";\n\nexport const dynamic = \"force-dynamic\";\n// or\n// export const revalidate = 0;\n\nexport default function Page() {\n  return (\n    <div className=\"flex gap-4\">\n      <Suspense fallback={<Loading />}>\n        <Main />\n      </Suspense>\n    </div>\n  );\n}\n\nasync function Main() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  return <Boundary label=\"Page\">loaded!</Boundary>;\n}\n\nfunction Loading() {\n  return (\n    <Boundary label=\"Loading\">\n      😜 you can see this message even if production build\n    </Boundary>\n  );\n}\n"
   }
 }

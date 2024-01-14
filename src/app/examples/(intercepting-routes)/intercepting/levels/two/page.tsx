@@ -1,3 +1,4 @@
+import { Boundary } from "@/app/_components/boundary";
 import Link from "next/link";
 
 // (..)(..) doesn't work
@@ -5,11 +6,12 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-4">
-      <h2>/levels/two</h2>
-      <Link href="/examples/intercepting/two-level-above">
-        👉 /levels/two (..)(..)
-      </Link>
-    </div>
+    <Boundary label="/levels/two">
+      <div className="flex flex-col gap-4">
+        <Link href="/examples/intercepting/two-level-above">
+          👉 /levels/two (..)(..)
+        </Link>
+      </div>
+    </Boundary>
   );
 }

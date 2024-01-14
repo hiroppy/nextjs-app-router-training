@@ -1,3 +1,4 @@
+import { Boundary } from "@/app/_components/boundary";
 import React, { type PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
@@ -6,9 +7,11 @@ type Props = PropsWithChildren<{
 
 export default function Layout({ modal, children }: Props) {
   return (
-    <div className="relative h-96">
-      {children}
-      {modal}
-    </div>
+    <Boundary label="Root Layout">
+      <div className="relative h-80">
+        {children}
+        {modal}
+      </div>
+    </Boundary>
   );
 }

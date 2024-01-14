@@ -1,5 +1,5 @@
+import { Boundary } from "@/app/_components/boundary";
 import { Suspense } from "react";
-import { Box } from "./_components/box";
 
 // turn off full route cache for demo
 export const dynamic = "force-dynamic";
@@ -7,10 +7,10 @@ export const dynamic = "force-dynamic";
 export default function Page() {
   return (
     <div className="flex gap-4">
-      <Suspense fallback={<Box>loading...</Box>}>
+      <Suspense fallback={<Boundary label="Loading">loading...</Boundary>}>
         <Left />
       </Suspense>
-      <Box>hi!</Box>
+      <Boundary label="Right">hi!</Boundary>
     </div>
   );
 }
@@ -18,5 +18,5 @@ export default function Page() {
 async function Left() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  return <Box>loaded!</Box>;
+  return <Boundary label="Left">loaded!</Boundary>;
 }

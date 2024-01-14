@@ -12,14 +12,10 @@ export default async function Page() {
       <p className="text-gray-400">
         Preload component doesn't wait for serial communication
       </p>
-      <div>
-        <span>Preload: </span>
+      <div className="flex gap-4">
         <Suspense fallback={<Loading />}>
           <Preload />
         </Suspense>
-      </div>
-      <div>
-        <span>Basic: </span>
         <Suspense fallback={<Loading />}>
           <Basic />
         </Suspense>

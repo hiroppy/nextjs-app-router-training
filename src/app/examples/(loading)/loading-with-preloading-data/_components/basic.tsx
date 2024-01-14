@@ -1,3 +1,4 @@
+import { Boundary } from "@/app/_components/boundary";
 import { notFound } from "next/navigation";
 import { getItem, isSignIn } from "../_utils/api";
 
@@ -10,5 +11,9 @@ export async function Basic() {
 
   await getItem(2);
 
-  return <span>loaded!</span>;
+  return (
+    <Boundary label="Basic">
+      <span>loaded!</span>
+    </Boundary>
+  );
 }

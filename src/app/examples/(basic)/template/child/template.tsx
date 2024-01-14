@@ -1,6 +1,6 @@
+import { Boundary } from "@/app/_components/boundary";
 import { PropsWithChildren } from "react";
-import { Box } from "../_components/box";
 
 export default function Template({ children }: PropsWithChildren) {
-  return <Box title="Child Template">{children}</Box>;
+  return <Boundary label="Child Template">{children}</Boundary>;
 }

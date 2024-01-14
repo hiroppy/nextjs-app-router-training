@@ -1,3 +1,5 @@
+import { Boundary } from "@/app/_components/boundary";
+
 export default function Loading() {
-  return <span>loading...</span>;
+  return <Boundary label="Loading">loading...</Boundary>;
 }

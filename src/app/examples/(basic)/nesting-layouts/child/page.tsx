@@ -1,9 +1,9 @@
-import { Box } from "../_components/box";
+import { Boundary } from "@/app/_components/boundary";
 
 export default function Page() {
   return (
-    <Box title="Child Page">
+    <Boundary label="Child Page">
       <p>child page has the root layout</p>
-    </Box>
+    </Boundary>
   );
 }

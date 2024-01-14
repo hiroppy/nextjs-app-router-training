@@ -1,5 +1,6 @@
 "use client";
 
+import { Boundary } from "@/app/_components/boundary";
 import { useMemo } from "react";
 import { useFetch } from "../_hooks/useFetch";
 
@@ -10,9 +11,9 @@ export default function Page() {
   const { data: dataWithNoTag } = useFetch<{ now: number }>(path);
 
   return (
-    <div>
+    <Boundary label="Revalidate Tag">
       <p>revalidated: {dataWithTags?.now}</p>
       <p>revalidated: {dataWithNoTag?.now}</p>
-    </div>
+    </Boundary>
   );
 }

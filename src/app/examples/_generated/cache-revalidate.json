@@ -7,6 +7,6 @@
     "doc": "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate"
   },
   "codes": {
-    "page.tsx": "// 5s\nexport const revalidate = 5;\n\nexport default function Page() {\n  return <p>{Date.now()}</p>;\n}\n"
+    "page.tsx": "import { Boundary } from \"@/app/_components/boundary\";\n\n// 5s\nexport const revalidate = 5;\n\nexport default function Page() {\n  return <Boundary label=\"Page\">{Date.now()}</Boundary>;\n}\n"
   }
 }

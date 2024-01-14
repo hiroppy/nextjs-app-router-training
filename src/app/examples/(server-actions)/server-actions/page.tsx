@@ -1,5 +1,6 @@
 "use client";
 
+import { Boundary } from "@/app/_components/boundary";
 import { useFormState, useFormStatus } from "react-dom";
 import { create } from "./actions";
 
@@ -7,13 +8,15 @@ export default function Page() {
   const [state, formAction] = useFormState(create, null);
 
   return (
-    <div className="flex flex-col gap-4">
-      <form action={formAction} className="flex flex-col gap-4">
-        <input type="text" name="name" className="bg-slate-600" />
-        <Submit />
-      </form>
-      {state?.message && <p>{state?.message}</p>}
-    </div>
+    <Boundary label="Page">
+      <div className="flex flex-col gap-4">
+        <form action={formAction} className="flex flex-col gap-4">
+          <input type="text" name="name" className="bg-slate-600" />
+          <Submit />
+        </form>
+        {state?.message && <p>{state?.message}</p>}
+      </div>
+    </Boundary>
   );
 }
 
