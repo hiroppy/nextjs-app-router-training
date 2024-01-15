@@ -20,8 +20,8 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.1",
-    "@types/node": "^20.11.1",
+    "@biomejs/biome": "1.5.2",
+    "@types/node": "^20.11.2",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.16",
