@@ -31,7 +31,7 @@ export function Code({ code }: Props) {
     <div
       // biome-ignore lint: security/noDangerouslySetInnerHtml
       dangerouslySetInnerHTML={{ __html: htmlCode }}
-      className="p-4 bg-transparent [&>*]:!bg-transparent"
+      className="p-2 md:px-4 md:py-0 bg-transparent [&>*]:!bg-transparent"
     />
   );
 }

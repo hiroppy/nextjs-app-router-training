@@ -100,7 +100,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
 
   return (
     <div className="text-gray-100 flex flex-col md:flex-row md:h-[calc(100vh_-_360px)]">
-      <div className="min-w-max overflow-y-auto pr-10 h-64 md:h-auto">
+      <div className="min-w-max overflow-y-auto pr-10 max-h-64 md:h-auto mb-2 md:mb-0">
         {renderTree(tree, 0)}
       </div>
       {Object.keys(code).length !== 0 && (

@@ -28,6 +28,17 @@ const config: Config = {
             background: colors.blue[300],
           },
         },
+        "router-cache-highlight": {
+          "0%": {
+            color: colors.gray[400],
+          },
+          "50%": {
+            color: colors.blue[300],
+          },
+          "100%": {
+            color: colors.gray[400],
+          },
+        },
       }),
     },
   },
