@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/app/_components/link";
 
 type Props = {
   params: {
@@ -8,13 +8,13 @@ type Props = {
 
 export default function Page({ params }: Props) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-4">
       <span>slug: {JSON.stringify(params.slug)}</span>
       <Link href="/examples/dynamic-required-multiple/one">
-        👉 "dynamic-required-multiple/one" is OK
+        👍 /dynamic-required-multiple/one
       </Link>
       <Link href="/examples/dynamic-required-multiple">
-        👉 "dynamic-required-multiple" is NG
+        👎 /dynamic-required-multiple
       </Link>
     </div>
   );

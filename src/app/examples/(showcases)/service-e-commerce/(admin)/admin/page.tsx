@@ -1,4 +1,3 @@
-import { convertFilePathToURLParam } from "@/app/_utils/filePath";
 import Link from "next/link";
 
 export default function Page() {
@@ -9,11 +8,7 @@ export default function Page() {
         "(admin)" root layout validates the cookie so all pages under "(admin)"
         can't access from non-admin users.
       </p>
-      <Link
-        href={`/examples/service-e-commerce/admin?file-path=${convertFilePathToURLParam(
-          "(admin)/layout.tsx",
-        )}`}
-      >
+      <Link href="/examples/service-e-commerce/admin?file-path=(admin)/layout.tsx">
         check
       </Link>
     </div>

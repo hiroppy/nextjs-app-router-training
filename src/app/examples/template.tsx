@@ -63,6 +63,16 @@ export default function Template({ children }: PropsWithChildren) {
     })();
   }, [exampleName]);
 
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("/service-worker.js");
+        }
+      });
+    }
+  }, []);
+
   if (hasError) {
     return notFound();
   }

@@ -7,6 +7,6 @@
     "doc": "https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#optional-catch-all-segments"
   },
   "codes": {
-    "[[...slug]]/page.tsx": "import Link from \"next/link\";\n\ntype Props = {\n  params: {\n    slug: string[];\n  };\n};\n\nexport default function Page({ params }: Props) {\n  return (\n    <div className=\"flex flex-col gap-1\">\n      <span>slug: {JSON.stringify(params.slug)}</span>\n      <Link href=\"/examples/dynamic-optional-multiple/one\">\n        👉 \"dynamic-optional-multiple/one\" is OK\n      </Link>\n      <Link href=\"/examples/dynamic-optional-multiple\">\n        👉 \"dynamic-optional-multiple\" is OK\n      </Link>\n    </div>\n  );\n}\n"
+    "[[...slug]]/page.tsx": "import { Link } from \"@/app/_components/link\";\n\ntype Props = {\n  params: {\n    slug: string[];\n  };\n};\n\nexport default function Page({ params }: Props) {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <span>slug: {JSON.stringify(params.slug)}</span>\n      <Link href=\"/examples/dynamic-optional-multiple/one\">\n        👍 /dynamic-optional-multiple/one\n      </Link>\n      <Link href=\"/examples/dynamic-optional-multiple\">\n        👍 /dynamic-optional-multiple\n      </Link>\n    </div>\n  );\n}\n"
   }
 }

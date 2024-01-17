@@ -1,5 +1,5 @@
+import { Link } from "@/app/_components/link";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Meta } from "./_components/meta";
 
 export const metadata: Metadata = {

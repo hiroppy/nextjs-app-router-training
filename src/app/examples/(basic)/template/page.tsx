@@ -1,15 +1,10 @@
 import { Boundary } from "@/app/_components/boundary";
-import Link from "next/link";
+import { Link } from "@/app/_components/link";
 
 export default function Page() {
   return (
-    <Boundary label="Root Page">
-      <Link
-        href="/examples/template/child"
-        className="block border border-gray-400 p-1 w-full text-center rounded-sm"
-      >
-        go to the child page
-      </Link>
+    <Boundary label="Root Page" textCenter>
+      <Link href="/examples/template/child">go to the child page</Link>
     </Boundary>
   );
 }

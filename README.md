@@ -13,38 +13,39 @@ This project aims to
 
 ## Examples
 
-| Example                           | Kind                | Status |
-| --------------------------------- | ------------------- | ------ |
-| Client and Server Components      | basic               | ✅     |
-| Overwriting Metadata              | basic               | ✅     |
-| Nesting Layouts                   | basic               | ✅     |
-| Template                          | basic               | ✅     |
-| Grouping                          | route groups        | ✅     |
-| Loading Immediately               | loading             | ✅     |
-| Loading with Streaming            | loading             | ✅     |
-| Loading with Preloading Data      | loading             | ✅     |
-| Error Immediately                 | error               | ✅     |
-| Not Found                         | error               | ✅     |
-| A Single Segment                  | dynamic routes      | ✅     |
-| Catch-all Segments                | dynamic routes      | ✅     |
-| Optional Catch-all Segments       | dynamic routes      | ✅     |
-| Parallel Routes                   | parallel routes     | ✅     |
-| Conditional Routes                | parallel routes     | ✅     |
-| Intercepting Routes               | intercepting routes | ✅     |
-| Modal with Parallel Routes        | intercepting routes | ✅     |
-| Static Rendering                  | full route cache    | ✅     |
-| Dynamic Rendering                 | full route cache    | ✅     |
-| Revalidating                      | full route cache    | ✅     |
-| Electronic Commerce               | showcases           | ✅     |
-| Route Handlers                    | route handlers      | ✅     |
-| Revalidating                      | route handlers      | ✅     |
-| Server Actions                    | server actions      | ✅     |
-| Non-form Elements                 | server actions      | ✅     |
-| Optimistic Updates                | server actions      | ✅     |
-| Revalidating data after mutations | server actions      | ✅     |
-| Taint                             | security            | ✅     |
-
-_This project doesn't have `fetch` section until now._
+| Example                                | Kind                | Status |
+| -------------------------------------- | ------------------- | ------ |
+| Overwriting Metadata                   | basic               | ✅     |
+| Nesting Layouts                        | basic               | ✅     |
+| Template                               | basic               | ✅     |
+| Server Components                      | rendering           | ✅     |
+| Server and Client Composition Patterns | rendering           | ✅     |
+| RSC Payload                            | rendering           | ✅     |
+| Client and Server Components           | basic               | ✅     |
+| Grouping                               | route groups        | ✅     |
+| Loading Immediately                    | loading             | ✅     |
+| Loading with Streaming                 | loading             | ✅     |
+| Loading with Preloading Data           | loading             | ✅     |
+| Error Immediately                      | error               | ✅     |
+| Not Found                              | error               | ✅     |
+| A Single Segment                       | dynamic routes      | ✅     |
+| Catch-all Segments                     | dynamic routes      | ✅     |
+| Optional Catch-all Segments            | dynamic routes      | ✅     |
+| Parallel Routes                        | parallel routes     | ✅     |
+| Conditional Routes                     | parallel routes     | ✅     |
+| Intercepting Routes                    | intercepting routes | ✅     |
+| Modal with Parallel Routes             | intercepting routes | ✅     |
+| Request Memoization (@server)          | caching             | ✅     |
+| Data Cache (@server)                   | caching             | ✅     |
+| Full Route Cache (@server)             | caching             | ✅     |
+| Router Cache (@client)                 | caching             | ✅     |
+| Route Handlers                         | route handlers      | ✅     |
+| Server Actions                         | server actions      | ✅     |
+| Non-form Elements                      | server actions      | ✅     |
+| Optimistic Updates                     | server actions      | ✅     |
+| Taint                                  | security            | ✅     |
+| Server Only end Env                    | security            | ✅     |
+| Electronic Commerce                    | showcases           | ✅     |
 
 ## Adding a new sample
 

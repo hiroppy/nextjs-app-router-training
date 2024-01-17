@@ -10,8 +10,8 @@ export default function Page() {
   return (
     <Boundary label="Page">
       <div className="flex flex-col gap-4">
-        <form action={formAction} className="flex flex-col gap-4">
-          <input type="text" name="name" className="bg-slate-600" />
+        <form action={formAction} className="flex gap-4">
+          <input type="text" name="message" className="bg-slate-600 flex-1" />
           <Submit />
         </form>
         {state?.message && <p>{state?.message}</p>}
