@@ -12,7 +12,7 @@ import {
 import Link from "next/link";
 import { notFound, usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { type PropsWithChildren, useEffect, useState } from "react";
+import { type PropsWithChildren, Suspense, useEffect, useState } from "react";
 import { GitHubIcon } from "../_components/icons/github";
 import { Reload } from "../_components/icons/reload";
 import { SkeletonBox } from "../_components/skeleton";
@@ -157,7 +157,9 @@ export default function Template({ children }: PropsWithChildren) {
               </Link>
             }
           >
-            <FileTree {...code} />
+            <Suspense>
+              <FileTree {...code} />
+            </Suspense>
           </Section>
         </div>
       </div>
