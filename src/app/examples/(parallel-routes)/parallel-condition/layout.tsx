@@ -1,5 +1,7 @@
+import { Boundary } from "@/app/_components/boundary";
+import { cookies } from "next/headers";
 import { type PropsWithChildren } from "react";
-import { getUser } from "./_utils/auth";
+import { COOKIE_NAME } from "./constants";
 
 type Props = PropsWithChildren<{
   dashboard: React.ReactNode;
@@ -7,12 +9,16 @@ type Props = PropsWithChildren<{
 }>;
 
 export default function Layout({ dashboard, login, children }: Props) {
-  const isLoggedIn = getUser();
+  const isLoggedIn = cookies().get(COOKIE_NAME)?.value === "true";
 
   return (
-    <div className="flex flex-col gap-2 bg-slate-700 p-4">
-      {isLoggedIn ? dashboard : login}
-      {children}
-    </div>
+    <Boundary label="Layout">
+      <div className="flex flex-col gap-2">
+        <div className={[isLoggedIn ? "bg-green-950" : "bg-red-950"].join(" ")}>
+          {isLoggedIn ? dashboard : login}
+        </div>
+        {children}
+      </div>
+    </Boundary>
   );
 }

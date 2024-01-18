@@ -1,12 +1,13 @@
 export type Kind =
   | "basic"
+  | "rendering"
   | "route-groups"
   | "loading"
   | "error"
   | "dynamic-routes"
   | "parallel-routes"
   | "intercepting-routes"
-  | "full-route-cache"
+  | "caching"
   | "route-handlers"
   | "server-actions"
   | "security"
@@ -22,18 +23,6 @@ export type Meta = {
 
 export const meta = (<const>{
   basic: {
-    "server-client-components": {
-      path: "server-client-components",
-      title: "Server and Client Components",
-      description: `
-By default, Next.js uses Server Components. This allows you to automatically implement server rendering with no additional configuration, and you can opt into using Client Components when needed
-
-React Server Components allow you to write UI that can be rendered and optionally cached on the server. In Next.js, the rendering work is further split by route segments to enable streaming and partial rendering
-
-Client Components allows you to write interactive UI that can be rendered on the client at request time. In Next.js, client rendering is opt-in, meaning you have to explicitly decide what components React should render on the client.
-  `,
-      doc: "https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns",
-    },
     "overwrite-meta": {
       path: "overwrite-meta",
       title: "Overwriting Metadata",
@@ -63,6 +52,37 @@ There may be cases where you need those specific behaviors, and templates would 
 - To change the default framework behavior. For example, Suspense Boundaries inside layouts only show the fallback the first time the Layout is loaded and not when switching pages. For templates, the fallback is shown on each navigation.
   `,
       doc: "https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#templates",
+    },
+  },
+  rendering: {
+    "server-components": {
+      path: "server-components",
+      title: "Server Components",
+      description: `
+React Server Components allow you to write UI that can be rendered and optionally cached on the server.
+By default, Next.js uses Server Components.
+    `,
+      doc: "https://nextjs.org/docs/app/building-your-application/rendering/server-components",
+    },
+    "server-client-components": {
+      path: "server-client-components",
+      title: "Server and Client Composition Patterns",
+      description: `
+When building React applications, you will need to consider what parts of your application should be rendered on the server or the client.
+  `,
+      doc: "https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns",
+    },
+    "rsc-payload": {
+      path: "rsc-payload",
+      title: "RSC Payload",
+      description: `
+The RSC Payload is a compact binary representation of the rendered React Server Components tree. It's used by React on the client to update the browser's DOM. The RSC Payload contains:
+
+- The rendered result of Server Components
+- Placeholders for where Client Components should be rendered and references to their JavaScript files
+- Any props passed from a Server Component to a Client Component
+  `,
+      doc: "https://nextjs.org/docs/app/building-your-application/rendering/server-components#how-are-server-components-rendered",
     },
   },
   "dynamic-routes": {
@@ -96,7 +116,7 @@ For example, pages/shop/[[...slug]].js will also match /shop, in addition to /sh
   "route-groups": {
     grouping: {
       path: "grouping",
-      title: "Grouping",
+      title: "Route Groups",
       description: `
 In the app directory, nested folders are normally mapped to URL paths. However, you can mark a folder as a Route Group to prevent the folder from being included in the route's URL path.
 This allows you to organize your route segments and project files into logical groups without affecting the URL path structure.
@@ -202,10 +222,28 @@ Using this pattern to create modals overcomes some common challenges when workin
       doc: "https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes#modals",
     },
   },
-  "full-route-cache": {
-    "cache-static": {
-      path: "cache-static",
-      title: "Static Rendering",
+  caching: {
+    "request-memoization": {
+      path: "request-memoization",
+      title: "Request Memoization (@server)",
+      description: `
+React extends the fetch API to automatically memoize requests that have the same URL and options.
+This means you can call a fetch function for the same data in multiple places in a React component tree while only executing it once.
+    `,
+      doc: "https://nextjs.org/docs/app/building-your-application/caching#request-memoization",
+    },
+    "data-cache": {
+      path: "data-cache",
+      title: "Data Cache (@server)",
+      description: `
+Next.js has a built-in Data Cache that persists the result of data fetches across incoming server requests and deployments.
+This is possible because Next.js extends the native fetch API to allow each request on the server to set its own persistent caching semantics.
+      `,
+      doc: "https://nextjs.org/docs/app/building-your-application/caching#data-cache",
+    },
+    "full-route-cache": {
+      path: "full-route-cache",
+      title: "Full Route Cache (@server)",
       description: `
 With Static Rendering(default), routes are rendered at build time, or in the background after data revalidation. The result is cached and can be pushed to a Content Delivery Network (CDN). This optimization allows you to share the result of the rendering work between users and server requests.
 
@@ -213,27 +251,23 @@ Static rendering is useful when a route has data that is not personalized to the
     `,
       doc: "https://nextjs.org/docs/app/building-your-application/rendering/server-components#static-rendering-default",
     },
-    "cache-dynamic": {
-      path: "cache-dynamic",
-      title: "Dynamic Rendering",
+    "router-cache": {
+      path: "router-cache",
+      title: "Router Cache (@client)",
       description: `
-With Dynamic Rendering, routes are rendered for each user at request time.
+Next.js has an in-memory client-side cache that stores the React Server Component Payload, split by individual route segments, for the duration of a user session.
+This is called the Router Cache.
 
-Dynamic rendering is useful when a route has data that is personalized to the user or has information that can only be known at request time, such as cookies or the URL's search params.
-    `,
-      doc: "https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering",
-    },
-    "cache-revalidate": {
-      path: "cache-revalidate",
-      title: "Revalidating",
-      description: `
-Set the default revalidation time for a layout or page. This option does not override the revalidate value set by individual fetch requests.
+The cache is stored in the browser's temporary memory. Two factors determine how long the router cache lasts:
 
-- false: (default) The default heuristic to cache any fetch requests that set their cache option to 'force-cache' or are discovered before a dynamic function is used. Semantically equivalent to revalidate: Infinity which effectively means the resource should be cached indefinitely. It is still possible for individual fetch requests to use cache: 'no-store' or revalidate: 0 to avoid being cached and make the route dynamically rendered. Or set revalidate to a positive number lower than the route default to increase the revalidation frequency of a route.
-- 0: Ensure a layout or page is always dynamically rendered even if no dynamic functions or uncached data fetches are discovered. This option changes the default of fetch requests that do not set a cache option to 'no-store' but leaves fetch requests that opt into 'force-cache' or use a positive revalidate as is.
-- number: (in seconds) Set the default revalidation frequency of a layout or page to n seconds.
-    `,
-      doc: "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate",
+- Session: The cache persists across navigation. However, it's cleared on page refresh.
+- Automatic Invalidation Period: The cache of an individual segment is automatically invalidated after a specific time. The duration depends on whether the route is statically or dynamically rendered:
+- Dynamically Rendered: 30 seconds
+- Statically Rendered: 5 minutes
+
+While a page refresh will clear all cached segments, the automatic invalidation period only affects the individual segment from the time it was last accessed or created.
+      `,
+      doc: "https://nextjs.org/docs/app/building-your-application/caching#router-cache",
     },
   },
   "route-handlers": {
@@ -245,15 +279,6 @@ Route Handlers allow you to create custom request handlers for a given route usi
 Route Handlers can be nested inside the app directory, similar to page.js and layout.js. But there cannot be a route.js file at the same route segment level as page.js.
     `,
       doc: "https://nextjs.org/docs/app/building-your-application/routing/route-handlers",
-    },
-    "route-handlers-revalidating": {
-      path: "route-handlers-revalidating",
-      title: "Revalidating Data",
-      description: `
-revalidatePath only invalidates the cache when the included path is next visited.
-This means calling revalidatePath with a dynamic route segment will not immediately trigger many revalidations at once. The invalidation only happens when the path is next visited.
-    `,
-      doc: "https://nextjs.org/docs/app/api-reference/functions/revalidatePath",
     },
   },
   "server-actions": {
@@ -296,6 +321,15 @@ A Client Component should never accept objects that carry sensitive data.
 Ideally, the data fetching functions should not expose data that the current user should not have access to. Sometimes mistakes happen during refactoring. To protect against these mistakes happening down the line we can “taint” the user object in our data API.
   `,
       doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#preventing-sensitive-data-from-being-exposed-to-the-client",
+    },
+    "server-only": {
+      path: "server-only",
+      title: "Server Only end Env",
+      description: `
+server-only: server-only packages prevent code running on the frontend.
+ENV: NEXT_PUBLIC prefix can be referred to by frontend.
+    `,
+      doc: "https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#keeping-server-only-code-out-of-the-client-environment",
     },
   },
   showcases: {

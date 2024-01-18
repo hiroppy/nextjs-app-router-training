@@ -7,6 +7,6 @@
     "doc": "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming#streaming-with-suspense"
   },
   "codes": {
-    "page.tsx": "import { Boundary } from \"@/app/_components/boundary\";\nimport { Suspense } from \"react\";\n\n// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex gap-4\">\n      <Suspense fallback={<Boundary label=\"Loading\">loading...</Boundary>}>\n        <Left />\n      </Suspense>\n      <Boundary label=\"Right\">hi!</Boundary>\n    </div>\n  );\n}\n\nasync function Left() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  return <Boundary label=\"Left\">loaded!</Boundary>;\n}\n"
+    "page.tsx": "import { Boundary } from \"@/app/_components/boundary\";\nimport { Loading } from \"@/app/_components/loading\";\nimport { Suspense } from \"react\";\n\n// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex gap-4\">\n      <Suspense fallback={<Loading />}>\n        <Left />\n      </Suspense>\n      <Boundary label=\"Right\">hi!</Boundary>\n    </div>\n  );\n}\n\nasync function Left() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  return <Boundary label=\"Left\">loaded!</Boundary>;\n}\n"
   }
 }

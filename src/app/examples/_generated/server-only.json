@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "kind": "security",
+    "path": "server-only",
+    "title": "Server Only end Env",
+    "description": "\nserver-only: server-only packages prevent code running on the frontend.\nENV: NEXT_PUBLIC prefix can be referred to by frontend.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#keeping-server-only-code-out-of-the-client-environment"
+  },
+  "codes": {
+    "_components/client.tsx": "\"use client\";\n\nimport { Boundary } from \"@/app/_components/boundary\";\nimport { EnvList } from \"./envList\";\n\nexport function Client() {\n  return (\n    <Boundary label=\"Client\">\n      <EnvList />\n    </Boundary>\n  );\n}\n",
+    "_components/envList.tsx": "export function EnvList() {\n  return (\n    <ul className=\"space-y-2\">\n      <Item name=\"NODE_ENV\" value={process.env.NODE_ENV} />\n      <Item\n        name=\"NEXT_PUBLIC_SERVER_ONLY_DEMO\"\n        value={process.env.NEXT_PUBLIC_SERVER_ONLY_DEMO}\n      />\n      <Item name=\"SERVER_ONLY_DEMO\" value={process.env.SERVER_ONLY_DEMO} />\n    </ul>\n  );\n}\n\nfunction Item({ name, value }: { name: string; value: string | undefined }) {\n  return (\n    <li>\n      <div className=\"flex flex-col\">\n        <span className=\"text-sm text-gray-400\">{name}</span>\n        <span className=\"text-right\">{value}</span>\n      </div>\n    </li>\n  );\n}\n",
+    "_components/server.tsx": "import { Boundary } from \"@/app/_components/boundary\";\nimport { EnvList } from \"../_components/envList\";\n\nexport function Server() {\n  return (\n    <Boundary label=\"Server\">\n      <EnvList />\n    </Boundary>\n  );\n}\n",
+    "_utils/serverOnlyFetcher.ts": "// Now, any Client Component that imports getData() will receive a build-time error explaining\n// that this module can only be used on the server.\nimport \"server-only\";\n\nexport async function getData() {\n  const res = await fetch(\"https://external-service.com/data\", {\n    headers: {\n      authorization: process.env.API_KEY || \"\",\n    },\n  });\n\n  return res.json();\n}\n",
+    "env/page.tsx": "import { Client } from \"../_components/client\";\nimport { Server } from \"../_components/server\";\n\nexport default function Page() {\n  return (\n    <div>\n      <Server />\n      <Client />\n    </div>\n  );\n}\n",
+    "page.tsx": "import { Boundary } from \"@/app/_components/boundary\";\nimport { Link } from \"@/app/_components/link\";\n\nexport default function Page() {\n  return (\n    <Boundary label=\"Page\">\n      <div className=\"flex flex-col gap-4\">\n        <Link\n          href={\"/examples/server-only?file-path=_utils/serverOnlyFetcher.ts\"}\n        >\n          server-only package\n        </Link>\n        <Link href=\"/examples/server-only/env\">process.env</Link>\n      </div>\n    </Boundary>\n  );\n}\n"
+  }
+}

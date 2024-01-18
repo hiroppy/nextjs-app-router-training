@@ -1,6 +1,5 @@
 import { Boundary } from "@/app/_components/boundary";
-import { convertFilePathToURLParam } from "@/app/_utils/filePath";
-import Link from "next/link";
+import { Link } from "@/app/_components/link";
 
 export default function Page() {
   return (
@@ -21,7 +20,5 @@ export default function Page() {
 }
 
 function getUrl(kind: string, filename: string) {
-  return `/examples/taint/${kind}?file-path=${convertFilePathToURLParam(
-    `${kind}/${filename}`,
-  )}`;
+  return `/examples/taint/${kind}?file-path=${kind}/${filename}`;
 }

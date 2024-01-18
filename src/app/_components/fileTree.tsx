@@ -2,7 +2,6 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { convertURLParamToFilePath } from "../_utils/filePath";
 import { Code } from "./code";
 import { FolderIcon } from "./icons/folder";
 
@@ -30,9 +29,8 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
 
       return 1;
     });
-  const initialPath = filePathFromParams
-    ? convertURLParamToFilePath(filePathFromParams)
-    : paths[0]?.replace(basePath, "") ?? "";
+  const initialPath =
+    filePathFromParams ?? paths[0]?.replace(basePath, "") ?? "";
   const [selectedPath, setSelectedPath] = useState(initialPath);
   const tree = createTree(exampleName, paths);
   const renderTree = (node: Tree, i: number, path = "") => {
@@ -83,7 +81,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
               i !== 0 ? "mt-1" : "",
             ].join(" ")}
           >
-            {hasChildren && <FolderIcon />}
+            <FolderIcon />
             {`${key} /`}
           </summary>
           <ul className="ml-2 t-1 border-l border-l-gray-600">
@@ -100,7 +98,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
 
   return (
     <div className="text-gray-100 flex flex-col md:flex-row md:h-[calc(100vh_-_360px)]">
-      <div className="min-w-max overflow-y-auto pr-10 max-h-64 md:h-auto mb-2 md:mb-0">
+      <div className="min-w-max overflow-y-auto pr-10 max-h-48 md:max-h-none mb-2 md:mb-0">
         {renderTree(tree, 0)}
       </div>
       {Object.keys(code).length !== 0 && (

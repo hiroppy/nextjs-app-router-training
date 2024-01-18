@@ -10,7 +10,7 @@ export async function create(
   prevState: typeof initialState | null,
   formData: FormData,
 ) {
-  const name = formData.get("name");
+  const name = formData.get("message");
   const validatedFields = schema.safeParse({ name });
 
   if (!validatedFields.success) {
@@ -23,6 +23,6 @@ export async function create(
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   return {
-    message: `success: ${formData.get("name")}`,
+    message: `success: ${formData.get("message")}`,
   };
 }

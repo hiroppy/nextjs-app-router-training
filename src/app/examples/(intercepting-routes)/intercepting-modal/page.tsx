@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <Boundary label="Root Page">
+    <Boundary label="Page">
       <div className="flex flex-col items-center justify-center h-full">
         <Link
           href="/examples/intercepting-modal/sign-up"

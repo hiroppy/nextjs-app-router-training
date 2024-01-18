@@ -7,7 +7,7 @@ type Props = PropsWithChildren<{
 
 export default function Layout({ modal, children }: Props) {
   return (
-    <Boundary label="Root Layout">
+    <Boundary label="Layout">
       <div className="relative h-80">
         {children}
         {modal}

@@ -1,16 +1,13 @@
 import { cookies, headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-
-const cookieName = "example-route-handlers";
+import { COOKIE_NAME } from "../constants";
 
 export async function GET(req: NextRequest, res: NextResponse) {
-  const headersList = headers();
-  const referer = headersList.get("referer");
-  const cookieStore = cookies();
-  const cookie = cookieStore.get(cookieName);
+  const referer = headers().get("referer");
+  const cookie = cookies().get(COOKIE_NAME);
   const newCookie = cookie
     ? `${cookie.name}=${cookie.value}; Max-Age=2;`
-    : `${cookieName}=referer:${referer}__${Date.now()}; Max-Age=2;`;
+    : `${COOKIE_NAME}=referer:${referer}__${Date.now()}; Max-Age=2;`;
 
   return NextResponse.json(
     { msg: newCookie },

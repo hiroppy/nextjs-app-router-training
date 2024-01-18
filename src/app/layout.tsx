@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { type PropsWithChildren } from "react";
 import { GitHubIcon } from "./_components/icons/github";
+import { TwitterIcon } from "./_components/icons/twitter";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -45,14 +46,21 @@ export default function RootLayout({ children }: PropsWithChildren) {
             >
               🐕
             </Link>
-            <Link
-              href="https://github.com/hiroppy/nextjs-app-router-training"
-              target="_blank"
-            >
-              <i className="text-gray-300 hover:text-blue-300">
-                <GitHubIcon />
-              </i>
-            </Link>
+            <div className="flex gap-5 items-center">
+              <Link href="https://twitter.com/about_hiroppy" target="_blank">
+                <i className="text-gray-300 hover:text-blue-300">
+                  <TwitterIcon />
+                </i>
+              </Link>
+              <Link
+                href="https://github.com/hiroppy/nextjs-app-router-training"
+                target="_blank"
+              >
+                <i className="text-gray-300 hover:text-blue-300">
+                  <GitHubIcon />
+                </i>
+              </Link>
+            </div>
           </header>
           <main className="p-6 text-gray-200 flex-1 h-full">{children}</main>
         </div>

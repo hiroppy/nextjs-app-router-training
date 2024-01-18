@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "kind": "rendering",
+    "path": "rsc-payload",
+    "title": "RSC Payload",
+    "description": "\nThe RSC Payload is a compact binary representation of the rendered React Server Components tree. It's used by React on the client to update the browser's DOM. The RSC Payload contains:\n\n- The rendered result of Server Components\n- Placeholders for where Client Components should be rendered and references to their JavaScript files\n- Any props passed from a Server Component to a Client Component\n  ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/rendering/server-components#how-are-server-components-rendered"
+  },
+  "codes": {
+    "_components/logs.tsx": "\"use client\";\n\nimport { Boundary } from \"@/app/_components/boundary\";\nimport { Button } from \"@/app/_components/button\";\nimport { useMonitorRSCPayload } from \"@/app/_hooks/useMonitorRSCPayload\";\nimport { useRouter } from \"next/navigation\";\n\nexport function Logs() {\n  const { logs } = useMonitorRSCPayload(\"/examples/rsc-payload\", true);\n  const current = logs.pop();\n  const router = useRouter();\n\n  return (\n    <Boundary label=\"Client: RSC Payload\">\n      <div className=\"w-100 overflow-auto\">\n        {current ? (\n          <pre>{current.body}</pre>\n        ) : (\n          <Button onClick={() => router.refresh()}>reload</Button>\n        )}\n      </div>\n    </Boundary>\n  );\n}\n",
+    "_components/server.tsx": "import { Boundary } from \"@/app/_components/boundary\";\n\nexport function Server() {\n  return <Boundary label=\"Server\">{Date.now()}</Boundary>;\n}\n",
+    "page.tsx": "import { Logs } from \"./_components/logs\";\nimport { Server } from \"./_components/server\";\n\n// turn off full route cache for demo\nexport const dynamic = \"force-dynamic\";\n\nexport default function Page() {\n  return (\n    <div>\n      <Server />\n      <Logs />\n    </div>\n  );\n}\n"
+  }
+}

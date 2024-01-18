@@ -1,15 +1,17 @@
 "use client";
 
 import { Boundary } from "@/app/_components/boundary";
+import { Loading } from "@/app/_components/loading";
 import { notFound } from "next/navigation";
 import { useFetch } from "./_hooks/useFetch";
+import { COOKIE_NAME } from "./constants";
 
 export default function Page() {
   const path = "/examples/route-handlers/api";
   const { data, loading, error } = useFetch<{ msg: string }>(path);
 
   if (loading) {
-    return <Boundary label="Loading">Loading...</Boundary>;
+    return <Loading />;
   }
 
   if (!data || error) {
@@ -19,8 +21,10 @@ export default function Page() {
   return (
     <Boundary label="Page">
       <div className="flex flex-col gap-4">
-        <h2 className="text-lg">assigned cookie</h2>
-        <p>endpoint: {path}</p>
+        <div>
+          <p>endpoint: {path}</p>
+          <p>cookie name: {COOKIE_NAME}</p>
+        </div>
         <p className="break-all text-gray-400">{data.msg}</p>
       </div>
     </Boundary>

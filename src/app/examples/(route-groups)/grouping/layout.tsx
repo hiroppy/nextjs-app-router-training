@@ -9,7 +9,7 @@ export default function Layout({ children }: PropsWithChildren) {
 
   return (
     <Boundary label="Root Layout">
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         <p>current path: {pathname}</p>
         {children}
       </div>
