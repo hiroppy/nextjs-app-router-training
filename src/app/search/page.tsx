@@ -4,7 +4,7 @@ import { PoweredBy } from "@/app/_components/search/poweredBy";
 import { Result } from "@/app/_components/search/result";
 import { SearchBox } from "@/app/_components/search/searchBox";
 import { client } from "@/app/_utils/algolia";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Configure } from "react-instantsearch";
 import { InstantSearchNext } from "react-instantsearch-nextjs";
 import { meta } from "../examples/data";
@@ -42,18 +42,20 @@ export default function Page() {
         ))}
       </ul>
       <div className="flex-1 w-full md:w-0">
-        <InstantSearchNext indexName="examples" searchClient={client}>
-          <Configure tagFilters={tag ?? undefined} />
-          <div className="text-gray-200 flex flex-col gap-4">
-            <header>
-              <SearchBox />
-            </header>
-            <Result />
-            <footer className="flex justify-end p-2">
-              <PoweredBy />
-            </footer>
-          </div>
-        </InstantSearchNext>
+        <Suspense>
+          <InstantSearchNext indexName="examples" searchClient={client}>
+            <Configure tagFilters={tag ?? undefined} />
+            <div className="text-gray-200 flex flex-col gap-4">
+              <header>
+                <SearchBox />
+              </header>
+              <Result />
+              <footer className="flex justify-end p-2">
+                <PoweredBy />
+              </footer>
+            </div>
+          </InstantSearchNext>
+        </Suspense>
       </div>
     </div>
   );

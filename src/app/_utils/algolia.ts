@@ -1,12 +1,9 @@
 import algoliasearch from "algoliasearch/lite";
-import type { SearchClient } from "instantsearch.js";
 
-export const client: SearchClient = {
-  ...algoliasearch(
-    process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID,
-    process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY,
-  ),
-};
+export const client = algoliasearch(
+  process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID,
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY,
+);
 
 export function buildFilters(
   queries: Record<string, string | string[] | undefined>,

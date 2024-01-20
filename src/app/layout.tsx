@@ -2,7 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { type PropsWithChildren } from "react";
+import { type PropsWithChildren, Suspense } from "react";
 import { GitHubIcon } from "./_components/icons/github";
 import { SearchIcon } from "./_components/icons/search";
 import { TwitterIcon } from "./_components/icons/twitter";
@@ -81,7 +81,7 @@ export default function RootLayout({ modal, children }: Props) {
           <main className="p-6 text-gray-200 flex-1 h-full">{children}</main>
         </div>
         <Analytics debug={false} />
-        {modal}
+        <Suspense>{modal}</Suspense>
       </body>
     </html>
   );
