@@ -15,7 +15,14 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "cSpell.enabled": true,
-  "cSpell.words": ["hiroppy", "nextjs", "biomejs", "shikiji", "nord"],
+  "cSpell.words": [
+    "hiroppy",
+    "nextjs",
+    "biomejs",
+    "shikiji",
+    "nord",
+    "algoliasearch"
+  ],
   "cSpell.allowCompoundWords": true,
   "cSpell.ignorePaths": [
     "**/package-lock.json",
