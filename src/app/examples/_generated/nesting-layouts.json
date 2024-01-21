@@ -1,6 +1,6 @@
 {
   "meta": {
-    "kind": "basic",
+    "kind": "layout",
     "path": "nesting-layouts",
     "title": "Nesting Layouts",
     "description": "\nA layout is UI that is shared between multiple pages. On navigation, layouts preserve state, remain interactive, and do not re-render. Layouts can also be nested.\n  ",

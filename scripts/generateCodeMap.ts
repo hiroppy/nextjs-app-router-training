@@ -24,6 +24,7 @@ import { Kind, meta } from "../src/app/examples/data";
       /* ignore root */ !key ||
       key === "_hooks" ||
       key === "_generated" ||
+      key === "_components" ||
       path.includes("data.ts")
     ) {
       continue;

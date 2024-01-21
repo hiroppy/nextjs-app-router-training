@@ -15,9 +15,10 @@ This project aims to
 
 | Example                                | Kind                | Status |
 | -------------------------------------- | ------------------- | ------ |
-| Overwriting Metadata                   | basic               | ✅     |
-| Nesting Layouts                        | basic               | ✅     |
-| Template                               | basic               | ✅     |
+| Nesting Layouts                        | layout              | ✅     |
+| Template                               | layout              | ✅     |
+| Overwriting Metadata                   | metadata            | ✅     |
+| Generating OpenGraph Image             | metadata            | ✅     |
 | Server Components                      | rendering           | ✅     |
 | Server and Client Composition Patterns | rendering           | ✅     |
 | RSC Payload                            | rendering           | ✅     |

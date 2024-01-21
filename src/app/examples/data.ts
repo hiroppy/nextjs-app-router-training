@@ -1,5 +1,6 @@
 export type Kind =
-  | "basic"
+  | "layout"
+  | "metadata"
   | "rendering"
   | "route-groups"
   | "loading"
@@ -22,15 +23,7 @@ export type Meta = {
 };
 
 export const meta = (<const>{
-  basic: {
-    "overwrite-meta": {
-      path: "overwrite-meta",
-      title: "Overwriting Metadata",
-      description: `
-Next.js has a Metadata API that can be used to define your application metadata (e.g. meta and link tags inside your HTML head element) for improved SEO and web shareability.
-  `,
-      doc: "https://nextjs.org/docs/app/building-your-application/optimizing/metadata",
-    },
+  layout: {
     "nesting-layouts": {
       path: "nesting-layouts",
       title: "Nesting Layouts",
@@ -52,6 +45,25 @@ There may be cases where you need those specific behaviors, and templates would 
 - To change the default framework behavior. For example, Suspense Boundaries inside layouts only show the fallback the first time the Layout is loaded and not when switching pages. For templates, the fallback is shown on each navigation.
   `,
       doc: "https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#templates",
+    },
+  },
+  metadata: {
+    "overwriting-meta": {
+      path: "overwriting-meta",
+      title: "Overwriting Metadata",
+      description: `
+Next.js has a Metadata API that can be used to define your application metadata (e.g. meta and link tags inside your HTML head element) for improved SEO and web shareability.
+  `,
+      doc: "https://nextjs.org/docs/app/building-your-application/optimizing/metadata",
+    },
+    "generating-opengraph-image": {
+      path: "generating-opengraph-image",
+      title: "Generating OpenGraph Image",
+      description: `
+You can programmatically generate images using code.
+Generate a route segment's shared image by creating an opengraph-image or twitter-image route that default exports a function.
+  `,
+      doc: "https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image#generate-images-using-code-js-ts-tsx",
     },
   },
   rendering: {

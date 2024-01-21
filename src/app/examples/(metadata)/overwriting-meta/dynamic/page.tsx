@@ -1,5 +1,8 @@
+import { Boundary } from "@/app/_components/boundary";
 import type { Metadata, ResolvingMetadata } from "next";
-import { Meta } from "../_components/meta";
+import { MetaList } from "../../_components/metaList";
+
+const path = "overwriting-meta/dynamic";
 
 type Params = {
   params: { id: string };
@@ -15,11 +18,15 @@ export async function generateMetadata(
   const parentDescription = parentInfo.description;
 
   return {
-    title: `[modified] ${parentTitle}`,
-    description: `[modified] ${parentDescription}`,
+    title: `🐭 ${parentTitle}`,
+    description: `🐭 ${parentDescription}`,
   };
 }
 
 export default function Page() {
-  return <Meta />;
+  return (
+    <Boundary label={`/${path}`}>
+      <MetaList path={path} />
+    </Boundary>
+  );
 }

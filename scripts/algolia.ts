@@ -25,6 +25,7 @@ import { glob } from "glob";
 
       return {
         ...res,
+        objectID: res.meta.path,
         _tags: [res.meta.kind],
       };
     }),
@@ -36,9 +37,7 @@ import { glob } from "glob";
   const index = client.initIndex("examples");
 
   try {
-    await index.saveObjects(contents, {
-      autoGenerateObjectIDIfNotExist: true,
-    });
+    await index.saveObjects(contents);
   } catch (e) {
     console.error(e);
   }
