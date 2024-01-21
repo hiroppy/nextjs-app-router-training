@@ -13,6 +13,19 @@ export type Props = {
 
 const basePath = "src/app/examples/";
 
+// https://nextjs.org/docs/getting-started/project-structure
+const reservedFiles = [
+  "layout.tsx",
+  "template.tsx",
+  "page.tsx",
+  "default.tsx",
+  "loading.tsx",
+  "not-found.tsx",
+  "error.tsx",
+  "route.ts",
+  "opengraph-image.tsx",
+];
+
 export function FileTree({ exampleName, filePaths, code }: Props) {
   const params = useSearchParams();
   const filePathFromParams = params.get("file-path");
@@ -40,6 +53,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
       const basePathWithName = `${basePath}${exampleName}/`;
       const position = i === 0 ? 0 : 24;
 
+      console.log(key);
       if (!hasChildren) {
         return (
           <li
@@ -59,8 +73,16 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
               onClick={() => {
                 setSelectedPath(newPath.replace(basePathWithName, ""));
               }}
+              className="flex items-center gap-2 justify-center"
             >
               {key}
+              {reservedFiles.includes(key) && (
+                <div className="relative rounded-full bg-gray-500 w-2 h-2 group text-gray-100">
+                  <span className="absolute group-hover:block hidden bg-gray-600 bg-opacity-90 py-1 px-2 rounded-md w-max -top-9 -right-14 text-sm">
+                    reserved file name
+                  </span>
+                </div>
+              )}
             </button>
           </li>
         );
