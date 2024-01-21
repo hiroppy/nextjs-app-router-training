@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/constants";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -13,16 +14,15 @@ const inter = Inter({ subsets: ["latin"] });
 const siteName = "Next.js App Router Training";
 const description =
   "Introducing various basic patterns using Next.js' app router with simplified code.";
-const url = "https://nextjs-app-router-training.vercel.app";
 
 export const metadata: Metadata = {
   title: siteName,
   description,
-  metadataBase: new URL(url),
+  metadataBase: new URL(BASE_URL),
   openGraph: {
     title: siteName,
     description,
-    url,
+    url: BASE_URL,
     siteName,
     type: "website",
   },

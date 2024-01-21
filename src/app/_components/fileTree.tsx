@@ -11,8 +11,6 @@ export type Props = {
   code: Record<string, string>;
 };
 
-const basePath = "src/app/examples/";
-
 // https://nextjs.org/docs/getting-started/project-structure
 const reservedFiles = [
   "layout.tsx",
@@ -30,7 +28,7 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
   const params = useSearchParams();
   const filePathFromParams = params.get("file-path");
   const paths = filePaths
-    .map((path) => `${basePath}${path}`)
+    .map((path) => `${exampleName}/${path}`)
     .sort((a, b) => {
       if (
         b.includes("_components") ||
@@ -42,18 +40,17 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
 
       return 1;
     });
-  const initialPath =
-    filePathFromParams ?? paths[0]?.replace(basePath, "") ?? "";
+  const initialPath = filePathFromParams ?? paths[0] ?? "";
   const [selectedPath, setSelectedPath] = useState(initialPath);
-  const tree = createTree(exampleName, paths);
+  const tree = createTree(paths);
+
   const renderTree = (node: Tree, i: number, path = "") => {
     return Object.keys(node).map((key) => {
-      const newPath = path ? `${path}/${key}` : `src/${key}`;
+      const newPath = path ? `${path}/${key}` : `${key}`;
       const hasChildren = Object.keys(node[key]).length > 0;
-      const basePathWithName = `${basePath}${exampleName}/`;
+      const basePathWithName = `${exampleName}/`;
       const position = i === 0 ? 0 : 24;
 
-      console.log(key);
       if (!hasChildren) {
         return (
           <li
@@ -115,12 +112,12 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
   };
 
   useEffect(() => {
-    setSelectedPath(initialPath);
-  }, [initialPath]);
+    setSelectedPath(initialPath.replace(`${exampleName}/`, ""));
+  }, [initialPath, exampleName]);
 
   return (
     <div className="text-gray-100 flex flex-col md:flex-row md:h-[calc(100vh_-_360px)]">
-      <div className="min-w-max overflow-y-auto pr-10 max-h-48 md:max-h-none mb-2 md:mb-0">
+      <div className="min-w-max overflow-y-auto pr-6 max-h-48 md:max-h-none mb-2 md:mb-0">
         {renderTree(tree, 0)}
       </div>
       {Object.keys(code).length !== 0 && (
@@ -136,17 +133,12 @@ type Tree = {
   [key: string]: Tree;
 };
 
-function createTree(name: string, paths: Props["filePaths"]) {
+function createTree(paths: Props["filePaths"]) {
   const tree: Tree = {};
 
   for (const path of paths) {
-    let pathParts = path.split("/");
+    const pathParts = path.split("/");
     let currentPart = tree;
-
-    // If the path starts with "src/app/examples", treat it as a single key
-    if (pathParts.slice(0, 3).join("/") === "src/app/examples") {
-      pathParts = [`app/examples/${name}`, ...pathParts.slice(3)];
-    }
 
     for (const part of pathParts) {
       if (!currentPart[part]) {

@@ -9,7 +9,7 @@ export default function Page() {
     <Boundary label={`/${path}`}>
       <div className="space-y-3">
         <div className="text-right">
-          <Link href="/examples/generating-opengraph-image/foo?file-path=[slug]/page.tsx">
+          <Link href="/examples/generating-opengraph-image/foo?file-path=[slug]/opengraph-image.tsx">
             [slug] Page
           </Link>
         </div>

@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { ImageItem, ImageList } from "../../_components/imageList";
 import { Section } from "../../_components/section";
 import { ImageSkeletons } from "../../_components/skeleton";
-import { isSignIn } from "../../_utils/auth";
+import { isSignIn } from "../../actions";
 import { items } from "../../mock";
 
 export default async function Page() {
@@ -24,7 +24,7 @@ export default async function Page() {
 async function Items() {
   // e.g. fetch
   const allItems = await new Promise<(typeof items)[number][]>((resolve) => {
-    setTimeout(() => resolve(items.filter(({ id }) => id === 1)), 3000);
+    setTimeout(() => resolve(items.filter(({ id }) => id === 1)), 2000);
   });
 
   return (

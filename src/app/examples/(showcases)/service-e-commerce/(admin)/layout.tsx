@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { type PropsWithChildren } from "react";
 import { PageWrapper } from "../_components/pageWrapper";
-import { isSignIn } from "../_utils/auth";
+import { isSignIn } from "../actions";
 
 export default async function layout({ children }: PropsWithChildren) {
   const signedIn = await isSignIn();

@@ -1,14 +1,11 @@
+import { BASE_URL } from "@/constants";
 import { MetadataRoute } from "next";
 
-const url = "https://nextjs-app-router-training.vercel.app";
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseURL = url;
   const lastModified = new Date();
-
   const staticPaths = [
     {
-      url: baseURL,
+      url: BASE_URL,
       lastModified,
     },
   ];
