@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
@@ -80,8 +80,8 @@ export default function RootLayout({ modal, children }: Props) {
           </header>
           <main className="p-6 text-gray-200 flex-1 h-full">{children}</main>
         </div>
-        <Analytics debug={false} />
         <Suspense>{modal}</Suspense>
+        {process.env.GA_ID && <GoogleAnalytics gaId={process.env.GA_ID} />}
       </body>
     </html>
   );

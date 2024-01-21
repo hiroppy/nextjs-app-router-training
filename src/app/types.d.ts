@@ -7,6 +7,7 @@ declare module "process" {
         SERVER_ONLY_DEMO: string;
         NEXT_PUBLIC_ALGOLIA_APPLICATION_ID: string;
         NEXT_PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY: string;
+        GA_ID: string;
       }
     }
   }
