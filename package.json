@@ -21,7 +21,7 @@
     "react-instantsearch": "^7.5.2",
     "react-instantsearch-nextjs": "^0.1.9",
     "server-only": "^0.0.1",
-    "shikiji": "^0.9.19",
+    "shikiji": "^0.10.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
