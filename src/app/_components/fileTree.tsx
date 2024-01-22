@@ -7,6 +7,7 @@ import { FolderIcon } from "./icons/folder";
 
 export type Props = {
   exampleName: string;
+  isIframe: boolean;
   filePaths: string[];
   code: Record<string, string>;
 };
@@ -24,7 +25,7 @@ const reservedFiles = [
   "opengraph-image.tsx",
 ];
 
-export function FileTree({ exampleName, filePaths, code }: Props) {
+export function FileTree({ exampleName, filePaths, code, isIframe }: Props) {
   const params = useSearchParams();
   const filePathFromParams = params.get("file-path");
   const paths = filePaths
@@ -40,7 +41,11 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
 
       return 1;
     });
-  const initialPath = filePathFromParams ?? paths[0] ?? "";
+  const initialCandidate = `${exampleName}/page.tsx`;
+  const initialPath =
+    filePathFromParams ?? paths.includes(initialCandidate)
+      ? initialCandidate
+      : paths[0] ?? "";
   const [selectedPath, setSelectedPath] = useState(initialPath);
   const tree = createTree(paths);
 
@@ -116,7 +121,12 @@ export function FileTree({ exampleName, filePaths, code }: Props) {
   }, [initialPath, exampleName]);
 
   return (
-    <div className="text-gray-100 flex flex-col md:flex-row md:h-[calc(100vh_-_360px)]">
+    <div
+      className={[
+        "text-gray-100 flex flex-col md:flex-row",
+        isIframe ? "md:max-h-96" : "md:h-[calc(100vh_-_340px)]",
+      ].join(" ")}
+    >
       <div className="min-w-max overflow-y-auto pr-6 max-h-48 md:max-h-none mb-2 md:mb-0">
         {renderTree(tree, 0)}
       </div>

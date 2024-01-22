@@ -28,7 +28,9 @@ export function MetaList({ path, showOnlyImage }: Props) {
           {key === "og:image" && value ? (
             <img src={value} alt="og-image-sample" className="w-44" />
           ) : (
-            <span className="truncate">{value}</span>
+            <span className="truncate" title={value ?? ""}>
+              {value}
+            </span>
           )}
         </div>
       ))}

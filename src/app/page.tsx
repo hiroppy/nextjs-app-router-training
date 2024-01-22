@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { meta } from "./examples/data";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="flex flex-col gap-10 py-6">
       <h1 className="text-center text-4xl font-semibold text-gray-50 leading-normal">
