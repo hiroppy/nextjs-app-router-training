@@ -16,7 +16,7 @@ import { glob } from "glob";
     join(__dirname, "../src/app/examples/_generated/*.json"),
     {
       // too huge size
-      ignore: ["**/service-e-commerce.json"],
+      ignore: ["**/shopping.json"],
     },
   );
   const contents = await Promise.all(

@@ -21,7 +21,7 @@ export function ImageItem({
   thumbnail: string;
 }) {
   return (
-    <Link href={`/examples/service-e-commerce/foods/${id}`}>
+    <Link href={`/examples/shopping/foods/${id}`}>
       <ImageBox>
         <div className="w-full h-full flex items-center justify-center bg-gray-600 rounded-md">
           <span className="text-3xl">{thumbnail}</span>

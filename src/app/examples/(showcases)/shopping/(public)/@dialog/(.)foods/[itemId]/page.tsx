@@ -1,5 +1,5 @@
-import { getItem } from "@/app/examples/(showcases)/service-shopping/_utils/items";
-import { type Item } from "@/app/examples/(showcases)/service-shopping/mock";
+import { getItem } from "@/app/examples/(showcases)/shopping/_utils/items";
+import { type Item } from "@/app/examples/(showcases)/shopping/mock";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Dialog } from "../../_components/dialog";

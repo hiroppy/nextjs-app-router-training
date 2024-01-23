@@ -25,7 +25,7 @@ export default async function Layout({ cart, dialog, children }: Props) {
                 ].join(" ")}
               />
               <Link
-                href="/examples/service-e-commerce/admin"
+                href="/examples/shopping/admin"
                 className="text-sm hover:text-blue-300"
               >
                 Admin
@@ -43,7 +43,7 @@ export default async function Layout({ cart, dialog, children }: Props) {
           <>
             <div />
             <Link
-              href="/examples/service-e-commerce/sign-in"
+              href="/examples/shopping/sign-in"
               className="text-sm border border-gray-500 py-1 px-4 rounded-md hover:text-blue-300"
             >
               sign in

@@ -345,8 +345,8 @@ ENV: NEXT_PUBLIC prefix can be referred to by frontend.
     },
   },
   showcases: {
-    "service-shopping": {
-      path: "service-shopping",
+    shopping: {
+      path: "shopping",
       title: "Shopping",
       description: `
 This example is for an e-commerce site that uses segment, grouping, intercepting, and parallel.

@@ -4,14 +4,14 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { COOKIE_NAME } from "./constants";
 
-const path = "/examples/service-e-commerce";
+const path = "/examples/shopping";
 
 export async function signIn() {
   // e.g. simulate a request to the server
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   cookies().set(COOKIE_NAME, "true");
-  redirect("/examples/service-e-commerce");
+  redirect("/examples/shopping");
 }
 
 export async function signout() {
