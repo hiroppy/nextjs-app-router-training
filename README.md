@@ -46,7 +46,7 @@ This project aims to
 | Optimistic Updates                     | server actions      | ✅     |
 | Taint                                  | security            | ✅     |
 | Server Only end Env                    | security            | ✅     |
-| Electronic Commerce                    | showcases           | ✅     |
+| Shopping                               | showcases           | ✅     |
 
 ## Adding a new sample
 
