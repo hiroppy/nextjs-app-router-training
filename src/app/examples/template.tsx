@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { type PropsWithChildren, Suspense, useEffect, useState } from "react";
 import { GitHubIcon } from "../_components/icons/github";
 import { Reload } from "../_components/icons/reload";
+import { PathnameBar } from "../_components/pathnameBar";
 import { SkeletonBox } from "../_components/skeleton";
 import { useIsEmbedded } from "../_hooks/useIsIframe";
 import type { Meta } from "./data";
@@ -139,11 +140,7 @@ export default function Template({ children }: PropsWithChildren) {
         <div className="md:w-96 md:min-w-96">
           <Section
             title="Preview"
-            header={
-              <div className="py-1 px-4 bg-gray-700 bg-opacity-30 border-b border-b-gray-600 text-sm text-gray-400">
-                {pathname}
-              </div>
-            }
+            header={<PathnameBar />}
             action={
               <button type="button" onClick={() => router.refresh()}>
                 <Reload />
