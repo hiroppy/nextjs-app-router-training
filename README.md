@@ -62,3 +62,7 @@ $ # editing src/app/examples/data.ts to add meta data, please refer type definit
 $ npm run generate
 $ # editing a table in README.md
 ```
+
+## Thanks to
+
+- [Next.js App Router Playground](https://vercel.com/templates/next.js/app-directory)
