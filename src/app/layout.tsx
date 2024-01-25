@@ -1,4 +1,3 @@
-import { BASE_URL } from "@/constants";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -15,11 +14,11 @@ const description =
 export const metadata: Metadata = {
   title: siteName,
   description,
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
   openGraph: {
     title: siteName,
     description,
-    url: BASE_URL,
+    url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName,
     type: "website",
   },
