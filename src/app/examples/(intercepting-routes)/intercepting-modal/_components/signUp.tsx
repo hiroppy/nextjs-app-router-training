@@ -1,10 +1,12 @@
-import { Button } from "./button";
-
 export function SignUp() {
   return (
     <div className="flex flex-col gap-4 items-center">
-      <Button>GitHub</Button>
-      <Button>Google</Button>
+      <button
+        type="button"
+        className="border border-gray-300 rounded-md py-1 w-4/5"
+      >
+        GitHub
+      </button>
     </div>
   );
 }

@@ -7,7 +7,7 @@
     "doc": "https://nextjs.org/docs/app/api-reference/functions/not-found"
   },
   "codes": {
-    "[id]/page.tsx": "import { notFound } from \"next/navigation\";\n\ntype Props = {\n  params: {\n    id: string;\n  };\n};\n\nexport default async function Page({ params }: Props) {\n  const item = await getItem(params.id);\n\n  if (item) {\n    return <span>🍎</span>;\n  }\n\n  return notFound();\n}\n\nasync function getItem(id: string) {\n  if (id === \"1\") {\n    return true;\n  }\n\n  return false;\n}\n",
-    "page.tsx": "import { Link } from \"@/app/_components/link\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex justify-around\">\n      <Link href=\"/examples/error-not-found/1\">200</Link>\n      <Link href=\"/examples/error-not-found/2\">404</Link>\n    </div>\n  );\n}\n"
+    "not-found.tsx": "import { Boundary } from \"@/app/_components/boundary\";\n\nexport default function notFound() {\n  return (\n    <Boundary label=\"not-found\">\n      <h2 className=\"text-2xl\">Page not found 🥲</h2>\n    </Boundary>\n  );\n}\n",
+    "page.tsx": "import { notFound } from \"next/navigation\";\n\nexport default function Page() {\n  return notFound();\n}\n"
   }
 }

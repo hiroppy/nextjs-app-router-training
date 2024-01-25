@@ -2,8 +2,8 @@
 
 import { Boundary } from "@/app/_components/boundary";
 import { Loading } from "@/app/_components/loading";
+import { useFetch } from "@/app/_hooks/useFetch";
 import { notFound } from "next/navigation";
-import { useFetch } from "./_hooks/useFetch";
 import { COOKIE_NAME } from "./constants";
 
 export default function Page() {

@@ -18,7 +18,7 @@ export function Modal({ children }: PropsWithChildren) {
         >
           close
         </button>
-        <div className="mt-6 h-full">{children}</div>
+        <div className="mt-8 h-full">{children}</div>
       </div>
     </div>
   );

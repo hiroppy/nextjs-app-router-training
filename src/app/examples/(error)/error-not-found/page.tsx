@@ -1,10 +1,5 @@
-import { Link } from "@/app/_components/link";
+import { notFound } from "next/navigation";
 
 export default function Page() {
-  return (
-    <div className="flex justify-around">
-      <Link href="/examples/error-not-found/1">200</Link>
-      <Link href="/examples/error-not-found/2">404</Link>
-    </div>
-  );
+  return notFound();
 }

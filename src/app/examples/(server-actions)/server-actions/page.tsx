@@ -14,7 +14,7 @@ export default function Page() {
           <input type="text" name="message" className="bg-slate-600 flex-1" />
           <Submit />
         </form>
-        {state?.message && <p>{state?.message}</p>}
+        {state?.message && <p>{state.message}</p>}
       </div>
     </Boundary>
   );

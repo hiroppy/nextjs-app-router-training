@@ -6,7 +6,7 @@ import { TwitterIcon } from "./icons/twitter";
 export function Header() {
   return (
     <header
-      className="flex justify-between items-center px-6 py-3 border-b border-b-gray-600"
+      className="sticky top-0 flex justify-between items-center px-6 py-3 border-b border-b-gray-600 z-50 bg-gray-800/70 backdrop-blur transition-colors duration-500"
       id="header"
     >
       <div className="flex gap-5 items-center">
