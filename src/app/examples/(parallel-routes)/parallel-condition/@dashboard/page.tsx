@@ -1,3 +1,4 @@
+import { Boundary } from "@/app/_components/boundary";
 import { Button } from "@/app/_components/button";
 import { cookies } from "next/headers";
 import { Box } from "../_components/box";
@@ -11,11 +12,13 @@ export default function Page() {
   }
 
   return (
-    <Box title="Dashboard">
-      <form action={logOut}>
-        <Button type="submit">logout</Button>
-      </form>
-      <p>you are logged in 😄</p>
-    </Box>
+    <Boundary label="@dashboard" bg="green" filePath="@dashboard/page.tsx">
+      <Box title="Dashboard">
+        <form action={logOut}>
+          <Button type="submit">logout</Button>
+        </form>
+        <p>you are logged in 😄</p>
+      </Box>
+    </Boundary>
   );
 }

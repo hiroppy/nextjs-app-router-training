@@ -11,7 +11,11 @@ async function Main() {
   //   throw new Error("error 🥲");
   // }
 
-  return <Boundary label="Left">hi 😁</Boundary>;
+  return (
+    <Boundary label="Left" filePath="@left/page.tsx">
+      hi 😁
+    </Boundary>
+  );
 }
 
 export default async function Page() {

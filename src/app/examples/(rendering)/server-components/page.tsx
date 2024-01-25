@@ -3,7 +3,7 @@ import { Link } from "@/app/_components/link";
 
 export default function Page() {
   return (
-    <Boundary label="Page">
+    <Boundary label="Page" filePath="page.tsx">
       <div className="flex flex-col gap-4">
         <p>There are two types of rendering methods</p>
         <ul className="list-disc list-inside">

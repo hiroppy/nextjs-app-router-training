@@ -9,7 +9,7 @@ type Props = {
 
 export default function ErrorComponent({ error, reset }: Props) {
   return (
-    <Boundary label="Error">
+    <Boundary label="Error" filePath="error.tsx">
       <div className="flex flex-col gap-2">
         <span>message: {error.message}</span>
         <span>digest: {error.digest}</span>

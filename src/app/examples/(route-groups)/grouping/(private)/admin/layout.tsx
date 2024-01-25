@@ -3,7 +3,11 @@ import { PropsWithChildren } from "react";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <Boundary label="Private Layout" bg="green">
+    <Boundary
+      label="Private Layout"
+      bg="green"
+      filePath="(private)/admin/layout.tsx"
+    >
       {children}
     </Boundary>
   );

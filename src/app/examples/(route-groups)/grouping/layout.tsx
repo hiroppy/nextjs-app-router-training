@@ -8,7 +8,7 @@ export default function Layout({ children }: PropsWithChildren) {
   const pathname = usePathname();
 
   return (
-    <Boundary label="Root Layout">
+    <Boundary label="Root Layout" filePath="layout.tsx">
       <div className="flex flex-col gap-4">
         <p>current path: {pathname}</p>
         {children}

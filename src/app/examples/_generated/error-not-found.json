@@ -7,7 +7,7 @@
     "doc": "https://nextjs.org/docs/app/api-reference/functions/not-found"
   },
   "codes": {
-    "not-found.tsx": "import { Boundary } from \"@/app/_components/boundary\";\n\nexport default function notFound() {\n  return (\n    <Boundary label=\"not-found\">\n      <h2 className=\"text-2xl\">Page not found 🥲</h2>\n    </Boundary>\n  );\n}\n",
+    "not-found.tsx": "import { Boundary } from \"@/app/_components/boundary\";\n\nexport default function notFound() {\n  return (\n    <Boundary label=\"not-found\" filePath=\"not-found.tsx\">\n      <h2 className=\"text-2xl\">Page not found 🥲</h2>\n    </Boundary>\n  );\n}\n",
     "page.tsx": "import { notFound } from \"next/navigation\";\n\nexport default function Page() {\n  return notFound();\n}\n"
   }
 }

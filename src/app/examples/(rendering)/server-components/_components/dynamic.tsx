@@ -9,5 +9,9 @@ export function Dynamic() {
   // or
   // searchParams
 
-  return <Boundary label="Dynamic">{performance.now()}</Boundary>;
+  return (
+    <Boundary label="Dynamic" filePath="_components/dynamic.tsx">
+      {performance.now()}
+    </Boundary>
+  );
 }

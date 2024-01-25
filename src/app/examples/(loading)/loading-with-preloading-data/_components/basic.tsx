@@ -12,7 +12,7 @@ export async function Basic() {
   await getItem(2);
 
   return (
-    <Boundary label="Basic">
+    <Boundary label="Basic" filePath="_components/basic.tsx">
       <span>loaded!</span>
     </Boundary>
   );

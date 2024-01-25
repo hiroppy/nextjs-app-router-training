@@ -1,14 +1,14 @@
-"use client";
-
+import Link from "next/link";
 import { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
   label: string;
   bg?: "green" | "red";
   textCenter?: boolean;
+  filePath?: string;
 }>;
 
-export function Boundary({ label, bg, textCenter, children }: Props) {
+export function Boundary({ label, bg, textCenter, filePath, children }: Props) {
   return (
     <div
       className={[
@@ -19,7 +19,17 @@ export function Boundary({ label, bg, textCenter, children }: Props) {
       ].join(" ")}
     >
       <div className="absolute -top-4 ml-2 px-2 py-1 bg-gray-700 rounded-full text-sm animate-[highlight_1s_ease-in-out_1] text-gray-300">
-        <span>{label}</span>
+        {filePath ? (
+          <Link
+            href={`?file-path=${filePath}`}
+            className="hover:text-blue-300"
+            replace
+          >
+            {label}
+          </Link>
+        ) : (
+          <span>{label}</span>
+        )}
       </div>
       <div className="mt-4 py-1 px-2 h-full">{children}</div>
     </div>

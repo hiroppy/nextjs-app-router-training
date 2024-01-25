@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 export default function Page() {
   return (
-    <Boundary label="Root Page">
+    <Boundary label="Root Page" filePath="page.tsx">
       <div className="flex flex-col gap-4">
         <p>
           By using Slot(`@`), you can define independent errors and loading

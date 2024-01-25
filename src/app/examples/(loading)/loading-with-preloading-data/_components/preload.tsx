@@ -24,7 +24,7 @@ export async function Preload() {
   }
 
   return (
-    <Boundary label="Preload">
+    <Boundary label="Preload" filePath="_components/preload.tsx">
       <Item id={1} />
     </Boundary>
   );

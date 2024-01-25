@@ -12,11 +12,9 @@ export default function Layout({ dashboard, login, children }: Props) {
   const isLoggedIn = cookies().get(COOKIE_NAME)?.value === "true";
 
   return (
-    <Boundary label="Layout">
+    <Boundary label="Layout" filePath="layout.tsx">
       <div className="flex flex-col gap-2">
-        <div className={[isLoggedIn ? "bg-green-950" : "bg-red-950"].join(" ")}>
-          {isLoggedIn ? dashboard : login}
-        </div>
+        {isLoggedIn ? dashboard : login}
         {children}
       </div>
     </Boundary>

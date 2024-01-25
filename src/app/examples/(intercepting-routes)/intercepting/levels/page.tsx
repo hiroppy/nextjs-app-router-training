@@ -3,7 +3,7 @@ import { Link } from "@/app/_components/link";
 
 export default function Page() {
   return (
-    <Boundary label="/levels">
+    <Boundary label="/levels" filePath="levels/page.tsx">
       <div className="flex flex-col gap-4">
         <Link href="/examples/intercepting/one-level-above">
           /one-level-above (..)
