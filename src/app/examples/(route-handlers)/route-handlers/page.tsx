@@ -1,32 +1,30 @@
 "use client";
 
 import { Boundary } from "@/app/_components/boundary";
-import { Loading } from "@/app/_components/loading";
 import { useFetch } from "@/app/_hooks/useFetch";
-import { notFound } from "next/navigation";
-import { COOKIE_NAME } from "./constants";
 
 export default function Page() {
-  const path = "/examples/route-handlers/api";
-  const { data, loading, error } = useFetch<{ msg: string }>(path);
-
-  if (loading) {
-    return <Loading />;
-  }
-
-  if (!data || error) {
-    return notFound();
-  }
+  const { data: staticData } = useFetch<{ msg: string }>(
+    "/examples/route-handlers/api/static",
+  );
+  const { data: dynamicData } = useFetch<{ msg: string }>(
+    "/examples/route-handlers/api/dynamic",
+  );
+  const { data: revalidateData } = useFetch<{ msg: string }>(
+    "/examples/route-handlers/api/revalidate",
+  );
 
   return (
-    <Boundary label="Page">
-      <div className="flex flex-col gap-4">
-        <div>
-          <p>endpoint: {path}</p>
-          <p>cookie name: {COOKIE_NAME}</p>
-        </div>
-        <p className="break-all text-gray-400">{data.msg}</p>
-      </div>
-    </Boundary>
+    <div className="space-y-6">
+      <Boundary label="Static" filePath="api/static/route.ts">
+        <p>{staticData?.msg ?? "loading"}</p>
+      </Boundary>
+      <Boundary label="Dynamic" filePath="api/dynamic/route.ts">
+        <p className="break-all">{dynamicData?.msg ?? "loading"}</p>
+      </Boundary>
+      <Boundary label="Revalidate (3s)" filePath="api/revalidate/route.ts">
+        <p>{revalidateData?.msg ?? "loading"}</p>
+      </Boundary>
+    </div>
   );
 }

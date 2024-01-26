@@ -41,6 +41,7 @@ This project aims to
 | Full Route Cache (@server)             | caching             | ✅     |
 | Router Cache (@client)                 | caching             | ✅     |
 | Route Handlers                         | route handlers      | ✅     |
+| Dynamic Route Segments                 | route handlers      | ✅     |
 | Server Actions                         | server actions      | ✅     |
 | Non-form Elements                      | server actions      | ✅     |
 | Optimistic Updates                     | server actions      | ✅     |

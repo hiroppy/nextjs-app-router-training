@@ -292,6 +292,14 @@ Route Handlers can be nested inside the app directory, similar to page.js and la
     `,
       doc: "https://nextjs.org/docs/app/building-your-application/routing/route-handlers",
     },
+    "dynamic-route-segments": {
+      path: "dynamic-route-segments",
+      title: "Dynamic Route Segments",
+      description: `
+Route Handlers can use Dynamic Segments to create request handlers from dynamic data.
+    `,
+      doc: "https://nextjs.org/docs/app/building-your-application/routing/route-handlers#dynamic-route-segments",
+    },
   },
   "server-actions": {
     "server-actions": {

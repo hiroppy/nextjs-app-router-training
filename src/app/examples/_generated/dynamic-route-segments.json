@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "kind": "route-handlers",
+    "path": "dynamic-route-segments",
+    "title": "Dynamic Route Segments",
+    "description": "\nRoute Handlers can use Dynamic Segments to create request handlers from dynamic data.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/routing/route-handlers#dynamic-route-segments"
+  },
+  "codes": {
+    "api/[slug]/route.ts": "import { NextRequest, NextResponse } from \"next/server\";\n\nexport async function GET(\n  req: NextRequest,\n  { params }: { params: { slug: string } },\n) {\n  return NextResponse.json({ msg: params.slug });\n}\n",
+    "page.tsx": "\"use client\";\n\nimport { Boundary } from \"@/app/_components/boundary\";\nimport { useFetch } from \"@/app/_hooks/useFetch\";\n\nexport default function Page() {\n  const { data } = useFetch<{ msg: string }>(\n    \"/examples/dynamic-route-segments/api/dog\",\n  );\n\n  return <Boundary label=\"Dog\">{data?.msg ?? \"loading\"}</Boundary>;\n}\n"
+  }
+}
