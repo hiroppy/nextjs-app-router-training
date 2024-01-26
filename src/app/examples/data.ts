@@ -300,6 +300,14 @@ Route Handlers can use Dynamic Segments to create request handlers from dynamic 
     `,
       doc: "https://nextjs.org/docs/app/building-your-application/routing/route-handlers#dynamic-route-segments",
     },
+    //     "router-handlers-revalidate": {
+    //       path: "router-handlers-revalidate",
+    //       title: "Revalidate",
+    //       description: `
+    // Route Handlers can use Dynamic Segments to create request handlers from dynamic data.
+    //     `,
+    //       doc: "https://nextjs.org/docs/app/building-your-application/routing/route-handlers#dynamic-route-segments",
+    //     },
   },
   "server-actions": {
     "server-actions": {

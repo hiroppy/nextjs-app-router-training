@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "kind": "route-handlers"
+  },
+  "codes": {
+    "api/revalidateTag/route.ts": "import { revalidateTag } from \"next/cache\";\nimport { NextResponse } from \"next/server\";\n\nexport async function GET() {\n  revalidateTag(\"dog\");\n\n  return NextResponse.json({\n    msg: Date.now(),\n  });\n}\n",
+    "api/revalidatepath/route.ts": "import { revalidatePath } from \"next/cache\";\nimport { NextResponse } from \"next/server\";\n\nexport async function GET() {\n  revalidatePath(\"/examples/router-handlers-revalidate/revalidatePath\");\n\n  return NextResponse.json({\n    msg: Date.now(),\n  });\n}\n"
+  }
+}
