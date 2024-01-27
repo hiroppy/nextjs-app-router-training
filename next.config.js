@@ -12,9 +12,8 @@ const nextConfig = {
     return [
       {
         // fetching
-        source: "/examples/revalidating-data",
-        destination:
-          "/examples/data-cache/revalidate?file-path=revalidate/page.tsx",
+        source: "/examples/caching-data",
+        destination: "/examples/data-cache",
         permanent: true,
       },
     ];

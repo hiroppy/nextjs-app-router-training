@@ -10,7 +10,7 @@ export default async function Page() {
   return (
     <Boundary label="Page">
       <div className="flex flex-col gap-4">
-        <p>Persited (default): {persited}</p>
+        <p>force-cache (default): {persited}</p>
         <Link href="/examples/data-cache/no-store?file-path=no-store/page.tsx">
           No store cache
         </Link>

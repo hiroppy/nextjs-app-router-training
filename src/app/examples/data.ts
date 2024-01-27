@@ -240,18 +240,12 @@ Using this pattern to create modals overcomes some common challenges when workin
       path: "caching-data",
       title: "Caching Data",
       description: `
+this example redirects to /examples/data-cache/
+
 Caching stores data so it doesn't need to be re-fetched from your data source on every request.
 By default, Next.js automatically caches the returned values of fetch in the Data Cache on the server. This means that the data can be fetched at build time or request time, cached, and reused on each data request.
     `,
       doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#caching-data",
-    },
-    "revalidating-data": {
-      path: "revalidating-data",
-      title: "Revalidating Data",
-      description: `
-this example redirects to /examples/data-cache/revalidate
-    `,
-      doc: "https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#revalidating-data",
     },
   },
   caching: {
