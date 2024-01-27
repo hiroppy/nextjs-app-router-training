@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "kind": "fetching",
+    "path": "caching-data",
+    "title": "Caching Data",
+    "description": "\nCaching stores data so it doesn't need to be re-fetched from your data source on every request.\nBy default, Next.js automatically caches the returned values of fetch in the Data Cache on the server. This means that the data can be fetched at build time or request time, cached, and reused on each data request.\n    ",
+    "doc": "https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#caching-data"
+  },
+  "codes": {
+    "page.tsx": "import { Boundary } from \"@/app/_components/boundary\";\nimport { NOW_API_ENDPOINT, NowResponse } from \"@/constants\";\n\nexport default async function Page() {\n  const { now: forceCache }: NowResponse = await (\n    await fetch(NOW_API_ENDPOINT)\n  ).json();\n  const { now: noStore }: NowResponse = await (\n    await fetch(NOW_API_ENDPOINT, {\n      cache: \"no-store\",\n    })\n  ).json();\n\n  return (\n    <Boundary label=\"Page\">\n      <p>force-cache is the default</p>\n      <Boundary label=\"force-cache\">{forceCache}</Boundary>\n      <Boundary label=\"no-store\">{noStore}</Boundary>\n    </Boundary>\n  );\n}\n"
+  }
+}

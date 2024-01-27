@@ -36,6 +36,7 @@ This project aims to
 | Conditional Routes                     | parallel routes     | ✅     |
 | Intercepting Routes                    | intercepting routes | ✅     |
 | Modal with Parallel Routes             | intercepting routes | ✅     |
+| Caching Data                           | fetching            | ✅     |
 | Request Memoization (@server)          | caching             | ✅     |
 | Data Cache (@server)                   | caching             | ✅     |
 | Full Route Cache (@server)             | caching             | ✅     |
