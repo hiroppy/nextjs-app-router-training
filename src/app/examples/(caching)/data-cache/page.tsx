@@ -8,9 +8,10 @@ export default async function Page() {
   ).json();
 
   return (
-    <Boundary label="Page">
+    <Boundary label="force-cache">
       <div className="flex flex-col gap-4">
-        <p>force-cache (default): {persited}</p>
+        <p>force-cache is the default fetch strategy</p>
+        <p>{persited}</p>
         <Link href="/examples/data-cache/no-store?file-path=no-store/page.tsx">
           No store cache
         </Link>

@@ -6,7 +6,7 @@ export default async function Layout({ children }: PropsWithChildren) {
   const { now }: NowResponse = await (await fetch(NOW_API_ENDPOINT)).json();
 
   return (
-    <Boundary label="Revalidation Layout">
+    <Boundary label="Revalidation">
       <div className="flex flex-col gap-4">
         <p>
           {now}{" "}

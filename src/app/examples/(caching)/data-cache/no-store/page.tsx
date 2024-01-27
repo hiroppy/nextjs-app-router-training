@@ -9,5 +9,5 @@ export default async function Page() {
     await fetch(NOW_API_ENDPOINT)
   ).json();
 
-  return <Boundary label="No Store">{noStore}</Boundary>;
+  return <Boundary label="no-store">{noStore}</Boundary>;
 }
