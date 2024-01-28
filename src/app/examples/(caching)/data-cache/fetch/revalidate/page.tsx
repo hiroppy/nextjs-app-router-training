@@ -3,7 +3,7 @@ import { Link } from "@/app/_components/link";
 import { NOW_API_ENDPOINT, NowResponse } from "@/constants";
 
 export default async function Page() {
-  const { now: revalidatedNow }: NowResponse = await (
+  const { now }: NowResponse = await (
     await fetch(NOW_API_ENDPOINT, {
       next: {
         revalidate: 3,
@@ -15,7 +15,7 @@ export default async function Page() {
     <div>
       <Boundary label="Time-based Revalidation">
         <div className="flex flex-col gap-6">
-          <p>3s: {revalidatedNow}</p>
+          <p>3s: {now}</p>
         </div>
       </Boundary>
       <Boundary label="On-Demand Revalidation">

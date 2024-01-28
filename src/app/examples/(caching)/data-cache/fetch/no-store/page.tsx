@@ -5,9 +5,7 @@ import { unstable_noStore } from "next/cache";
 export default async function Page() {
   unstable_noStore();
 
-  const { now: noStore }: NowResponse = await (
-    await fetch(NOW_API_ENDPOINT)
-  ).json();
+  const { now }: NowResponse = await (await fetch(NOW_API_ENDPOINT)).json();
 
-  return <Boundary label="no-store">{noStore}</Boundary>;
+  return <Boundary label="no-store">{now}</Boundary>;
 }
