@@ -13,7 +13,7 @@ const nextConfig = {
       {
         // fetching
         source: "/examples/caching-data",
-        destination: "/examples/data-cache",
+        destination: "/examples/data-cache/fetch",
         permanent: true,
       },
     ];
