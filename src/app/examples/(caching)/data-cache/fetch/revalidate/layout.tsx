@@ -7,15 +7,13 @@ export default async function Layout({ children }: PropsWithChildren) {
 
   return (
     <Boundary label="Revalidation">
-      <div className="flex flex-col gap-4">
-        <p>
-          {now}{" "}
-          <span className="text-sm text-gray-400">
-            {"(depends on child's config)"}
-          </span>
+      <Boundary label="layout: force-cache">
+        <p className="text-sm text-gray-400">
+          layout depends on child's config
         </p>
-        {children}
-      </div>
+        <p>{now}</p>
+      </Boundary>
+      {children}
     </Boundary>
   );
 }

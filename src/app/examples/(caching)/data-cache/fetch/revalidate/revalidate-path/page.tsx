@@ -7,7 +7,7 @@ export default async function Page() {
   async function update() {
     "use server";
 
-    revalidatePath("/examples/data-cache/revalidate-path");
+    revalidatePath("/examples/data-cache/fetch/revalidate/revalidate-path");
   }
 
   const data = await fetch(NOW_API_ENDPOINT);

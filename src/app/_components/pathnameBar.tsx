@@ -9,23 +9,24 @@ export function PathnameBar() {
   );
   const [prevParts, setPrevParts] = useState<string[]>(currentParts);
   const [diffIndex, setDiffIndex] = useState(-1);
+  const prevIndex = currentParts.findIndex(
+    (part, index) => part !== prevParts[index],
+  );
 
   useEffect(() => {
-    const diffIndex = currentParts.findIndex(
-      (part, index) => part !== prevParts[index],
-    );
-
     setPrevParts(currentParts);
 
-    if (diffIndex === -1) {
+    if (prevIndex === -1) {
       return;
     }
-    setDiffIndex(diffIndex);
-  }, [currentParts, prevParts]);
+
+    setDiffIndex(prevIndex);
+  }, [prevIndex, currentParts]);
 
   return (
-    <div className="py-1 px-4 bg-gray-700 bg-opacity-30 border-b border-b-gray-600 text-sm text-gray-400 flex gap-1">
+    <div className="py-1 px-4 bg-gray-700 bg-opacity-30 border-b border-b-gray-600 text-sm text-gray-400 flex gap-0.5">
       {currentParts.map((part, i) => (
+        // biome-ignore lint: key is i
         <div key={`${part}_${i}`} className="flex gap-1">
           <span
             className={[

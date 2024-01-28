@@ -38,6 +38,7 @@ export default function Page() {
         <button type="submit">Submit</button>
       </form>
       {optimisticMessages.map(({ message, sending }, i) => (
+        // biome-ignore lint: i is key
         <p key={`${message}_${i}`}>
           {message}
           {sending && <small> (Sending...)</small>}

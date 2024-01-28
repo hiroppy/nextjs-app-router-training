@@ -122,15 +122,15 @@ export function FileTree({ exampleName, filePaths, code, isIframe }: Props) {
   return (
     <div
       className={[
-        "text-gray-100 flex flex-col md:flex-row",
-        isIframe ? "md:max-h-96" : "md:h-[calc(100vh_-_340px)]",
+        "text-gray-100 flex flex-col lg:flex-row",
+        isIframe ? "lg:max-h-96" : "lg:h-[calc(100vh_-_340px)]",
       ].join(" ")}
     >
-      <div className="min-w-max overflow-y-auto pr-6 max-h-48 md:max-h-none mb-2 md:mb-0">
+      <div className="min-w-max overflow-y-auto pr-6 max-h-48 lg:max-h-none mb-2 lg:mb-0">
         {renderTree(tree, 0)}
       </div>
       {Object.keys(code).length !== 0 && (
-        <div className="border-gray-600 overflow-auto flex-1 border-t md:border-l md:border-t-0 h-2 md:h-auto">
+        <div className="border-gray-600 overflow-auto flex-1 border-t lg:border-l lg:border-t-0 h-2 lg:h-auto">
           <Code code={code[selectedPath] ?? ""} />
         </div>
       )}

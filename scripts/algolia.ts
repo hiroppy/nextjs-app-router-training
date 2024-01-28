@@ -20,15 +20,18 @@ import { glob } from "glob";
     },
   );
   const contents = await Promise.all(
-    list.map(async (path) => {
-      const res = await import(path).then((v) => v.default);
+    list
+      .map(async (path) => {
+        const res = await import(path).then((v) => v.default);
 
-      return {
-        ...res,
-        objectID: res.meta.path,
-        _tags: [res.meta.kind],
-      };
-    }),
+        return {
+          ...res,
+          objectID: res.meta.path,
+          _tags: [res.meta.kind],
+        };
+      })
+      // @ts-expect-error
+      .filter(({ objectID }) => !!objectID),
   );
   const client = algoliasearch(
     process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID,
