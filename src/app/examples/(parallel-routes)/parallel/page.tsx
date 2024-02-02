@@ -13,7 +13,7 @@ export default function Page() {
           states for each route at the same time.
         </p>
         <Link href="/examples/parallel/only-right">
-          check the default.tsx bahavior
+          check the default.tsx behavior
         </Link>
       </div>
     </Boundary>
