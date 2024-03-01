@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@next/third-parties':
-    specifier: ^14.1.0
-    version: 14.1.0(next@14.1.1)(react@18.2.0)
+    specifier: ^14.1.1
+    version: 14.1.1(next@14.1.1)(react@18.2.0)
   algoliasearch:
     specifier: ^4.22.1
     version: 4.22.1
@@ -408,8 +408,8 @@ packages:
     dev: false
     optional: true
 
-  /@next/third-parties@14.1.0(next@14.1.1)(react@18.2.0):
-    resolution: {integrity: sha512-f55SdvQ1WWxi4mb5QqtYQh5wRzbm1XaeP7s39DPn4ks3re+n9VlFccbMxBRHqkE62zAyIKmvkUB2cByT/gugGA==}
+  /@next/third-parties@14.1.1(next@14.1.1)(react@18.2.0):
+    resolution: {integrity: sha512-Z3xGaalLRd9a1JNSwYzcTIcFyWTCi7o9fGTa2f+ibE1sc2zvxRbBNDyHz0sL+5yGmlxqsLIERPhB6W/GQkKgXQ==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0
       react: ^18.2.0
