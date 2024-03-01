@@ -1,11 +1,14 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "quickfix.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
@@ -14,7 +17,13 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "prettier.requireConfig": false,
   "cSpell.enabled": true,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.ignorePaths": ["**/node_modules/**", "**/vscode-extension/**"],
   "cSpell.words": [
     "hiroppy",
     "nextjs",
@@ -22,12 +31,5 @@
     "shikiji",
     "nord",
     "algoliasearch"
-  ],
-  "cSpell.allowCompoundWords": true,
-  "cSpell.ignorePaths": [
-    "**/package-lock.json",
-    "**/node_modules/**",
-    "**/vscode-extension/**",
-    "**/.git/objects/**"
   ]
 }
