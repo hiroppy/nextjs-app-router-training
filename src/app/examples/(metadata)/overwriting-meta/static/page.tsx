@@ -1,3 +1,4 @@
+// [!code word:metadata]
 import { Boundary } from "@/app/_components/boundary";
 import type { Metadata } from "next";
 import { MetaList } from "../../_components/metaList";

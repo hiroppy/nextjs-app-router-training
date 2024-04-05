@@ -1,5 +1,5 @@
 import { cookies, headers } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
 const COOKIE_NAME = "example-route-handlers";
 

@@ -1,3 +1,4 @@
+// [!code word:revalidate]
 import { Boundary } from "@/app/_components/boundary";
 
 // 5s

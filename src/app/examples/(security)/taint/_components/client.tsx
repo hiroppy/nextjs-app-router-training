@@ -1,6 +1,6 @@
 "use client";
 
-import { User } from "../api";
+import type { User } from "../api";
 
 type Props = Partial<User>;
 

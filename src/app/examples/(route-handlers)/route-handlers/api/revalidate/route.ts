@@ -1,5 +1,5 @@
-import { NowResponse } from "@/constants";
-import { NextRequest, NextResponse } from "next/server";
+import type { NowResponse } from "@/constants";
+import { type NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, res: NextResponse) {
   const { now }: NowResponse = await (

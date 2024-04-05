@@ -3,8 +3,8 @@
     "kind": "route-handlers"
   },
   "codes": {
+    "api/revalidatePath/route.ts": "import { revalidatePath } from \"next/cache\";\nimport { NextResponse } from \"next/server\";\n\nexport async function GET() {\n  revalidatePath(\"/examples/router-handlers-revalidate/revalidatePath\");\n\n  return NextResponse.json({\n    msg: Date.now(),\n  });\n}\n",
     "api/revalidateTag/route.ts": "import { revalidateTag } from \"next/cache\";\nimport { NextResponse } from \"next/server\";\n\nexport async function GET() {\n  revalidateTag(\"dog\");\n\n  return NextResponse.json({\n    msg: Date.now(),\n  });\n}\n",
-    "api/revalidatepath/route.ts": "import { revalidatePath } from \"next/cache\";\nimport { NextResponse } from \"next/server\";\n\nexport async function GET() {\n  revalidatePath(\"/examples/router-handlers-revalidate/revalidatePath\");\n\n  return NextResponse.json({\n    msg: Date.now(),\n  });\n}\n",
     "revalidatePath/page.tsx": "export default async function Page() {\n  const { msg } = await (\n    await fetch(\n      `${process.env.NEXT_PUBLIC_EXTERNAL_URL}/examples/router-handlers-revalidate/api/revalidatepath`,\n    )\n  ).json();\n\n  return <div>{msg}</div>;\n}\n"
   }
 }

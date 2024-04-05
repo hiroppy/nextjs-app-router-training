@@ -1,5 +1,5 @@
 import { Boundary } from "@/app/_components/boundary";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { getNow } from "../data";
 
 export default async function Layout({ children }: PropsWithChildren) {

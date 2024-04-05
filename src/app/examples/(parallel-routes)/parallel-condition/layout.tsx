@@ -1,6 +1,6 @@
 import { Boundary } from "@/app/_components/boundary";
 import { cookies } from "next/headers";
-import { type PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { COOKIE_NAME } from "./constants";
 
 type Props = PropsWithChildren<{

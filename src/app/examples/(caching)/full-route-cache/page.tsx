@@ -1,6 +1,6 @@
 import { Boundary } from "@/app/_components/boundary";
 import { Link } from "@/app/_components/link";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 export default function Page() {
   return (

@@ -1,6 +1,6 @@
 import { Button } from "@/app/_components/button";
 import Link from "next/link";
-import { type PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { PageWrapper } from "../_components/pageWrapper";
 import { isSignIn, signout } from "../actions";
 

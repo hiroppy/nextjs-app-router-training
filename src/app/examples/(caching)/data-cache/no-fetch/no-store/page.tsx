@@ -1,3 +1,4 @@
+// [!code word:unstable_noStore]
 import { Boundary } from "@/app/_components/boundary";
 import { unstable_noStore } from "next/cache";
 import { getNow } from "../data";

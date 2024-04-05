@@ -1,6 +1,7 @@
+// [!code word:revalidateTag]
 import { Boundary } from "@/app/_components/boundary";
 import { Button } from "@/app/_components/button";
-import { NOW_API_ENDPOINT, NowResponse } from "@/constants";
+import { NOW_API_ENDPOINT, type NowResponse } from "@/constants";
 import { revalidateTag } from "next/cache";
 
 export default async function Page() {

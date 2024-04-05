@@ -1,5 +1,5 @@
 import { Boundary } from "@/app/_components/boundary";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (

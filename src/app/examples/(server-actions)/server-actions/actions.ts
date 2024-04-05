@@ -1,3 +1,4 @@
+// [!code word:use server]
 "use server";
 
 import { schema } from "./schema";

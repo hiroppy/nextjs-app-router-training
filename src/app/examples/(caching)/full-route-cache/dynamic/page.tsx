@@ -1,3 +1,4 @@
+// [!code word:force-dynamic]
 import { Boundary } from "@/app/_components/boundary";
 import { Suspense } from "react";
 

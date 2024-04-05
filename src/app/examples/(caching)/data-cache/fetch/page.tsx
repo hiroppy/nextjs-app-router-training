@@ -1,6 +1,6 @@
 import { Boundary } from "@/app/_components/boundary";
 import { Link } from "@/app/_components/link";
-import { NOW_API_ENDPOINT, NowResponse } from "@/constants";
+import { NOW_API_ENDPOINT, type NowResponse } from "@/constants";
 
 export default async function Page() {
   const { now }: NowResponse = await (await fetch(NOW_API_ENDPOINT)).json();

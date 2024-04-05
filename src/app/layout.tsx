@@ -1,7 +1,7 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { type Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { type PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { Header } from "./_components/header";
 import "./globals.css";
 

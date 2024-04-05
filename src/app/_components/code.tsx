@@ -1,5 +1,6 @@
 "use client";
 
+import { transformerNotationWordHighlight } from "@shikijs/transformers";
 import { useEffect, useState } from "react";
 import { codeToHtml } from "shiki/bundle/web";
 
@@ -16,6 +17,7 @@ export function Code({ code }: Props) {
         const html = await codeToHtml(code, {
           lang: "tsx",
           theme: "nord",
+          transformers: [transformerNotationWordHighlight()],
         });
 
         setHtmlCode(html);

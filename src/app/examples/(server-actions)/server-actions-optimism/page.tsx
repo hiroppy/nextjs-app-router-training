@@ -1,3 +1,4 @@
+// [!code word:useOptimistic]
 "use client";
 
 import { Boundary } from "@/app/_components/boundary";

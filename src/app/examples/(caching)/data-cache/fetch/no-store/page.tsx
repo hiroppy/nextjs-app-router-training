@@ -1,5 +1,6 @@
+// [!code word:unstable_noStore]
 import { Boundary } from "@/app/_components/boundary";
-import { NOW_API_ENDPOINT, NowResponse } from "@/constants";
+import { NOW_API_ENDPOINT, type NowResponse } from "@/constants";
 import { unstable_noStore } from "next/cache";
 
 export default async function Page() {

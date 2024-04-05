@@ -1,3 +1,4 @@
+// [!code word:generateMetadata]
 import { Boundary } from "@/app/_components/boundary";
 import type { Metadata, ResolvingMetadata } from "next";
 import { MetaList } from "../../_components/metaList";

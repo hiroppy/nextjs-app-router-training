@@ -1,6 +1,6 @@
 import { Boundary } from "@/app/_components/boundary";
-import { NOW_API_ENDPOINT, NowResponse } from "@/constants";
-import { PropsWithChildren } from "react";
+import { NOW_API_ENDPOINT, type NowResponse } from "@/constants";
+import type { PropsWithChildren } from "react";
 
 export default async function Layout({ children }: PropsWithChildren) {
   const { now }: NowResponse = await (await fetch(NOW_API_ENDPOINT)).json();

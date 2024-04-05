@@ -8,6 +8,6 @@
   },
   "codes": {
     "not-found.tsx": "import { Boundary } from \"@/app/_components/boundary\";\n\nexport default function notFound() {\n  return (\n    <Boundary label=\"not-found\" filePath=\"not-found.tsx\">\n      <h2 className=\"text-2xl\">Page not found 🥲</h2>\n    </Boundary>\n  );\n}\n",
-    "page.tsx": "import { notFound } from \"next/navigation\";\n\nexport default function Page() {\n  return notFound();\n}\n"
+    "page.tsx": "// [!code word:notFound]\nimport { notFound } from \"next/navigation\";\n\nexport default function Page() {\n  return notFound();\n}\n"
   }
 }

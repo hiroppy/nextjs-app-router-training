@@ -1,5 +1,6 @@
 import { Boundary } from "@/app/_components/boundary";
-import React, { type PropsWithChildren } from "react";
+import type React from "react";
+import type { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
   modal: React.ReactNode;

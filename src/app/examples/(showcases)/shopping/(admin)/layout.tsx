@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { type PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { PageWrapper } from "../_components/pageWrapper";
 import { isSignIn } from "../actions";
 

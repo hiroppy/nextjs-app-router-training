@@ -1,3 +1,4 @@
+// [!code word:unstable_cache]
 import { Boundary } from "@/app/_components/boundary";
 import { Button } from "@/app/_components/button";
 import { revalidateTag, unstable_cache } from "next/cache";

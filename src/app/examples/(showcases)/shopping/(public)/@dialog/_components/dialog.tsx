@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { type PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 export function Dialog({ children }: PropsWithChildren) {
   const router = useRouter();

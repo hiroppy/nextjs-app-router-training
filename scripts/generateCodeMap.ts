@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { join, parse } from "node:path";
 import { glob } from "glob";
-import { Kind, meta } from "../src/app/examples/data";
+import { type Kind, meta } from "../src/app/examples/data";
 
 (async () => {
   const base = join(__dirname, "../src/app/examples");

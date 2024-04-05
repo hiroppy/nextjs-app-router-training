@@ -2,7 +2,7 @@
 
 "use client";
 
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { Header } from "./_components/header";
 import { useIsEmbedded } from "./_hooks/useIsIframe";
 

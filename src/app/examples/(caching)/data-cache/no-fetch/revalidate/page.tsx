@@ -1,3 +1,4 @@
+// [!code word:unstable_cache]
 import { Boundary } from "@/app/_components/boundary";
 import { Link } from "@/app/_components/link";
 import { unstable_cache } from "next/cache";

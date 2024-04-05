@@ -1,5 +1,5 @@
 import NextLink, { type LinkProps } from "next/link";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<LinkProps>;
 
