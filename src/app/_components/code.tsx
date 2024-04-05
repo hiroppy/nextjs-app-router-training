@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { codeToHtml } from "shikiji/bundle/web";
+import { codeToHtml } from "shiki/bundle/web";
 
 type Props = {
   code: string;
