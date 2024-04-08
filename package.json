@@ -29,7 +29,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.6.4",
     "@types/node": "^20.12.5",
-    "@types/react": "^18.2.74",
+    "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "autoprefixer": "^10.4.19",
     "glob": "^10.3.12",
