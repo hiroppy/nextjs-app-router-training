@@ -2,7 +2,9 @@
   "name": "nextjs-routing-demo",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@8.15.6",
   "scripts": {
+    "setup": "corepack enable pnpm",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
