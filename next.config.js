@@ -5,6 +5,7 @@ const nextConfig = {
   //     fullUrl: true,
   //   },
   // },
+  transpilePackages: ["shiki"],
   experimental: {
     taint: true,
   },
