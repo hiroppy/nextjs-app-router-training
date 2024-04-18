@@ -15,8 +15,8 @@ dependencies:
     specifier: ^4.23.3
     version: 4.23.3
   instantsearch.js:
-    specifier: ^4.66.1
-    version: 4.66.1(algoliasearch@4.23.3)
+    specifier: ^4.67.0
+    version: 4.67.0(algoliasearch@4.23.3)
   next:
     specifier: 14.2.2
     version: 14.2.2(react-dom@18.2.0)(react@18.2.0)
