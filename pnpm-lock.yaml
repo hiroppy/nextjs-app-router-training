@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@next/third-parties':
-    specifier: ^14.2.1
-    version: 14.2.1(next@14.2.2)(react@18.2.0)
+    specifier: ^14.2.2
+    version: 14.2.2(next@14.2.2)(react@18.2.0)
   '@shikijs/transformers':
     specifier: ^1.3.0
     version: 1.3.0
@@ -427,8 +427,8 @@ packages:
     dev: false
     optional: true
 
-  /@next/third-parties@14.2.1(next@14.2.2)(react@18.2.0):
-    resolution: {integrity: sha512-iHVq3uHT1BLR4O8LXJ/AJeRCATnsxWNq5S223BYhrQMceMUr/5TtKIroQwJpXrbwxkOr7SFX72mZqPTXxd/TnQ==}
+  /@next/third-parties@14.2.2(next@14.2.2)(react@18.2.0):
+    resolution: {integrity: sha512-udHgllytb8GPbqghxIDf09E7x/4hYgp7WjmfH1Z3u4EG29Mhf12NyXpc49wtd0k3rLydunqDa4MH9ej2y5Ph/A==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0
       react: ^18.2.0
