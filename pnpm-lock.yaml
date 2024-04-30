@@ -18,8 +18,8 @@ importers:
         specifier: ^4.23.3
         version: 4.23.3
       instantsearch.js:
-        specifier: ^4.67.0
-        version: 4.67.0(algoliasearch@4.23.3)
+        specifier: ^4.68.0
+        version: 4.68.0(algoliasearch@4.23.3)
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -360,6 +360,11 @@ packages:
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
+  algoliasearch-helper@3.19.0:
+    resolution: {integrity: sha512-AaSb5DZDMZmDQyIy6lf4aL0OZGgyIdqvLIIvSuVQOIOqfhrYSY7TvotIFI2x0Q3cP3xUpTd7lI1astUC4aXBJw==}
+    peerDependencies:
+      algoliasearch: '>= 3.1 < 6'
+
   algoliasearch@4.23.3:
     resolution: {integrity: sha512-Le/3YgNvjW9zxIQMRhUHuhiUjAlKY/zsdZpfq4dlLqg6mEm0nL6yk+7f2hDOtLpxsgE4jSzDmvHL7nXdBp5feg==}
 
@@ -544,8 +549,16 @@ packages:
   instantsearch-ui-components@0.4.0:
     resolution: {integrity: sha512-Isa9Ankm89e9PUXsUto6TxYzcQpXKlWZMsKLXc//dO4i9q5JS8s0Es+c+U65jRLK2j1DiVlNx/Z6HshRIZwA8w==}
 
+  instantsearch-ui-components@0.5.0:
+    resolution: {integrity: sha512-iDdbAbPDyKZOCdOd4aiMkMVJ1WFhc+QU0dM0EIgfZqDYHFuw8XfyLakRK+S7YcQi4bomoqWZ4FiQ/gTFFWo4rQ==}
+
   instantsearch.js@4.67.0:
     resolution: {integrity: sha512-RKbLBbpysAHOjOBtuSnxsYRnYydEB+Y/R/W0XMC+HZRro6FKUmLexXJR2MkVJXwuC3AG7RNC75jPx1WbVREWMA==}
+    peerDependencies:
+      algoliasearch: '>= 3.1 < 6'
+
+  instantsearch.js@4.68.0:
+    resolution: {integrity: sha512-eIh7jgXAd/TH3OBSgNmfXo6Dl2Apg05EKWqxrbOv0QCAKaouColPkmF6xujhNhjCUM/MVLyidMpSbGbEHa+GUw==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
@@ -1226,6 +1239,11 @@ snapshots:
       '@algolia/events': 4.0.1
       algoliasearch: 4.23.3
 
+  algoliasearch-helper@3.19.0(algoliasearch@4.23.3):
+    dependencies:
+      '@algolia/events': 4.0.1
+      algoliasearch: 4.23.3
+
   algoliasearch@4.23.3:
     dependencies:
       '@algolia/cache-browser-local-storage': 4.23.3
@@ -1413,6 +1431,10 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.23.8
 
+  instantsearch-ui-components@0.5.0:
+    dependencies:
+      '@babel/runtime': 7.23.8
+
   instantsearch.js@4.67.0(algoliasearch@4.23.3):
     dependencies:
       '@algolia/events': 4.0.1
@@ -1425,6 +1447,22 @@ snapshots:
       hogan.js: 3.0.2
       htm: 3.1.1
       instantsearch-ui-components: 0.4.0
+      preact: 10.19.3
+      qs: 6.9.7
+      search-insights: 2.13.0
+
+  instantsearch.js@4.68.0(algoliasearch@4.23.3):
+    dependencies:
+      '@algolia/events': 4.0.1
+      '@types/dom-speech-recognition': 0.0.1
+      '@types/google.maps': 3.54.10
+      '@types/hogan.js': 3.0.5
+      '@types/qs': 6.9.11
+      algoliasearch: 4.23.3
+      algoliasearch-helper: 3.19.0(algoliasearch@4.23.3)
+      hogan.js: 3.0.2
+      htm: 3.1.1
+      instantsearch-ui-components: 0.5.0
       preact: 10.19.3
       qs: 6.9.7
       search-insights: 2.13.0
