@@ -26,7 +26,7 @@
     "react-instantsearch-nextjs": "^0.2.3",
     "server-only": "^0.0.1",
     "shiki": "^1.4.0",
-    "zod": "^3.23.6"
+    "zod": "^3.23.7"
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
