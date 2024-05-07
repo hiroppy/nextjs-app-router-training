@@ -18,8 +18,8 @@ importers:
         specifier: ^4.23.3
         version: 4.23.3
       instantsearch.js:
-        specifier: ^4.68.0
-        version: 4.68.0(algoliasearch@4.23.3)
+        specifier: ^4.68.1
+        version: 4.68.1(algoliasearch@4.23.3)
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -33,8 +33,8 @@ importers:
         specifier: ^7.7.3
         version: 7.7.3(algoliasearch@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-instantsearch-nextjs:
-        specifier: ^0.2.2
-        version: 0.2.2(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.7.3(algoliasearch@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^0.2.3
+        version: 0.2.3(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.7.3(algoliasearch@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -549,6 +549,11 @@ packages:
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
+  instantsearch.js@4.68.1:
+    resolution: {integrity: sha512-h1TmKTO9K3aid6m/4JlLPDnlun/GDniGALxljrFctNHR7zIRP1SsNJtqcAevID49BVlpFSGqwtrtZ7JgpWQJJg==}
+    peerDependencies:
+      algoliasearch: '>= 3.1 < 6'
+
   is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
@@ -769,8 +774,8 @@ packages:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.8.0 < 19'
 
-  react-instantsearch-nextjs@0.2.2:
-    resolution: {integrity: sha512-tRyUVeQHcsv9mRiNR6d8pzmA1cQMZXXyAp0kNX/Y1D1l6mCkX0CkLkIupPfZPzsthCJ/oe1FfFbEiQ7lHkiqlg==}
+  react-instantsearch-nextjs@0.2.3:
+    resolution: {integrity: sha512-ffDZrN/46cZ1SwL6vFF9Y6cH4y1ez3Z+0dx66iiONwaBQHElSJ6aCGja/dKOCxO6uAV9B6qWsA/rRds0hEiNdg==}
     peerDependencies:
       next: '>= 13.4 && < 15'
       react-instantsearch: '>= 7.1.0 && < 8'
@@ -1429,6 +1434,22 @@ snapshots:
       qs: 6.9.7
       search-insights: 2.13.0
 
+  instantsearch.js@4.68.1(algoliasearch@4.23.3):
+    dependencies:
+      '@algolia/events': 4.0.1
+      '@types/dom-speech-recognition': 0.0.1
+      '@types/google.maps': 3.54.10
+      '@types/hogan.js': 3.0.5
+      '@types/qs': 6.9.11
+      algoliasearch: 4.23.3
+      algoliasearch-helper: 3.19.0(algoliasearch@4.23.3)
+      hogan.js: 3.0.2
+      htm: 3.1.1
+      instantsearch-ui-components: 0.5.0
+      preact: 10.19.3
+      qs: 6.9.7
+      search-insights: 2.13.0
+
   is-binary-path@2.1.0:
     dependencies:
       binary-extensions: 2.2.0
@@ -1617,7 +1638,7 @@ snapshots:
       react: 18.3.1
       use-sync-external-store: 1.2.0(react@18.3.1)
 
-  react-instantsearch-nextjs@0.2.2(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.7.3(algoliasearch@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  react-instantsearch-nextjs@0.2.3(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.7.3(algoliasearch@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       next: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-instantsearch: 7.7.3(algoliasearch@4.23.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
