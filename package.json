@@ -22,7 +22,7 @@
     "next": "14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-instantsearch": "^7.7.3",
+    "react-instantsearch": "^7.8.0",
     "react-instantsearch-nextjs": "^0.2.3",
     "server-only": "^0.0.1",
     "shiki": "^1.4.0",
