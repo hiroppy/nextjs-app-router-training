@@ -2,7 +2,7 @@
   "name": "nextjs-routing-demo",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@9.2.0",
   "scripts": {
     "setup": "corepack enable pnpm",
     "dev": "next dev",
@@ -29,7 +29,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.3",
+    "@biomejs/biome": "1.8.0",
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
