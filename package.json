@@ -36,7 +36,7 @@
     "autoprefixer": "^10.4.19",
     "glob": "^10.4.5",
     "postcss": "^8.4.40",
-    "tailwindcss": "^3.4.6",
+    "tailwindcss": "^3.4.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
