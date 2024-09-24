@@ -33,8 +33,8 @@ importers:
         specifier: ^7.11.4
         version: 7.11.4(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-instantsearch-nextjs:
-        specifier: ^0.3.11
-        version: 0.3.11(next@14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.11.4(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^0.3.12
+        version: 0.3.12(next@14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.11.4(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -780,8 +780,8 @@ packages:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.8.0 < 19'
 
-  react-instantsearch-nextjs@0.3.11:
-    resolution: {integrity: sha512-FGyxqPWKZZGTq4e8vbw5uZBpYcrv81SqZarJBkh33JIs2hhOmsqYR6o/22IZy8oe6t5PNHBoAnbm/1CVRCYAhQ==}
+  react-instantsearch-nextjs@0.3.12:
+    resolution: {integrity: sha512-5c212/6Lwh9nJdqTH9LwhZqkD6+O0SWwUWVHJDhbxlHPniGv0FkIg3YZv3l5xo5coM3pUm1sD1yCj6luFgTAYA==}
     peerDependencies:
       next: '>= 13.4 && < 15'
       react-instantsearch: '>= 7.1.0 && < 8'
@@ -1641,7 +1641,7 @@ snapshots:
       react: 18.3.1
       use-sync-external-store: 1.2.0(react@18.3.1)
 
-  react-instantsearch-nextjs@0.3.11(next@14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.11.4(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  react-instantsearch-nextjs@0.3.12(next@14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.11.4(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       next: 14.2.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-instantsearch: 7.11.4(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
