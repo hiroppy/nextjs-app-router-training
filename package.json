@@ -15,11 +15,11 @@
     "check": "biome check --apply ."
   },
   "dependencies": {
-    "@next/third-parties": "^14.2.13",
+    "@next/third-parties": "^14.2.14",
     "@shikijs/transformers": "^1.10.3",
     "algoliasearch": "^4.24.0",
     "instantsearch.js": "^4.72.2",
-    "next": "14.2.13",
+    "next": "14.2.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-instantsearch": "^7.11.4",
