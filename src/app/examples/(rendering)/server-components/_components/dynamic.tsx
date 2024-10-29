@@ -2,10 +2,10 @@ import { performance } from "node:perf_hooks";
 import { Boundary } from "@/app/_components/boundary";
 import { cookies, headers } from "next/headers";
 
-export function Dynamic() {
-  const headersList = headers();
+export async function Dynamic() {
+  const headersList = await headers();
   // or
-  const cookiesList = cookies();
+  const cookiesList = await cookies();
   // or
   // searchParams
 

@@ -8,7 +8,7 @@ export default function Page() {
   async function login() {
     "use server";
 
-    cookies().set(COOKIE_NAME, "true");
+    (await cookies()).set(COOKIE_NAME, "true");
   }
 
   return (

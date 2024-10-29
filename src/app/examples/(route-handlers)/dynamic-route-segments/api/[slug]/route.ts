@@ -1,8 +1,16 @@
 import { type NextRequest, NextResponse } from "next/server";
 
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>
+}
+
 export async function GET(
   req: NextRequest,
-  { params }: { params: { slug: string } },
+  { params }: Props,
 ) {
-  return NextResponse.json({ msg: params.slug });
+  const { slug } = await params;
+
+  return NextResponse.json({ msg: slug });
 }

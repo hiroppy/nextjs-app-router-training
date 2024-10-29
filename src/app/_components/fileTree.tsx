@@ -44,7 +44,7 @@ export function FileTree({ exampleName, filePaths, code, isIframe }: Props) {
   const initialCandidate = `${exampleName}/page.tsx`;
   const initialPath =
     filePathFromParams ??
-    (paths.includes(initialCandidate) ? initialCandidate : paths[0] ?? "");
+    (paths.includes(initialCandidate) ? initialCandidate : (paths[0] ?? ""));
   const [selectedPath, setSelectedPath] = useState(initialPath);
   const tree = createTree(paths);
 

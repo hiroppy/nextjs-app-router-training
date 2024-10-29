@@ -8,9 +8,6 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-  // when you want to return an image when only bots
-  // const { isBot } = userAgent({ headers: headers() });
-
   return new ImageResponse(
     <div
       style={{

@@ -8,6 +8,7 @@ const nextConfig = {
   transpilePackages: ["shiki"],
   experimental: {
     taint: true,
+    // typedRoutes: true,
   },
   async redirects() {
     return [

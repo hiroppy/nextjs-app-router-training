@@ -1,7 +1,7 @@
 import NextLink, { type LinkProps } from "next/link";
 import type { PropsWithChildren } from "react";
 
-type Props = PropsWithChildren<LinkProps>;
+type Props = PropsWithChildren<LinkProps<unknown>>;
 
 export function Link({ children, ...rest }: Props) {
   return (

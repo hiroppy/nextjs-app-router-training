@@ -8,7 +8,7 @@ export default function Page() {
   async function logOut() {
     "use server";
 
-    cookies().delete(COOKIE_NAME);
+    (await cookies()).delete(COOKIE_NAME);
   }
 
   return (

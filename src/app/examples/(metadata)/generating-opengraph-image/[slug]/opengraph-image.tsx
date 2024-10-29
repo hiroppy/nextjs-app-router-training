@@ -8,12 +8,14 @@ export const size = {
 export const contentType = "image/png";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export default async function Image({ params }: Props) {
+  const { slug } = await params;
+
   return new ImageResponse(
     <div
       style={{
@@ -26,7 +28,7 @@ export default async function Image({ params }: Props) {
         justifyContent: "center",
       }}
     >
-      {alt} {params.slug}
+      {alt} {slug}
     </div>,
   );
 }

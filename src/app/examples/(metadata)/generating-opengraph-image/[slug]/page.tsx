@@ -5,13 +5,15 @@ import { MetaList } from "../../_components/metaList";
 const path = "generating-opengraph-image/foo";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function Page({ params }: Props) {
-  if (params.slug !== "foo") {
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+
+  if (slug !== "foo") {
     return notFound();
   }
 

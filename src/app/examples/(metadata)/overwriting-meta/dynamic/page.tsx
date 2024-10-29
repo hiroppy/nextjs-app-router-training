@@ -6,8 +6,10 @@ import { MetaList } from "../../_components/metaList";
 const path = "overwriting-meta/dynamic";
 
 type Params = {
-  params: { id: string };
-  searchParams: Record<string, string | string[] | undefined>;
+  params: Promise<{
+    id: string;
+  }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
 export async function generateMetadata(

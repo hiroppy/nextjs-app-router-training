@@ -5,16 +5,18 @@ import { Suspense } from "react";
 import { Dialog } from "../../_components/dialog";
 
 type Props = {
-  params: {
+  params: Promise<{
     itemId: string;
-  };
+  }>;
 };
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
+  const { itemId } = await params;
+
   return (
     <Dialog>
       <Suspense fallback={<Loading />}>
-        <Main id={params.itemId} />
+        <Main id={itemId} />
       </Suspense>
     </Dialog>
   );

@@ -8,8 +8,8 @@ type Props = PropsWithChildren<{
   login: React.ReactNode;
 }>;
 
-export default function Layout({ dashboard, login, children }: Props) {
-  const isLoggedIn = cookies().get(COOKIE_NAME)?.value === "true";
+export default async function Layout({ dashboard, login, children }: Props) {
+  const isLoggedIn = (await cookies()).get(COOKIE_NAME)?.value === "true";
 
   return (
     <Boundary label="Layout" filePath="layout.tsx">

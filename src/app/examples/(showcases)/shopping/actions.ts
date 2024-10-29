@@ -10,14 +10,14 @@ export async function signIn() {
   // e.g. simulate a request to the server
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  cookies().set(COOKIE_NAME, "true");
+  (await cookies()).set(COOKIE_NAME, "true");
   redirect("/examples/shopping");
 }
 
 export async function signout() {
-  cookies().delete(COOKIE_NAME);
+  (await cookies()).delete(COOKIE_NAME);
 }
 
 export async function isSignIn() {
-  return cookies().get(COOKIE_NAME)?.value === "true";
+  return (await cookies()).get(COOKIE_NAME)?.value === "true";
 }

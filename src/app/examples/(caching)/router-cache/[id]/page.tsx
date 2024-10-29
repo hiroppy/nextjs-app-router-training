@@ -4,13 +4,14 @@ import { notFound } from "next/navigation";
 import { TITLES } from "../constants";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export default function Page({ params }: Props) {
-  const title = TITLES[Number(params.id)];
+export default async function Page({ params }: Props) {
+  const { id } = await params;
+  const title = TITLES[Number(id)];
 
   if (!title) {
     return notFound();

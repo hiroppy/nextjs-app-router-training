@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import { getItem } from "../../../_utils/items";
 
 type Props = {
-  params: {
+  params: Promise<{
     itemId: string;
-  };
+  }>;
 };
 
 export default async function Page({ params }: Props) {
-  const item = await getItem(params.itemId);
+  const { itemId } = await params;
+  const item = await getItem(itemId);
 
   if (item === undefined) {
     return notFound();

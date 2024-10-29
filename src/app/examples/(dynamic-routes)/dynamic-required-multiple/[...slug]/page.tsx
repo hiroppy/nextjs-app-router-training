@@ -1,15 +1,17 @@
 import { Link } from "@/app/_components/link";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 };
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+
   return (
     <div className="flex flex-col gap-4">
-      <span>slug: {JSON.stringify(params.slug)}</span>
+      <span>slug: {JSON.stringify(slug)}</span>
       <Link href="/examples/dynamic-required-multiple/one">
         👍 /dynamic-required-multiple/one
       </Link>
