@@ -17,7 +17,7 @@
   "dependencies": {
     "@next/third-parties": "^15.0.1",
     "@shikijs/transformers": "^1.22.2",
-    "algoliasearch": "^4.24.0",
+    "algoliasearch": "^5.29.0",
     "instantsearch.js": "^4.75.3",
     "next": "canary",
     "react": "^18.3.1",
