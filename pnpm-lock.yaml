@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@next/third-parties':
-        specifier: ^15.0.1
-        version: 15.0.1(next@16.4.0-canary.26(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        specifier: ^15.5.25
+        version: 15.5.25(next@16.4.0-canary.26(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@shikijs/transformers':
         specifier: ^1.22.2
         version: 1.22.2
@@ -412,11 +412,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/third-parties@15.0.1':
-    resolution: {integrity: sha512-URkJqgF+75uH6JTZ5bXkVNANO5WDXSPV+IM17DluywUMMkqJvot/LhjgnTZ5TM2X0q7rdQmRHeOxQi2bMbynQQ==}
+  '@next/third-parties@15.5.25':
+    resolution: {integrity: sha512-cOPrVyIJbkMfpRL1cTHi2sCEmLssscEcPRR31HVWv6hAbLFr+jzB8lUK81KKWcmgkS22hziVYpV2PjmlMMe14g==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0 || ^15.0.0
-      react: ^18.2.0 || 19.0.0-rc-65a56d0e-20241020
+      react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1565,7 +1565,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@16.4.0-canary.26':
     optional: true
 
-  '@next/third-parties@15.0.1(next@16.4.0-canary.26(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@next/third-parties@15.5.25(next@16.4.0-canary.26(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       next: 16.4.0-canary.26(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
