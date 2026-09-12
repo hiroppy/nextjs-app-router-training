@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@next/third-parties':
-        specifier: ^15.5.25
-        version: 15.5.25(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        specifier: ^16.3.5
+        version: 16.3.5(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@shikijs/transformers':
         specifier: ^1.22.2
         version: 1.22.2
@@ -412,10 +412,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/third-parties@15.5.25':
-    resolution: {integrity: sha512-cOPrVyIJbkMfpRL1cTHi2sCEmLssscEcPRR31HVWv6hAbLFr+jzB8lUK81KKWcmgkS22hziVYpV2PjmlMMe14g==}
+  '@next/third-parties@16.3.5':
+    resolution: {integrity: sha512-ZQiUWEPKFD/c8z8DTMzUbYwOLv8/fzF9JDDCvYo19eBg2rKyMzOtpiDX1eqb8q6+vJWK/aW2m0REAM3cVKsWTA==}
     peerDependencies:
-      next: ^13.0.0 || ^14.0.0 || ^15.0.0
+      next: ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0-beta.0
       react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1565,7 +1565,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@16.4.0-canary.27':
     optional: true
 
-  '@next/third-parties@15.5.25(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@next/third-parties@16.3.5(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       next: 16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
