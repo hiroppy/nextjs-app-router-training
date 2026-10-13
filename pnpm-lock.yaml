@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@next/third-parties':
         specifier: ^15.5.25
-        version: 15.5.25(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 15.5.25(next@16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@shikijs/transformers':
         specifier: ^1.22.2
         version: 1.22.2
@@ -18,11 +18,11 @@ importers:
         specifier: ^4.24.0
         version: 4.24.0
       instantsearch.js:
-        specifier: ^4.116.0
-        version: 4.116.0(algoliasearch@4.24.0)
+        specifier: ^4.120.0
+        version: 4.120.0(algoliasearch@4.24.0)
       next:
         specifier: canary
-        version: 16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -30,11 +30,11 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-instantsearch:
-        specifier: ^7.49.0
-        version: 7.49.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^7.52.0
+        version: 7.52.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-instantsearch-nextjs:
-        specifier: ^0.3.21
-        version: 0.3.21(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.49.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^0.5.0
+        version: 0.5.0(next@16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.52.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -361,53 +361,53 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@next/env@16.4.0-canary.27':
-    resolution: {integrity: sha512-oHhmFa7yc+tloFCsZ6r4mRNH0DEROLPE+pTaaQpOzEfe8r32fgQMW0xmhPHE1m2qEzkiOlxWFPtJ+JrihFq4aQ==}
+  '@next/env@16.5.0-canary.9':
+    resolution: {integrity: sha512-uWMdaox6DpCaLWxWqBFiWj4rZ5vmjp8sjHWrtUulRhbNTyLkk9mDberCyDKVRq88uEz9bG5rObDPo39MphN1Nw==}
 
-  '@next/swc-darwin-arm64@16.4.0-canary.27':
-    resolution: {integrity: sha512-R44S+CwR0CXEmRPksT6UmcPp5XP55qWPqOBJG67x/Q39FUOaac/NA1bbmahboPIR7AFBxJpP4TO4l+UxRm1OQg==}
+  '@next/swc-darwin-arm64@16.5.0-canary.9':
+    resolution: {integrity: sha512-ClQNu9/gLCvUZuc6LZKXCOAfPJxjzzqYNU90RLeZ++3KDhv0ki9Sn/kxEopwGyIvrASYmJZCk9oNxRlWAHIusg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@next/swc-darwin-x64@16.4.0-canary.27':
-    resolution: {integrity: sha512-pbo2dP1G3mnAowRUZo1QbPuNeMcbt1G4l7OPzaQL8WVftdyNRQc0pM9F+Am9tAraTV7RzB/jH4Vqc/UokOJPEw==}
+  '@next/swc-darwin-x64@16.5.0-canary.9':
+    resolution: {integrity: sha512-S71aQX+sOPrXoLsUHLNzXjUpOigRQ54xEvGH48DDK1JNHrVuyQodBddosqwfTJNsYDXDF7We1BowptXhZpDovQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@next/swc-linux-arm64-gnu@16.4.0-canary.27':
-    resolution: {integrity: sha512-sr81CHq73KRUk0vy9Uw40dv1WVxwUL4bWfZh6lSzvJFTJm7vT9GWHOlrxH45O9syDrd/2NGY8avFVJrndbTMhg==}
+  '@next/swc-linux-arm64-gnu@16.5.0-canary.9':
+    resolution: {integrity: sha512-3m8laVuBx6l3tSV7QPpWPafd/ukf7Cv+QPmWjWiCJhlRdU+Ef+Bt0IrKS1hqmEgNZ2F8NBCYDeb+2f9JRIzsrQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-arm64-musl@16.4.0-canary.27':
-    resolution: {integrity: sha512-+HBL/QYBY6l01p1cTO9rpXpKiKsYGvFrV+BGZyaqLw0Bu9DY/V6MoHPYlP92vQLQ/L13X9NMEk/GWHhzS46nsQ==}
+  '@next/swc-linux-arm64-musl@16.5.0-canary.9':
+    resolution: {integrity: sha512-1Fzpny3eBSmfQc7AHjwulZWeT5Gwt2ik7/dAPdzHHe/TrSL2STwjAqNT36q+92e52P3spLLDKwe23dxfR5izsQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-x64-gnu@16.4.0-canary.27':
-    resolution: {integrity: sha512-FgJ+mCvHNFTcacodRaOHsWIeqd67J1KLB13Ry8pSaxaUfJriRjeZTHDVLbPJykvJ7nXnfxQTbWp94bmiWijpgw==}
+  '@next/swc-linux-x64-gnu@16.5.0-canary.9':
+    resolution: {integrity: sha512-ZwbR7RhlRMmnfavghbvEgqgJo/wHKKG0qwjV0oXut0zPdSFtbKKsWVg/9Upj4mO2FAcMaVCtKNn6bLbgBI3blQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-linux-x64-musl@16.4.0-canary.27':
-    resolution: {integrity: sha512-T9yX3nQq96SKn3J37aemwn++eyLqqK/oBvFJWobHLYx2r3xge2BweoDgIHMCHibYkPWM6Mo7ghX4S9DuoBtHfw==}
+  '@next/swc-linux-x64-musl@16.5.0-canary.9':
+    resolution: {integrity: sha512-+xMSCdF+QSNpru2zZD7z9x/Ew0JHAb6VN0tpcGtDPY16cxlfibNpLexn7a8WHO+HVBISnV/eM0JUj3VAWC/a6A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-win32-arm64-msvc@16.4.0-canary.27':
-    resolution: {integrity: sha512-jKYXtsgUfQbPvPECRn01mrPClii1ob9I9RgPezmp/ecg9a+Ku3iKz+0b7NgZDva3bMCsawzCicM4IlDPKT7Fjw==}
+  '@next/swc-win32-arm64-msvc@16.5.0-canary.9':
+    resolution: {integrity: sha512-XTcjBjvAJx+iTBxTfPJI4LEnIhCiacu7kv/8WGkUTKeIMZGI3IZ562QXhAp+Xtpj2p4DREEH388vykfjsbZOAA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@next/swc-win32-x64-msvc@16.4.0-canary.27':
-    resolution: {integrity: sha512-bmstF1AiCpSyaUcmR5rLLWgaCDXqh6RVNoQSlQuTrafSzLq0w1k0y94e9oS9MG64+TxbKMWoofE0XCJ2HgxylQ==}
+  '@next/swc-win32-x64-msvc@16.5.0-canary.9':
+    resolution: {integrity: sha512-iwGk2ogJN6HNSRcSBCXXfqbk/8+BMhcDbDQhFC0iwl86werKnd+CJ+4WydejHIAgX3lCn0XpE0u+3BfQtyzpNQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -521,8 +521,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  algoliasearch-helper@3.29.3:
-    resolution: {integrity: sha512-gVOMbbPVrCO3Xs+B+BLAIGFqIQow6qHMTYCEeBqLQB9m4ZmKUqMwkEumlal2iyyezHEd4Y0FvFTLbCRutCutIQ==}
+  algoliasearch-helper@3.30.0:
+    resolution: {integrity: sha512-leiyAC/Giqxk9OW2YCUZDtqKZInSwMgdhd4PNqeUC8eNBZgtIB9BlUR0RkAbHeS9r5GxI1GiJUu31SO8RjWfaA==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
@@ -754,11 +754,11 @@ packages:
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
 
-  instantsearch-ui-components@0.40.0:
-    resolution: {integrity: sha512-iswxns+LY+CsK70eBxAGNk3rNgbbZsHf9Dy+PA+WHahSe/se1N0cZuHNXyvvRepwsuceogft7HGncA2Nqiv8Bw==}
+  instantsearch-ui-components@0.43.0:
+    resolution: {integrity: sha512-oEaoM2gTrh7AsU+LhgzFBLd564KZxG4HD1urKSrh2btTt0xbEJPKC0yCqbxByJxoYRceN4FO7j6UEMRhTUbDDQ==}
 
-  instantsearch.js@4.116.0:
-    resolution: {integrity: sha512-d3qolbGBPNCTmoTwSBgXVCXKv/6Ow+gx0AEmNinQyliaoCLXUBgTrh/0dzKJu/j7itw1PYrjUZ6FwtTA1bJnQw==}
+  instantsearch.js@4.120.0:
+    resolution: {integrity: sha512-Vr9RzAcyasBo1hR23aUB2fT0gU1tIrzBUm+mtlgAEndt+uFLcH8tV5i5bcA32Iyjatipbf8heEs6trHIMMXf5Q==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
@@ -825,15 +825,6 @@ packages:
   make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
 
-  markdown-to-jsx@7.7.17:
-    resolution: {integrity: sha512-7mG/1feQ0TX5I7YyMZVDgCC/y2I3CiEhIRQIhyov9nGBP5eoVrOXXHuL5ZP8GRfxVZKRiXWJgwXkb9It+nQZfQ==}
-    engines: {node: '>= 10'}
-    peerDependencies:
-      react: '>= 0.14.0'
-    peerDependenciesMeta:
-      react:
-        optional: true
-
   mdast-util-to-hast@13.2.0:
     resolution: {integrity: sha512-QGYKEuUsYT9ykKBCMOEDLsU5JRObWQusAolFMeko/tYPufNkRffBAQjIE+99jbA87xv6FgmjLtwjh9wBWajwAA==}
 
@@ -889,8 +880,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  next@16.4.0-canary.27:
-    resolution: {integrity: sha512-fynLjnShVkJevmuNC9ChKsfrt51oB1Pc43NjSfBJyCv0IvHIdwuYngPP6RmPrV2RP9TmiTqOQrizYHIG047Z2w==}
+  next@16.5.0-canary.9:
+    resolution: {integrity: sha512-pO1xrviQUbq38lM0MWKroe9xRyINcAQkdTtnRlfLwSLKTkUV8T4AQnTnlbKNZwP+pG6Bt/tzf+mHwIj5hEAwyg==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
@@ -1033,20 +1024,20 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
-  react-instantsearch-core@7.49.0:
-    resolution: {integrity: sha512-jSuVck9g/Z1MEfv9MRlBhU7Dx5AIHPyQtdyYbKDuSnR2oaFVSAFc02p+F4hR4xmuoc3XJd5VVB1qfRB0WivqNA==}
+  react-instantsearch-core@7.52.0:
+    resolution: {integrity: sha512-TKakRCTk6puV0qR3O54WkUS1ECcu0DNhPzkCUzGl/lTSp2IuDP6nsOS5/xMiOCZlyumNwgq+fJpuPRHavLca7g==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
       react: '>= 16.8.0 < 20'
 
-  react-instantsearch-nextjs@0.3.21:
-    resolution: {integrity: sha512-GDhi7jabacahXjqkkwQN0Lq3FaW3pwIMz6ac5GeOqJkqqfEFAluUuNHgkjGOT+MVPnVmpnbQyRgOxUSL8SXYVQ==}
+  react-instantsearch-nextjs@0.5.0:
+    resolution: {integrity: sha512-PQydmJfLfl6/prGHL2IyH/W83l7buV65q9vmAAqDuOHW0Xkg0WCvBJIw8raN+kStoQt0HDf4meisypCVv5xfBg==}
     peerDependencies:
-      next: '>= 13.4 < 15'
+      next: '>= 13.4 < 16'
       react-instantsearch: '>= 7.1.0 < 8'
 
-  react-instantsearch@7.49.0:
-    resolution: {integrity: sha512-08oXw0kw0Ij1qR66drS+lqPfR4R8zbjHtc7nZgK+lA4k6FmpvMEAQopFVeeeIhNQQXg1QoMaTcddIZZoj1dvtw==}
+  react-instantsearch@7.52.0:
+    resolution: {integrity: sha512-ghXUeFrCGAYjY9b/aOoCSSsl7+a+SaCI2gO0fQbSAAnb7qtX1Ujj4EY18/hoXYSnrF9Gp6EjoLxioBWroQzyVQ==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
       react: '>= 16.8.0 < 20'
@@ -1545,35 +1536,35 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@next/env@16.4.0-canary.27': {}
+  '@next/env@16.5.0-canary.9': {}
 
-  '@next/swc-darwin-arm64@16.4.0-canary.27':
+  '@next/swc-darwin-arm64@16.5.0-canary.9':
     optional: true
 
-  '@next/swc-darwin-x64@16.4.0-canary.27':
+  '@next/swc-darwin-x64@16.5.0-canary.9':
     optional: true
 
-  '@next/swc-linux-arm64-gnu@16.4.0-canary.27':
+  '@next/swc-linux-arm64-gnu@16.5.0-canary.9':
     optional: true
 
-  '@next/swc-linux-arm64-musl@16.4.0-canary.27':
+  '@next/swc-linux-arm64-musl@16.5.0-canary.9':
     optional: true
 
-  '@next/swc-linux-x64-gnu@16.4.0-canary.27':
+  '@next/swc-linux-x64-gnu@16.5.0-canary.9':
     optional: true
 
-  '@next/swc-linux-x64-musl@16.4.0-canary.27':
+  '@next/swc-linux-x64-musl@16.5.0-canary.9':
     optional: true
 
-  '@next/swc-win32-arm64-msvc@16.4.0-canary.27':
+  '@next/swc-win32-arm64-msvc@16.5.0-canary.9':
     optional: true
 
-  '@next/swc-win32-x64-msvc@16.4.0-canary.27':
+  '@next/swc-win32-x64-msvc@16.5.0-canary.9':
     optional: true
 
-  '@next/third-parties@15.5.25(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@next/third-parties@15.5.25(next@16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
-      next: 16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       third-party-capital: 1.0.20
 
@@ -1680,7 +1671,7 @@ snapshots:
 
   acorn@8.11.3: {}
 
-  algoliasearch-helper@3.29.3(algoliasearch@4.24.0):
+  algoliasearch-helper@3.30.0(algoliasearch@4.24.0):
     dependencies:
       '@algolia/events': 4.0.1
       algoliasearch: 4.24.0
@@ -1921,14 +1912,11 @@ snapshots:
 
   html-void-elements@3.0.0: {}
 
-  instantsearch-ui-components@0.40.0(react@18.3.1):
+  instantsearch-ui-components@0.43.0:
     dependencies:
       '@swc/helpers': 0.5.18
-      markdown-to-jsx: 7.7.17(react@18.3.1)
-    transitivePeerDependencies:
-      - react
 
-  instantsearch.js@4.116.0(algoliasearch@4.24.0):
+  instantsearch.js@4.120.0(algoliasearch@4.24.0):
     dependencies:
       '@algolia/events': 4.0.1
       '@swc/helpers': 0.5.18
@@ -1937,10 +1925,10 @@ snapshots:
       '@types/hogan.js': 3.0.5
       '@types/qs': 6.9.11
       algoliasearch: 4.24.0
-      algoliasearch-helper: 3.29.3(algoliasearch@4.24.0)
+      algoliasearch-helper: 3.30.0(algoliasearch@4.24.0)
       hogan.js: 3.0.2
       htm: 3.1.1
-      instantsearch-ui-components: 0.40.0(react@18.3.1)
+      instantsearch-ui-components: 0.43.0
       preact: 10.19.3
       qs: 6.9.7
       react: 18.3.1
@@ -1993,10 +1981,6 @@ snapshots:
   lru-cache@11.0.1: {}
 
   make-error@1.3.6: {}
-
-  markdown-to-jsx@7.7.17(react@18.3.1):
-    optionalDependencies:
-      react: 18.3.1
 
   mdast-util-to-hast@13.2.0:
     dependencies:
@@ -2056,9 +2040,9 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next@16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@next/env': 16.4.0-canary.27
+      '@next/env': 16.5.0-canary.9
       '@swc/helpers': 0.5.23
       baseline-browser-mapping: 2.11.22
       caniuse-lite: 1.0.30001646
@@ -2067,14 +2051,14 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       styled-jsx: 5.1.6(react@18.3.1)
     optionalDependencies:
-      '@next/swc-darwin-arm64': 16.4.0-canary.27
-      '@next/swc-darwin-x64': 16.4.0-canary.27
-      '@next/swc-linux-arm64-gnu': 16.4.0-canary.27
-      '@next/swc-linux-arm64-musl': 16.4.0-canary.27
-      '@next/swc-linux-x64-gnu': 16.4.0-canary.27
-      '@next/swc-linux-x64-musl': 16.4.0-canary.27
-      '@next/swc-win32-arm64-msvc': 16.4.0-canary.27
-      '@next/swc-win32-x64-msvc': 16.4.0-canary.27
+      '@next/swc-darwin-arm64': 16.5.0-canary.9
+      '@next/swc-darwin-x64': 16.5.0-canary.9
+      '@next/swc-linux-arm64-gnu': 16.5.0-canary.9
+      '@next/swc-linux-arm64-musl': 16.5.0-canary.9
+      '@next/swc-linux-x64-gnu': 16.5.0-canary.9
+      '@next/swc-linux-x64-musl': 16.5.0-canary.9
+      '@next/swc-win32-arm64-msvc': 16.5.0-canary.9
+      '@next/swc-win32-x64-msvc': 16.5.0-canary.9
       sharp: 0.35.4(@types/node@22.20.2)
     transitivePeerDependencies:
       - '@babel/core'
@@ -2181,29 +2165,29 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-instantsearch-core@7.49.0(algoliasearch@4.24.0)(react@18.3.1):
+  react-instantsearch-core@7.52.0(algoliasearch@4.24.0)(react@18.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
       algoliasearch: 4.24.0
-      algoliasearch-helper: 3.29.3(algoliasearch@4.24.0)
-      instantsearch.js: 4.116.0(algoliasearch@4.24.0)
+      algoliasearch-helper: 3.30.0(algoliasearch@4.24.0)
+      instantsearch.js: 4.120.0(algoliasearch@4.24.0)
       react: 18.3.1
       use-sync-external-store: 1.2.0(react@18.3.1)
 
-  react-instantsearch-nextjs@0.3.21(next@16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.49.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  react-instantsearch-nextjs@0.5.0(next@16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-instantsearch@7.52.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
-      next: 16.4.0-canary.27(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-instantsearch: 7.49.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 16.5.0-canary.9(@types/node@22.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-instantsearch: 7.52.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  react-instantsearch@7.49.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-instantsearch@7.52.0(algoliasearch@4.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
       algoliasearch: 4.24.0
-      instantsearch-ui-components: 0.40.0(react@18.3.1)
-      instantsearch.js: 4.116.0(algoliasearch@4.24.0)
+      instantsearch-ui-components: 0.43.0
+      instantsearch.js: 4.120.0(algoliasearch@4.24.0)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-instantsearch-core: 7.49.0(algoliasearch@4.24.0)(react@18.3.1)
+      react-instantsearch-core: 7.52.0(algoliasearch@4.24.0)(react@18.3.1)
 
   react@18.3.1:
     dependencies:
